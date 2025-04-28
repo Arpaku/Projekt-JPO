@@ -1,0 +1,50 @@
+# Pliki tymczasowe Visual Studio
+*.obj
+*.exe
+*.pch
+*.pdb
+*.ipch
+*.db
+*.suo
+*.sdf
+*.user
+*.aps
+*.ncb
+*.log
+*.cache
+*.ilk
+*.tmp
+*.bak
+*.exp
+*.log
+*.tlog
+
+# Katalogi builda
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+
+# Pliki CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+
+# Systemowe
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# JSON/XML tymczasowe jeśli generowane
+*.tmp.json
+*.tmp.xml
