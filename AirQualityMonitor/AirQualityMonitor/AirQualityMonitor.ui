@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AirQualityMonitorClass</class>
+ <widget class="QMainWindow" name="AirQualityMonitorClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>957</width>
+    <height>817</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AirQualityMonitor</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>891</width>
+      <height>721</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLineEdit" name="searchBox">
+         <property name="placeholderText">
+          <string>Wyszukaj stacje </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="backButton">
+         <property name="text">
+          <string>Powrot</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QStackedWidget" name="confirmButton">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="page">
+          <widget class="QListWidget" name="stationListWidget">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>891</width>
+             <height>691</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="showMapButton">
+           <property name="geometry">
+            <rect>
+             <x>660</x>
+             <y>0</y>
+             <width>231</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Pokaz na mapie</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="page_2">
+          <widget class="QListWidget" name="stationDetailWidget">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>891</width>
+             <height>691</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="downloadStationDetail">
+           <property name="geometry">
+            <rect>
+             <x>660</x>
+             <y>0</y>
+             <width>231</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Pobierz dane do pliku</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="page_3">
+          <widget class="QListWidget" name="stationParameterListWidget">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>431</width>
+             <height>691</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QWidget" name="verticalChart" native="true">
+           <property name="geometry">
+            <rect>
+             <x>429</x>
+             <y>-1</y>
+             <width>461</width>
+             <height>351</height>
+            </rect>
+           </property>
+           <widget class="QWidget" name="verticalLayoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>9</x>
+              <y>29</y>
+              <width>451</width>
+              <height>321</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout"/>
+           </widget>
+           <widget class="QWidget" name="horizontalLayoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>0</y>
+              <width>441</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,2">
+             <item>
+              <widget class="QDateEdit" name="startDateEdit"/>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="endDateEdit"/>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="gridLayoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>439</x>
+             <y>353</y>
+             <width>451</width>
+             <height>331</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="minValueLabel">
+              <property name="text">
+               <string>Min</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="maxValueLabel">
+              <property name="text">
+               <string>Max</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="avgValueLabel">
+              <property name="text">
+               <string>Avg</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="trendLabel">
+              <property name="text">
+               <string>Trend</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="page_4">
+          <widget class="QWidget" name="mapPage" native="true">
+           <property name="geometry">
+            <rect>
+             <x>-1</x>
+             <y>-1</y>
+             <width>891</width>
+             <height>691</height>
+            </rect>
+           </property>
+           <widget class="QWidget" name="verticalLayoutWidget_2">
+            <property name="geometry">
+             <rect>
+              <x>-1</x>
+              <y>29</y>
+              <width>891</width>
+              <height>661</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="mapLayout"/>
+           </widget>
+           <widget class="QWidget" name="horizontalLayoutWidget_2">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>-1</y>
+              <width>891</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="2,2,1,1,1,1">
+             <item>
+              <widget class="QLineEdit" name="addressSearchBox">
+               <property name="placeholderText">
+                <string>Wpisz lokalizacje</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="radiusSearchBox">
+               <property name="placeholderText">
+                <string>Wpisz promien</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="measurementTypeList">
+               <property name="placeholderText">
+                <string>Rodzaj pomiaru</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="searchNearbyButton">
+               <property name="text">
+                <string>Szukaj</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="showAllStationsButton">
+               <property name="text">
+                <string>Pokaz wszystkie</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="backToListButton">
+               <property name="text">
+                <string>Wroc do listy</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>957</width>
+     <height>33</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="AirQualityMonitor.qrc"/>
+ </resources>
+ <connections/>
+</ui>
