@@ -1,65 +1,5 @@
 [
     {
-        "id": 282,
-        "param": {
-            "idParam": 10,
-            "paramCode": "C6H6",
-            "paramFormula": "C6H6",
-            "paramName": "benzen"
-        },
-        "stationId": 52
-    },
-    {
-        "id": 285,
-        "param": {
-            "idParam": 8,
-            "paramCode": "CO",
-            "paramFormula": "CO",
-            "paramName": "tlenek węgla"
-        },
-        "stationId": 52
-    },
-    {
-        "id": 291,
-        "param": {
-            "idParam": 6,
-            "paramCode": "NO2",
-            "paramFormula": "NO2",
-            "paramName": "dwutlenek azotu"
-        },
-        "stationId": 52
-    },
-    {
-        "id": 293,
-        "param": {
-            "idParam": 5,
-            "paramCode": "O3",
-            "paramFormula": "O3",
-            "paramName": "ozon"
-        },
-        "stationId": 52
-    },
-    {
-        "id": 297,
-        "param": {
-            "idParam": 1,
-            "paramCode": "SO2",
-            "paramFormula": "SO2",
-            "paramName": "dwutlenek siarki"
-        },
-        "stationId": 52
-    },
-    {
-        "id": 14397,
-        "param": {
-            "idParam": 3,
-            "paramCode": "PM10",
-            "paramFormula": "PM10",
-            "paramName": "pył zawieszony PM10"
-        },
-        "stationId": 52
-    },
-    {
         "id": 50,
         "param": {
             "idParam": 6,
@@ -88,26 +28,6 @@
             "paramName": "pył zawieszony PM10"
         },
         "stationId": 11
-    },
-    {
-        "id": 1283,
-        "param": {
-            "idParam": 6,
-            "paramCode": "NO2",
-            "paramFormula": "NO2",
-            "paramName": "dwutlenek azotu"
-        },
-        "stationId": 190
-    },
-    {
-        "id": 1285,
-        "param": {
-            "idParam": 5,
-            "paramCode": "O3",
-            "paramFormula": "O3",
-            "paramName": "ozon"
-        },
-        "stationId": 190
     },
     {
         "id": 101,
@@ -160,6 +80,56 @@
         "stationId": 38
     },
     {
+        "id": 991,
+        "param": {
+            "idParam": 6,
+            "paramCode": "NO2",
+            "paramFormula": "NO2",
+            "paramName": "dwutlenek azotu"
+        },
+        "stationId": 158
+    },
+    {
+        "id": 993,
+        "param": {
+            "idParam": 5,
+            "paramCode": "O3",
+            "paramFormula": "O3",
+            "paramName": "ozon"
+        },
+        "stationId": 158
+    },
+    {
+        "id": 995,
+        "param": {
+            "idParam": 3,
+            "paramCode": "PM10",
+            "paramFormula": "PM10",
+            "paramName": "pył zawieszony PM10"
+        },
+        "stationId": 158
+    },
+    {
+        "id": 996,
+        "param": {
+            "idParam": 69,
+            "paramCode": "PM2.5",
+            "paramFormula": "PM2.5",
+            "paramName": "pył zawieszony PM2.5"
+        },
+        "stationId": 158
+    },
+    {
+        "id": 998,
+        "param": {
+            "idParam": 1,
+            "paramCode": "SO2",
+            "paramFormula": "SO2",
+            "paramName": "dwutlenek siarki"
+        },
+        "stationId": 158
+    },
+    {
         "id": 642,
         "param": {
             "idParam": 6,
@@ -178,66 +148,6 @@
             "paramName": "ozon"
         },
         "stationId": 114
-    },
-    {
-        "id": 672,
-        "param": {
-            "idParam": 1,
-            "paramCode": "SO2",
-            "paramFormula": "SO2",
-            "paramName": "dwutlenek siarki"
-        },
-        "stationId": 117
-    },
-    {
-        "id": 658,
-        "param": {
-            "idParam": 10,
-            "paramCode": "C6H6",
-            "paramFormula": "C6H6",
-            "paramName": "benzen"
-        },
-        "stationId": 117
-    },
-    {
-        "id": 665,
-        "param": {
-            "idParam": 6,
-            "paramCode": "NO2",
-            "paramFormula": "NO2",
-            "paramName": "dwutlenek azotu"
-        },
-        "stationId": 117
-    },
-    {
-        "id": 667,
-        "param": {
-            "idParam": 5,
-            "paramCode": "O3",
-            "paramFormula": "O3",
-            "paramName": "ozon"
-        },
-        "stationId": 117
-    },
-    {
-        "id": 670,
-        "param": {
-            "idParam": 69,
-            "paramCode": "PM2.5",
-            "paramFormula": "PM2.5",
-            "paramName": "pył zawieszony PM2.5"
-        },
-        "stationId": 117
-    },
-    {
-        "id": 14395,
-        "param": {
-            "idParam": 3,
-            "paramCode": "PM10",
-            "paramFormula": "PM10",
-            "paramName": "pył zawieszony PM10"
-        },
-        "stationId": 117
     },
     {
         "id": 737,
@@ -268,55 +178,5 @@
             "paramName": "pył zawieszony PM2.5"
         },
         "stationId": 129
-    },
-    {
-        "id": 828,
-        "param": {
-            "idParam": 3,
-            "paramCode": "PM10",
-            "paramFormula": "PM10",
-            "paramName": "pył zawieszony PM10"
-        },
-        "stationId": 143
-    },
-    {
-        "id": 1401,
-        "param": {
-            "idParam": 6,
-            "paramCode": "NO2",
-            "paramFormula": "NO2",
-            "paramName": "dwutlenek azotu"
-        },
-        "stationId": 206
-    },
-    {
-        "id": 1403,
-        "param": {
-            "idParam": 5,
-            "paramCode": "O3",
-            "paramFormula": "O3",
-            "paramName": "ozon"
-        },
-        "stationId": 206
-    },
-    {
-        "id": 1405,
-        "param": {
-            "idParam": 3,
-            "paramCode": "PM10",
-            "paramFormula": "PM10",
-            "paramName": "pył zawieszony PM10"
-        },
-        "stationId": 206
-    },
-    {
-        "id": 1409,
-        "param": {
-            "idParam": 1,
-            "paramCode": "SO2",
-            "paramFormula": "SO2",
-            "paramName": "dwutlenek siarki"
-        },
-        "stationId": 206
     }
 ]

@@ -1,5 +1,5 @@
-/// @file AirQualityMonitor.cpp
-/// @brief Implementacja klasy AirQualityMonitor - Monitor jakoœci powietrza.
+ï»¿/// @file AirQualityMonitor.cpp
+/// @brief Implementacja klasy AirQualityMonitor - Monitor jakoï¿½ci powietrza.
 
 #include "AirQualityMonitor.h"
 #include "ui_AirQualityMonitor.h"
@@ -24,11 +24,12 @@
 #include <algorithm>
 #include <QWebChannel>
 #include <QtConcurrent/QtConcurrentRun>
+#include <QMessageBox> 
 
 /// @brief Konstruktor klasy AirQualityMonitor.
-/// @param parent WskaŸnik na rodzica widgetu.
+/// @param parent Wskaï¿½nik na rodzica widgetu.
 AirQualityMonitor::AirQualityMonitor(QWidget* parent)
-    : QMainWindow(parent), networkManager(new QNetworkAccessManager(this)), currentStationId(-1), webView(nullptr)
+    : QMainWindow(parent), networkManager(new QNetworkAccessManager(this)), currentStationId(-1), currentSensorId(-1), webView(nullptr)
 {
     ui.setupUi(this);
     loadStations();
@@ -43,7 +44,17 @@ AirQualityMonitor::AirQualityMonitor(QWidget* parent)
     connect(ui.backToListButton, &QPushButton::clicked, this, [this]() { ui.confirmButton->setCurrentIndex(0); });
     connect(ui.searchNearbyButton, &QPushButton::clicked, this, &AirQualityMonitor::onSearchNearbyClicked);
     connect(ui.showAllStationsButton, &QPushButton::clicked, this, &AirQualityMonitor::showAllStationsOnMap);
+
+    //przycisk do pobierania danych sensorow
     connect(ui.downloadStationDetail, &QPushButton::clicked, this, &AirQualityMonitor::downloadSensorData);
+
+    //przycisk do pobierania danych pomiarow
+
+    connect(ui.downloadMeasurementButton, &QPushButton::clicked, this, &AirQualityMonitor::downloadMeasurementData);
+
+   
+
+    
 
     webView = new QWebEngineView(ui.mapPage);
 
@@ -70,7 +81,27 @@ AirQualityMonitor::~AirQualityMonitor()
     }
 }
 
-/// @brief Funkcja do pobierania danych sensorów i zapisu do pliku.
+bool AirQualityMonitor::isInternetAvailable()
+{
+    QNetworkAccessManager* manager = new QNetworkAccessManager(this);
+    QNetworkRequest request(QUrl("https://www.google.com"));
+    QNetworkReply* reply = manager->get(request);
+
+    QEventLoop loop;
+    connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+
+    loop.exec();  // Czeka na odpowiedÅº
+
+    if (reply->error() == QNetworkReply::NoError) {
+        return true;  // PoÅ‚Ä…czenie jest dostÄ™pne
+    }
+    else {
+        return false; // Brak poÅ‚Ä…czenia
+    }
+}
+
+
+/// @brief Funkcja do pobierania danych sensorï¿½w i zapisu do pliku.
 void AirQualityMonitor::downloadSensorData()
 {
     if (currentStationId == -1) {
@@ -90,6 +121,8 @@ void AirQualityMonitor::downloadSensorData()
         }
         if (stationExists) {
             onSensorsLoadedFromFile(currentStationId);
+            QMessageBox::information(this, "Informacja", "Dane dla tej stacji sÄ… juÅ¼ zapisane.", QMessageBox::Ok);
+
             return;
         }
     }
@@ -100,14 +133,14 @@ void AirQualityMonitor::downloadSensorData()
     connect(reply, &QNetworkReply::finished, this, &AirQualityMonitor::onSensorsDownloaded);
 }
 
-/// @brief Funkcja obs³uguj¹ca zakoñczenie pobierania danych sensorów.
+/// @brief Funkcja obsï¿½ugujï¿½ca zakoï¿½czenie pobierania danych sensorï¿½w.
 void AirQualityMonitor::onSensorsDownloaded()
 {
     QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
     if (!reply) return;
 
     if (reply->error() != QNetworkReply::NoError) {
-        qDebug() << "B³¹d sieci:" << reply->errorString();
+        qDebug() << "Bï¿½ï¿½d sieci:" << reply->errorString();
         onSensorsLoadedFromFile(currentStationId);
         reply->deleteLater();
         return;
@@ -136,7 +169,7 @@ void AirQualityMonitor::updateSensorsFile(const QJsonArray& newSensors)
 {
     QJsonArray allSensors;
 
-    // Wczytaj obecne dane, jeœli plik istnieje
+    // Wczytaj obecne dane, jeï¿½li plik istnieje
     QFile readFile(QDir::currentPath() + "/sensors.json");
     if (readFile.exists() && readFile.open(QIODevice::ReadOnly)) {
         QByteArray data = readFile.readAll();
@@ -147,7 +180,7 @@ void AirQualityMonitor::updateSensorsFile(const QJsonArray& newSensors)
         readFile.close();
     }
 
-    // Usuñ stare dane dla tej stacji, jeœli istniej¹
+    // Usuï¿½ stare dane dla tej stacji, jeï¿½li istniejï¿½
     int stationId = -1;
     if (!newSensors.isEmpty()) {
         stationId = newSensors.at(0).toObject().value("stationId").toInt();
@@ -171,38 +204,81 @@ void AirQualityMonitor::updateSensorsFile(const QJsonArray& newSensors)
     saveSensorsToFile(allSensors);
 }
 
-// Funkcja do ³adowania danych sensorów dla konkretnej stacji z pliku
+
+void AirQualityMonitor::saveSensorsToFile(const QJsonArray& sensors)
+{
+   
+
+    QMessageBox::information(this, "Informacja", "Dane zostaÅ‚y pobrane do pliku", QMessageBox::Ok);
+
+
+    qDebug() << "KlikniÄ™to przycisk, rozpoczynamy zapis...";
+    QFile file(QDir::currentPath() + "/sensors.json");
+    if (file.open(QIODevice::WriteOnly)) {
+        file.write(QJsonDocument(sensors).toJson());
+        file.close();
+        qDebug() << "Dane zapisane do pliku sensors.json";
+    }
+    else {
+        qDebug() << "BÅ‚Ä…d przy otwieraniu pliku do zapisu";
+    }
+}
+
+
+// Funkcja do ï¿½adowania danych sensorï¿½w dla konkretnej stacji z pliku
 void AirQualityMonitor::onSensorsLoadedFromFile(int stationId)
 {
+    // Wczytanie wszystkich sensorÃ³w z pliku
     QJsonArray allSensors = loadSensorsFromFile();
     QJsonArray stationSensors;
 
-    // Filtruj sensory dla konkretnej stacji
+    // Filtruj sensory tylko dla tej konkretnej stacji
     for (const QJsonValue& value : allSensors) {
         QJsonObject obj = value.toObject();
+        // Dodaj tylko te sensory, ktÃ³re majÄ… odpowiedni stationId
         if (obj.value("stationId").toInt() == stationId) {
             stationSensors.append(obj);
         }
     }
+    
+    // JeÅ›li nie ma danych dla danej stacji, pokaÅ¼ pustÄ… tablicÄ™ (lub odpowiedni komunikat)
+    if (stationSensors.isEmpty()) {
+        
+        ui.stationDetailWidget->clear();
+        // JeÅ›li brak danych w pliku i brak internetu
+        if (!isInternetAvailable()) {
+            QMessageBox::critical(this, "BÅ‚Ä…d", "Brak danych dla wybranej stacji oraz brak poÅ‚Ä…czenia z internetem.", QMessageBox::Ok);
+            return;  // ZakoÅ„cz funkcjÄ™
+        }
 
-    if (!stationSensors.isEmpty()) {
-        updateSensorsList(stationSensors);
-    }
-    else {
-        // Jeœli nie ma danych w pliku, spróbuj pobraæ z API
+        // JeÅ›li brak danych w pliku, a internet jest dostÄ™pny, pobierz dane z API
         QUrl url(QString("https://api.gios.gov.pl/pjp-api/rest/station/sensors/%1").arg(stationId));
         QNetworkRequest request(url);
         QNetworkReply* reply = networkManager->get(request);
         connect(reply, &QNetworkReply::finished, this, &AirQualityMonitor::onSensorsDownloaded);
     }
+    else {
+        // Zaktualizuj listÄ™ sensorÃ³w tylko dla tej stacji
+            updateSensorsList(stationSensors);
+        
+        
+        }
 }
 
-// Funkcja do aktualizacji interfejsu u¿ytkownika z danymi sensorów
+
+
+// Funkcja do aktualizacji interfejsu uï¿½ytkownika z danymi sensorï¿½w
 void AirQualityMonitor::updateSensorsList(const QJsonArray& sensorsData)
 {
-    ui.stationDetailWidget->clear();
-    sensorMap.clear();
+    ui.stationDetailWidget->clear();  // WyczyÅ›Ä‡ starÄ… listÄ™
+    sensorMap.clear();  // WyczyÅ›Ä‡ mapÄ™ sensorÃ³w
 
+    if (sensorsData.isEmpty()) {
+        // JeÅ¼eli nie ma danych dla stacji, nie wyÅ›wietlaj nic
+        return;
+    }
+
+    // PrzetwÃ³rz dane sensorÃ³w i zaktualizuj listÄ™
     for (const QJsonValue& value : sensorsData) {
         QJsonObject sensor = value.toObject();
         QString paramName = sensor.value("param").toObject().value("paramName").toString();
@@ -214,6 +290,417 @@ void AirQualityMonitor::updateSensorsList(const QJsonArray& sensorsData)
         sensorMap.insert(sensorDisplay, sensorId);
     }
 }
+
+
+QJsonArray AirQualityMonitor::loadSensorsFromFile()
+{
+    QFile file(QDir::currentPath() + "/sensors.json");
+    if (!file.open(QIODevice::ReadOnly)) {
+        return QJsonArray();
+    }
+
+    QByteArray data = file.readAll();
+    QJsonDocument doc = QJsonDocument::fromJson(data);
+    return doc.isArray() ? doc.array() : QJsonArray();
+}
+
+QJsonArray AirQualityMonitor::loadMeasurementsFromFile()
+{
+    QFile file(QDir::currentPath() + "/measurements.json");
+    if (file.exists() && file.open(QIODevice::ReadOnly)) {
+        QByteArray data = file.readAll();
+        QJsonDocument doc = QJsonDocument::fromJson(data);
+        if (doc.isArray()) return doc.array();
+        file.close();
+    }
+    return QJsonArray();
+}
+
+
+
+
+void AirQualityMonitor::downloadMeasurementData()
+{
+    qDebug() << "Funkcja downloadMeasurementData zostaÅ‚a wywoÅ‚ana";  // Dodaj log, aby sprawdziÄ‡, czy funkcja jest wywoÅ‚ywana
+
+    if (currentSensorId == -1) {
+        qDebug() << "Brak wybranego sensora";
+        return;  // Brak wybranego sensora
+    }
+
+    QFile file(QDir::currentPath() + "/measurements.json");
+    if (file.exists()) {
+        qDebug() << "Plik measurements.json istnieje";
+        QJsonArray measurementData = loadMeasurementsFromFile();
+        bool sensorExists = false;
+        for (const QJsonValue& value : measurementData) {
+            QJsonObject obj = value.toObject();
+            if (obj.value("sensorId").toInt() == currentSensorId) {
+                sensorExists = true;
+                break;
+            }
+        }
+        if (sensorExists) {
+            qDebug() << "Dane dla tego sensora sÄ… juÅ¼ zapisane";
+            onMeasurementsLoadedFromFile(currentSensorId);
+            QMessageBox::information(this, "Informacja", "Dane dla tego sensora sÄ… juÅ¼ zapisane.", QMessageBox::Ok);
+            return;
+        }
+    }
+
+    // Pobieramy dane z API, jeÅ›li nie znaleÅºliÅ›my ich w pliku
+    qDebug() << "Pobieranie danych z API...";
+    QUrl url(QString("https://api.gios.gov.pl/pjp-api/rest/data/getData/%1").arg(currentSensorId));
+    QNetworkRequest request(url);
+    QNetworkReply* reply = networkManager->get(request);
+    connect(reply, &QNetworkReply::finished, this, &AirQualityMonitor::onMeasurementsDownloaded);
+}
+
+
+
+void AirQualityMonitor::onMeasurementsDownloaded()
+{
+    QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
+    if (!reply) return;
+
+    if (reply->error() != QNetworkReply::NoError) {
+        qDebug() << "BÅ‚Ä…d sieci przy pobieraniu pomiarÃ³w:" << reply->errorString();
+        reply->deleteLater();
+        return;
+    }
+
+    QByteArray data = reply->readAll();
+    QJsonDocument doc = QJsonDocument::fromJson(data);
+
+    if (!doc.isObject()) {
+        qDebug() << "NieprawidÅ‚owy format danych z API";
+        reply->deleteLater();
+        return;
+    }
+
+    QJsonObject root = doc.object();
+    QJsonArray values = root.value("values").toArray();
+    int sensorId = reply->property("sensorId").toInt();  // z setProperty()
+
+
+    // Zapisz dane
+    updateMeasurementsFile(sensorId, values);
+
+    // Zaktualizuj widok
+    updateMeasurementsList(values);
+
+    reply->deleteLater();
+}
+
+
+
+void AirQualityMonitor::onMeasurementsLoadedFromFile(int sensorId)
+{
+    QJsonArray allMeasurements = loadMeasurementsFromFile();
+    QJsonArray sensorMeasurements;
+
+    for (const QJsonValue& value : allMeasurements) {
+        QJsonObject obj = value.toObject();
+        if (obj.value("id").toInt() == sensorId) {
+            sensorMeasurements = obj.value("values").toArray();
+            break;
+        }
+    }
+
+    if (sensorMeasurements.isEmpty()) {
+        if (!isInternetAvailable()) {
+            QMessageBox::critical(this, "BÅ‚Ä…d", "Brak danych pomiarowych oraz brak poÅ‚Ä…czenia z internetem.", QMessageBox::Ok);
+            return;
+        }
+
+        // Pobieramy z API
+        QUrl url(QString("https://api.gios.gov.pl/pjp-api/rest/data/getData/%1").arg(sensorId));
+        QNetworkRequest request(url);
+        QNetworkReply* reply = networkManager->get(request);
+        connect(reply, &QNetworkReply::finished, this, &AirQualityMonitor::onMeasurementsDownloaded);
+    }
+    else {
+        updateMeasurementsList(sensorMeasurements);
+    }
+}
+
+void AirQualityMonitor::updateMeasurementsList(const QJsonArray& values)
+{
+    ui.stationParameterListWidget->clear();
+    qDebug() << "Liczba wartoÅ›ci:" << values.size();  // Debugging line
+
+    // JeÅ›li nie ma danych
+    if (values.isEmpty()) {
+        ui.stationParameterListWidget->addItem("Brak waÅ¼nych danych pomiarowych.");
+        return;
+    }
+
+    // Iteracja po danych
+    for (const QJsonValue& val : values) {
+        QJsonObject obj = val.toObject();
+
+        // Debugging, sprawdzenie wartoÅ›ci
+        qDebug() << "Data:" << obj.value("date").toString();
+        qDebug() << "WartoÅ›Ä‡:" << obj.value("value").toDouble();
+
+        // Sprawdzamy, czy wartoÅ›Ä‡ jest null
+        if (obj.contains("value")) {
+            QString dateStr = obj.value("date").toString();
+            QDateTime dateTime = QDateTime::fromString(dateStr, "yyyy-MM-dd HH:mm:ss");
+            QJsonValue value = obj.value("value");
+
+            // JeÅ›li wartoÅ›Ä‡ jest null, wyÅ›wietlamy "Brak danych"
+            if (value.isNull()) {
+                ui.stationParameterListWidget->addItem(
+                    QString("%1 - Brak danych")
+                    .arg(dateTime.toString("dd.MM.yyyy HH:mm"))
+                );
+            }
+            else {
+                double actualValue = value.toDouble();
+                ui.stationParameterListWidget->addItem(
+                    QString("%1 - %2")
+                    .arg(dateTime.toString("dd.MM.yyyy HH:mm"))
+                    .arg(actualValue, 0, 'f', 1)
+                );
+            }
+        }
+    }
+
+    // JeÅ›li lista jest pusta po dodaniu wartoÅ›ci
+    if (ui.stationParameterListWidget->count() == 0) {
+        ui.stationParameterListWidget->addItem("Brak waÅ¼nych danych pomiarowych.");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+void AirQualityMonitor::updateMeasurementsFile(int sensorId, const QJsonArray& newValues)
+{
+    QFile file(QDir::currentPath() + "/measurements.json");
+    QJsonArray allMeasurements;
+
+    if (file.exists() && file.open(QIODevice::ReadOnly)) {
+        QByteArray data = file.readAll();
+        QJsonDocument doc = QJsonDocument::fromJson(data);
+        if (doc.isArray()) allMeasurements = doc.array();
+        file.close();
+    }
+
+    // UsuÅ„ stare dane dla sensorId
+    for (int i = allMeasurements.size() - 1; i >= 0; --i) {
+        if (allMeasurements.at(i).toObject().value("id").toInt() == sensorId) {
+            allMeasurements.removeAt(i);
+        }
+    }
+
+    // Dodaj nowe dane
+    QJsonObject newEntry;
+    newEntry["id"] = sensorId;
+    newEntry["values"] = newValues;
+    allMeasurements.append(newEntry);
+
+    // Zapisz do pliku
+    if (file.open(QIODevice::WriteOnly)) {
+        file.write(QJsonDocument(allMeasurements).toJson());
+        file.close();
+        QMessageBox::information(this, "Informacja", "Dane pomiarowe zostaÅ‚y zapisane do pliku", QMessageBox::Ok);
+    }
+    else {
+        qDebug() << "BÅ‚Ä…d zapisu do measurements.json";
+    }
+}
+
+
+
+void AirQualityMonitor::saveMeasurementsToFile(const QJsonArray& allMeasurements)
+{
+    QFile file(QDir::currentPath() + "/measurements.json");
+    if (file.open(QIODevice::WriteOnly)) {
+        file.write(QJsonDocument(allMeasurements).toJson());
+        file.close();
+        qDebug() << "Dane zapisane do pliku measurements.json";
+    }
+    else {
+        qDebug() << "BÅ‚Ä…d zapisu do pliku measurements.json";
+    }
+}
+
+
+
+
+void AirQualityMonitor::loadMeasurementData(int sensorId)
+{
+    QUrl url(QString("https://api.gios.gov.pl/pjp-api/rest/data/getData/%1").arg(sensorId));
+    QNetworkRequest request(url);
+    QNetworkReply* reply = networkManager->get(request);
+    connect(reply, &QNetworkReply::finished, this, &AirQualityMonitor::onMeasurementDataFinished);
+}
+
+
+void AirQualityMonitor::displayMeasurementData(const QJsonArray& values)
+{
+    if (values.isEmpty())
+        return;
+
+    lastMeasurements = values;
+
+    QDateTime minDate = QDateTime::currentDateTime();
+    QDateTime maxDate = QDateTime::fromSecsSinceEpoch(0);
+
+    for (const QJsonValue& value : values) {
+        QJsonObject obj = value.toObject();
+        QDateTime dt = QDateTime::fromString(obj.value("date").toString(), Qt::ISODate);
+        if (dt.isValid()) {
+            if (dt < minDate) minDate = dt;
+            if (dt > maxDate) maxDate = dt;
+        }
+    }
+
+    ui.startDateEdit->setDateTime(minDate);
+    ui.endDateEdit->setDateTime(maxDate);
+
+    updateMeasurementDisplay();
+}
+
+void AirQualityMonitor::updateMeasurementDisplay()
+{
+    ui.stationParameterListWidget->clear();
+
+    QLayoutItem* item;
+    while ((item = ui.verticalLayout->takeAt(0)) != nullptr) {
+        if (item->widget())
+            delete item->widget();
+        delete item;
+    }
+
+
+    if (lastMeasurements.isEmpty()) {
+        ui.minValueLabel->setText("Wartoï¿½ï¿½ minimalna\nBrak danych");
+        ui.maxValueLabel->setText("Wartoï¿½ï¿½ maksymalna\nBrak danych");
+        ui.avgValueLabel->setText("Wartoï¿½ï¿½ ï¿½rednia\nBrak danych");
+        ui.trendLabel->setText("Trend wykresu\nBrak danych");
+        return;
+    }
+
+    QLineSeries* series = new QLineSeries();
+    QList<double> selectedValues;
+
+    for (const QJsonValue& value : lastMeasurements) {
+        QJsonObject obj = value.toObject();
+        QDateTime dt = QDateTime::fromString(obj.value("date").toString(), Qt::ISODate);
+        if (dt.isValid() && obj.contains("value") && !obj.value("value").isNull()) {
+            if (dt >= ui.startDateEdit->dateTime() && dt <= ui.endDateEdit->dateTime()) {
+                double val = obj.value("value").toDouble();
+                selectedValues.append(val);
+                series->append(dt.toMSecsSinceEpoch(), val);
+                ui.stationParameterListWidget->addItem(dt.toString("yyyy-MM-dd HH:mm") + ": " + QString::number(val));
+            }
+        }
+    }
+
+    if (selectedValues.isEmpty()) {
+        ui.minValueLabel->setText("Wartosc minimalna\nBrak danych");
+        ui.maxValueLabel->setText("Wartosc maksymalna\nBrak danych");
+        ui.avgValueLabel->setText("Wartosc srednia\nBrak danych");
+        ui.trendLabel->setText("Trend wykresu\nBrak danych");
+    }
+    else {
+        double min = *std::min_element(selectedValues.begin(), selectedValues.end());
+        double max = *std::max_element(selectedValues.begin(), selectedValues.end());
+        double avg = std::accumulate(selectedValues.begin(), selectedValues.end(), 0.0) / selectedValues.size();
+        QString trend;
+
+        double sumFirst = 0, sumLast = 0;
+        int size = selectedValues.size();
+
+        // Liczymy ï¿½redniï¿½ z pierwszej poï¿½owy
+        for (int i = 0; i < size / 2; ++i) {
+            sumFirst += selectedValues[i];
+        }
+
+        // Liczymy ï¿½redniï¿½ z drugiej poï¿½owy
+        for (int i = size / 2; i < size; ++i) {
+            sumLast += selectedValues[i];
+        }
+
+        double avgFirst = sumFirst / (size / 2);
+        double avgLast = sumLast / (size - size / 2); // druga poï¿½owa moï¿½e byï¿½ o 1 wiï¿½ksza
+
+        // Okreï¿½lamy trend
+        if (avgLast > avgFirst) {
+            trend = "Rosnacy";
+        }
+        else if (avgLast < avgFirst) {
+            trend = "Malejacy";
+        }
+        else {
+            trend = "Stabilny";
+        }
+
+
+        // Styl + wyï¿½rodkowanie
+        QString labelStyle = "font-size: 18px; font-weight: bold; color: #00FFC6;";
+        QString trendStyle = "font-size: 18px; font-weight: bold; color: #00FFC6;";
+
+        ui.minValueLabel->setStyleSheet(labelStyle);
+        ui.maxValueLabel->setStyleSheet(labelStyle);
+        ui.avgValueLabel->setStyleSheet(labelStyle);
+        ui.trendLabel->setStyleSheet(trendStyle);
+
+        ui.minValueLabel->setAlignment(Qt::AlignCenter);
+        ui.maxValueLabel->setAlignment(Qt::AlignCenter);
+        ui.avgValueLabel->setAlignment(Qt::AlignCenter);
+        ui.trendLabel->setAlignment(Qt::AlignCenter);
+
+        // Ustawiamy tekst z podpisem i wartoï¿½ciï¿½
+        ui.minValueLabel->setText(QString("Wartosc minimalna\n%1").arg(QString::number(min, 'f', 2)));
+        ui.maxValueLabel->setText(QString("Wartosc maksymalna\n%1").arg(QString::number(max, 'f', 2)));
+        ui.avgValueLabel->setText(QString("Wartosc srednia\n%1").arg(QString::number(avg, 'f', 2)));
+        ui.trendLabel->setText(QString("Trend wykresu\n%1").arg(trend));
+    }
+
+    // Wykres
+    QChart* chart = new QChart();
+    chart->legend()->hide();
+    chart->addSeries(series);
+    chart->setTitle("Pomiary");
+
+    QDateTimeAxis* axisX = new QDateTimeAxis;
+    axisX->setFormat("dd-MM HH:mm");
+    axisX->setTitleText("Czas");
+    axisX->setLabelsAngle(-45);
+    chart->addAxis(axisX, Qt::AlignBottom);
+    series->attachAxis(axisX);
+
+    QValueAxis* axisY = new QValueAxis;
+    axisY->setTitleText("Wartosc");
+    chart->addAxis(axisY, Qt::AlignLeft);
+    series->attachAxis(axisY);
+
+    chart->setBackgroundBrush(QBrush(QColor("#121212")));
+    chart->setTitleBrush(QBrush(Qt::white));
+    axisX->setLinePenColor(Qt::white);
+    axisX->setLabelsBrush(Qt::white);
+    axisY->setLinePenColor(Qt::white);
+    axisY->setLabelsBrush(Qt::white);
+    axisX->setGridLineColor(QColor("#555555"));
+    axisY->setGridLineColor(QColor("#555555"));
+    series->setColor(QColor("#00c3ff"));
+
+    QChartView* chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+
+    ui.verticalLayout->addWidget(chartView);
+}
+
 
 void AirQualityMonitor::loadMap()
 {
@@ -255,7 +742,7 @@ void AirQualityMonitor::loadMap()
             map = L.map('map').setView([52.4064, 16.9252], 12);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
-                attribution: '© OpenStreetMap'
+                attribution: 'ï¿½ OpenStreetMap'
             }).addTo(map);
         };
       </script>
@@ -283,7 +770,7 @@ void AirQualityMonitor::showAllStationsOnMap()
     if (!webView)
         return;
 
-    // Wyczyœæ stare markery
+    // Wyczyï¿½ï¿½ stare markery
     webView->page()->runJavaScript("clearMarkers();");
 
     // Dodaj wszystkie stacje
@@ -300,9 +787,9 @@ void AirQualityMonitor::showAllStationsOnMap()
 
 void AirQualityMonitor::onMarkerClicked(const QString& stationName)
 {
-    qDebug() << "Klikniêto marker:" << stationName;
+    qDebug() << "Klikniï¿½to marker:" << stationName;
 
-    // Teraz rêcznie znajdziemy stacjê i poka¿emy szczegó³y
+    // Teraz rï¿½cznie znajdziemy stacjï¿½ i pokaï¿½emy szczegï¿½y
     QList<QListWidgetItem*> items = ui.stationListWidget->findItems(stationName, Qt::MatchExactly);
     if (!items.isEmpty()) {
         showStationDetails(items.first());
@@ -315,7 +802,7 @@ void AirQualityMonitor::onSearchNearbyClicked()
     QString radiusStr = ui.radiusSearchBox->text();
 
     if (address.isEmpty() || radiusStr.isEmpty()) {
-        qDebug() << "Adres lub promieñ pusty!";
+        qDebug() << "Adres lub promieï¿½ pusty!";
         return;
     }
 
@@ -340,7 +827,7 @@ void AirQualityMonitor::geocodeAddress(const QString& address, double radius)
     QNetworkReply* reply = networkManager->get(request);
     connect(reply, &QNetworkReply::finished, this, [this, reply, radius]() {
         if (reply->error() != QNetworkReply::NoError) {
-            qDebug() << "B³¹d geokodowania:" << reply->errorString();
+            qDebug() << "Bï¿½ï¿½d geokodowania:" << reply->errorString();
             reply->deleteLater();
             return;
         }
@@ -367,7 +854,7 @@ void AirQualityMonitor::findStationsInRadius(double centerLat, double centerLon,
 {
     QVector<QJsonObject> stationsInRadius;
 
-    for (const QJsonValue& value : cachedStations) { // cachedStations -> Twoje wczeœniej za³adowane stacje
+    for (const QJsonValue& value : cachedStations) { // cachedStations -> Twoje wczeï¿½niej zaï¿½adowane stacje
         QJsonObject obj = value.toObject();
         double lat = obj.value("gegrLat").toString().toDouble();
         double lon = obj.value("gegrLon").toString().toDouble();
@@ -399,7 +886,7 @@ double AirQualityMonitor::haversineDistance(double lat1, double lon1, double lat
 //aktualizacja mapy
 void AirQualityMonitor::updateMapWithStations(const QVector<QJsonObject>& stations)
 {
-    QString jsCode = "clearMarkers();\n"; // zak³adam, ¿e masz funkcjê w mapie która czyœci stare markery
+    QString jsCode = "clearMarkers();\n"; // zakï¿½adam, ï¿½e masz funkcjï¿½ w mapie ktï¿½ra czyï¿½ci stare markery
 
     for (const auto& station : stations) {
         double lat = station["gegrLat"].toString().toDouble();
@@ -437,9 +924,6 @@ void AirQualityMonitor::loadStationsFromApi()
         });
 }
 
-//---------------------------------------------------------------------- LADOWANIE STACJI DO PLIIKU I Z PLIKU ----------------------------------------------------------------
-
-
 
 void AirQualityMonitor::saveStationsToFile(const QJsonArray& stations)
 {
@@ -449,6 +933,7 @@ void AirQualityMonitor::saveStationsToFile(const QJsonArray& stations)
         file.close();
     }
 }
+
 QJsonArray AirQualityMonitor::loadStationsFromFile()
 {
     QFile file(QDir::currentPath() + "/stations.json");
@@ -463,32 +948,8 @@ QJsonArray AirQualityMonitor::loadStationsFromFile()
 
 
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//---------------------------------------------------------------------- LADOWANIE STANOWISK DO PLIIKU I Z PLIKU ----------------------------------------------------------------
 
-void AirQualityMonitor::saveSensorsToFile(const QJsonArray& sensors)
-{
-    QFile file(QDir::currentPath() + "/sensors.json");
-    if (file.open(QIODevice::WriteOnly)) {
-        file.write(QJsonDocument(sensors).toJson());
-        file.close();
-    }
-}
-
-QJsonArray AirQualityMonitor::loadSensorsFromFile()
-{
-    QFile file(QDir::currentPath() + "/sensors.json");
-    if (!file.open(QIODevice::ReadOnly)) {
-        return QJsonArray();
-    }
-
-    QByteArray data = file.readAll();
-    QJsonDocument doc = QJsonDocument::fromJson(data);
-    return doc.isArray() ? doc.array() : QJsonArray();
-}
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 void AirQualityMonitor::filterStations(const QString& text)
 {
@@ -562,9 +1023,9 @@ void AirQualityMonitor::onSensorsFinished()
     if (!reply) return;
 
     if (reply->error() != QNetworkReply::NoError) {
-        qDebug() << "B³¹d sieci:" << reply->errorString();
+        qDebug() << "Bï¿½ï¿½d sieci:" << reply->errorString();
 
-        // Spróbuj za³adowaæ z pliku, jeœli dostêpny
+        // Sprï¿½buj zaï¿½adowaï¿½ z pliku, jeï¿½li dostï¿½pny
         onSensorsLoadedFromFile(currentStationId);
 
         reply->deleteLater();
@@ -591,16 +1052,17 @@ void AirQualityMonitor::showSensorDetails(QListWidgetItem* item)
     QString sensorDisplayName = item->text();
     if (sensorMap.contains(sensorDisplayName)) {
         int sensorId = sensorMap.value(sensorDisplayName);
+        currentSensorId = sensorMap.value(sensorDisplayName);
+        qDebug() << "Åadowanie danych pomiarowych dla sensora o ID:" << sensorId;
         loadMeasurementData(sensorId);
-    }
-}
 
-void AirQualityMonitor::loadMeasurementData(int sensorId)
-{
-    QUrl url(QString("https://api.gios.gov.pl/pjp-api/rest/data/getData/%1").arg(sensorId));
-    QNetworkRequest request(url);
-    QNetworkReply* reply = networkManager->get(request);
-    connect(reply, &QNetworkReply::finished, this, &AirQualityMonitor::onMeasurementDataFinished);
+
+        // Przekazujemy ID sensora bezpoÅ›rednio do downloadMeasurementData
+        
+    }
+    else {
+        qDebug() << "Sensor o nazwie" << sensorDisplayName << "nie zostaÅ‚ znaleziony!";
+    }
 }
 
 void AirQualityMonitor::onMeasurementDataFinished()
@@ -625,159 +1087,31 @@ void AirQualityMonitor::onMeasurementDataFinished()
     reply->deleteLater();
 }
 
-void AirQualityMonitor::displayMeasurementData(const QJsonArray& values)
+
+
+void AirQualityMonitor::loadSensorMeasurements(int sensorId)
 {
-    if (values.isEmpty())
-        return;
+    QString filePath = QString("measurements_%1.json").arg(sensorId);
+    QFile file(filePath);
 
-    lastMeasurements = values;
+    if (file.exists() && file.open(QIODevice::ReadOnly)) {
+        QByteArray fileData = file.readAll();
+        file.close();
 
-    QDateTime minDate = QDateTime::currentDateTime();
-    QDateTime maxDate = QDateTime::fromSecsSinceEpoch(0);
-
-    for (const QJsonValue& value : values) {
-        QJsonObject obj = value.toObject();
-        QDateTime dt = QDateTime::fromString(obj.value("date").toString(), Qt::ISODate);
-        if (dt.isValid()) {
-            if (dt < minDate) minDate = dt;
-            if (dt > maxDate) maxDate = dt;
+        QJsonDocument doc = QJsonDocument::fromJson(fileData);
+        if (doc.isObject() && doc.object().contains("values")) {
+            QJsonArray values = doc.object().value("values").toArray();
+            qDebug() << "Wczytano dane z pliku dla sensora" << sensorId;
+            updateMeasurementsList(values);
+            return;
         }
     }
 
-    ui.startDateEdit->setDateTime(minDate);
-    ui.endDateEdit->setDateTime(maxDate);
-
-    updateMeasurementDisplay();
+    // JeÅ¼eli pliku brak lub nie da siÄ™ sparsowaÄ‡ â€“ wyÅ›lij Å¼Ä…danie HTTP
+    qDebug() << "Plik nie istnieje lub nieczytelny, pobieranie z serwera...";
+    QUrl url(QString("https://api.gios.gov.pl/pjp-api/rest/data/getData/%1").arg(sensorId));
+    QNetworkRequest request(url);
+    QNetworkReply* reply = networkManager->get(request);
+    reply->setProperty("sensorId", sensorId);
+    connect(reply, &QNetworkReply::finished, this, &AirQualityMonitor::onMeasurementsDownloaded);
 }
-
-void AirQualityMonitor::updateMeasurementDisplay()
-{
-    ui.stationParameterListWidget->clear();
-
-    QLayoutItem* item;
-    while ((item = ui.verticalLayout->takeAt(0)) != nullptr) {
-        if (item->widget())
-            delete item->widget();
-        delete item;
-    }
-
-
-    if (lastMeasurements.isEmpty()) {
-        ui.minValueLabel->setText("Wartoœæ minimalna\nBrak danych");
-        ui.maxValueLabel->setText("Wartoœæ maksymalna\nBrak danych");
-        ui.avgValueLabel->setText("Wartoœæ œrednia\nBrak danych");
-        ui.trendLabel->setText("Trend wykresu\nBrak danych");
-        return;
-    }
-
-    QLineSeries* series = new QLineSeries();
-    QList<double> selectedValues;
-
-    for (const QJsonValue& value : lastMeasurements) {
-        QJsonObject obj = value.toObject();
-        QDateTime dt = QDateTime::fromString(obj.value("date").toString(), Qt::ISODate);
-        if (dt.isValid() && obj.contains("value") && !obj.value("value").isNull()) {
-            if (dt >= ui.startDateEdit->dateTime() && dt <= ui.endDateEdit->dateTime()) {
-                double val = obj.value("value").toDouble();
-                selectedValues.append(val);
-                series->append(dt.toMSecsSinceEpoch(), val);
-                ui.stationParameterListWidget->addItem(dt.toString("yyyy-MM-dd HH:mm") + ": " + QString::number(val));
-            }
-        }
-    }
-
-    if (selectedValues.isEmpty()) {
-        ui.minValueLabel->setText("Wartosc minimalna\nBrak danych");
-        ui.maxValueLabel->setText("Wartosc maksymalna\nBrak danych");
-        ui.avgValueLabel->setText("Wartosc srednia\nBrak danych");
-        ui.trendLabel->setText("Trend wykresu\nBrak danych");
-    }
-    else {
-        double min = *std::min_element(selectedValues.begin(), selectedValues.end());
-        double max = *std::max_element(selectedValues.begin(), selectedValues.end());
-        double avg = std::accumulate(selectedValues.begin(), selectedValues.end(), 0.0) / selectedValues.size();
-        QString trend;
-
-        double sumFirst = 0, sumLast = 0;
-        int size = selectedValues.size();
-
-        // Liczymy œredni¹ z pierwszej po³owy
-        for (int i = 0; i < size / 2; ++i) {
-            sumFirst += selectedValues[i];
-        }
-
-        // Liczymy œredni¹ z drugiej po³owy
-        for (int i = size / 2; i < size; ++i) {
-            sumLast += selectedValues[i];
-        }
-
-        double avgFirst = sumFirst / (size / 2);
-        double avgLast = sumLast / (size - size / 2); // druga po³owa mo¿e byæ o 1 wiêksza
-
-        // Okreœlamy trend
-        if (avgLast > avgFirst) {
-            trend = "Rosnacy";
-        }
-        else if (avgLast < avgFirst) {
-            trend = "Malejacy";
-        }
-        else {
-            trend = "Stabilny";
-        }
-
-
-        // Styl + wyœrodkowanie
-        QString labelStyle = "font-size: 18px; font-weight: bold; color: #00FFC6;";
-        QString trendStyle = "font-size: 18px; font-weight: bold; color: #00FFC6;";
-
-        ui.minValueLabel->setStyleSheet(labelStyle);
-        ui.maxValueLabel->setStyleSheet(labelStyle);
-        ui.avgValueLabel->setStyleSheet(labelStyle);
-        ui.trendLabel->setStyleSheet(trendStyle);
-
-        ui.minValueLabel->setAlignment(Qt::AlignCenter);
-        ui.maxValueLabel->setAlignment(Qt::AlignCenter);
-        ui.avgValueLabel->setAlignment(Qt::AlignCenter);
-        ui.trendLabel->setAlignment(Qt::AlignCenter);
-
-        // Ustawiamy tekst z podpisem i wartoœci¹
-        ui.minValueLabel->setText(QString("Wartosc minimalna\n%1").arg(QString::number(min, 'f', 2)));
-        ui.maxValueLabel->setText(QString("Wartosc maksymalna\n%1").arg(QString::number(max, 'f', 2)));
-        ui.avgValueLabel->setText(QString("Wartosc srednia\n%1").arg(QString::number(avg, 'f', 2)));
-        ui.trendLabel->setText(QString("Trend wykresu\n%1").arg(trend));
-    }
-
-    // Wykres
-    QChart* chart = new QChart();
-    chart->legend()->hide();
-    chart->addSeries(series);
-    chart->setTitle("Pomiary");
-
-    QDateTimeAxis* axisX = new QDateTimeAxis;
-    axisX->setFormat("dd-MM HH:mm");
-    axisX->setTitleText("Czas");
-    axisX->setLabelsAngle(-45);
-    chart->addAxis(axisX, Qt::AlignBottom);
-    series->attachAxis(axisX);
-
-    QValueAxis* axisY = new QValueAxis;
-    axisY->setTitleText("Wartosc");
-    chart->addAxis(axisY, Qt::AlignLeft);
-    series->attachAxis(axisY);
-
-    chart->setBackgroundBrush(QBrush(QColor("#121212")));
-    chart->setTitleBrush(QBrush(Qt::white));
-    axisX->setLinePenColor(Qt::white);
-    axisX->setLabelsBrush(Qt::white);
-    axisY->setLinePenColor(Qt::white);
-    axisY->setLabelsBrush(Qt::white);
-    axisX->setGridLineColor(QColor("#555555"));
-    axisY->setGridLineColor(QColor("#555555"));
-    series->setColor(QColor("#00c3ff"));
-
-    QChartView* chartView = new QChartView(chart);
-    chartView->setRenderHint(QPainter::Antialiasing);
-
-    ui.verticalLayout->addWidget(chartView);
-}
-

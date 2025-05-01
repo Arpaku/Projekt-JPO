@@ -47,7 +47,7 @@
        <item>
         <widget class="QStackedWidget" name="confirmButton">
          <property name="currentIndex">
-          <number>0</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="page">
           <widget class="QListWidget" name="stationListWidget">
@@ -65,7 +65,7 @@
             <rect>
              <x>660</x>
              <y>0</y>
-             <width>231</width>
+             <width>221</width>
              <height>31</height>
             </rect>
            </property>
@@ -90,7 +90,7 @@
             <rect>
              <x>660</x>
              <y>0</y>
-             <width>231</width>
+             <width>221</width>
              <height>31</height>
             </rect>
            </property>
@@ -139,12 +139,19 @@
               <height>31</height>
              </rect>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,2">
+            <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,2,1">
              <item>
               <widget class="QDateEdit" name="startDateEdit"/>
              </item>
              <item>
               <widget class="QDateEdit" name="endDateEdit"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="downloadMeasurementButton">
+               <property name="text">
+                <string>Pobierz dane</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>

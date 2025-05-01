@@ -1,0 +1,16 @@
+# Ignore build artifacts
+/bin/
+/obj/
+/*.exe
+/*.dll
+/*.pdb
+*.user
+*.suo
+*.ipch
+*.log
+*.tmp
+*.cache
+*.vs/
+*.vcxproj.user
+*.db
+.DS_Store
