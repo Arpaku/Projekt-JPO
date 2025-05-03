@@ -93,7 +93,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bridge.cpp" />
-    <ClCompile Include="MapManager.cpp" />
     <QtRcc Include="AirQualityMonitor.qrc" />
     <QtUic Include="AirQualityMonitor.ui" />
     <QtMoc Include="AirQualityMonitor.h" />
@@ -103,17 +102,10 @@
       <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
       <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
     </ClCompile>
-    <ClCompile Include="ApiClient.cpp" />
-    <ClCompile Include="DataManager.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Bridge.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ApiClient.h" />
-    <ClInclude Include="DataManager.h" />
-    <ClInclude Include="MapManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

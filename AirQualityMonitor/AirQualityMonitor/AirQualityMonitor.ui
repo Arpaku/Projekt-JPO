@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>957</width>
-    <height>817</height>
+    <width>961</width>
+    <height>825</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -47,7 +47,7 @@
        <item>
         <widget class="QStackedWidget" name="confirmButton">
          <property name="currentIndex">
-          <number>2</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="page">
           <widget class="QListWidget" name="stationListWidget">
@@ -289,7 +289,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>957</width>
+     <width>961</width>
      <height>33</height>
     </rect>
    </property>

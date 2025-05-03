@@ -4,7 +4,7 @@
 #include "AirQualityMonitor.h"
 #include "ui_AirQualityMonitor.h"
 #include "Bridge.h"
-
+#include <QTimer>
 #include <QNetworkReply>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -83,21 +83,30 @@ AirQualityMonitor::~AirQualityMonitor()
 
 bool AirQualityMonitor::isInternetAvailable()
 {
-    QNetworkAccessManager* manager = new QNetworkAccessManager(this);
-    QNetworkRequest request(QUrl("https://www.google.com"));
-    QNetworkReply* reply = manager->get(request);
+    // Create a dedicated network manager for this test
+    QNetworkAccessManager manager;
+    QNetworkRequest request(QUrl("https://api.gios.gov.pl/pjp-api/rest/station/findAll"));
+
+    // Set a timeout for the request
+    request.setTransferTimeout(5000); // 5 seconds timeout
+
+    QNetworkReply* reply = manager.get(request);
 
     QEventLoop loop;
-    connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
 
-    loop.exec();  // Czeka na odpowiedź
+    // Also quit the loop if the request times out
+    QTimer timer;
+    timer.setSingleShot(true);
+    QObject::connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
+    timer.start(5000);  // 5 second timeout
 
-    if (reply->error() == QNetworkReply::NoError) {
-        return true;  // Połączenie jest dostępne
-    }
-    else {
-        return false; // Brak połączenia
-    }
+    loop.exec();  // Wait for response or timeout
+
+    bool success = (reply->error() == QNetworkReply::NoError);
+    reply->deleteLater();
+
+    return success;
 }
 
 
@@ -307,53 +316,113 @@ QJsonArray AirQualityMonitor::loadSensorsFromFile()
 QJsonArray AirQualityMonitor::loadMeasurementsFromFile()
 {
     QFile file(QDir::currentPath() + "/measurements.json");
-    if (file.exists() && file.open(QIODevice::ReadOnly)) {
-        QByteArray data = file.readAll();
-        QJsonDocument doc = QJsonDocument::fromJson(data);
-        if (doc.isArray()) return doc.array();
-        file.close();
+    if (!file.exists()) {
+        qDebug() << "Plik measurements.json nie istnieje.";
+        return QJsonArray();
     }
-    return QJsonArray();
+
+    if (!file.open(QIODevice::ReadOnly)) {
+        qDebug() << "Nie można otworzyć pliku measurements.json:" << file.errorString();
+        return QJsonArray();
+    }
+
+    QByteArray data = file.readAll();
+    file.close();
+
+    QJsonParseError parseError;
+    QJsonDocument doc = QJsonDocument::fromJson(data, &parseError);
+
+    if (parseError.error != QJsonParseError::NoError) {
+        qDebug() << "Błąd parsowania JSON:" << parseError.errorString();
+        return QJsonArray();
+    }
+
+    if (!doc.isArray()) {
+        qDebug() << "Plik JSON nie zawiera tablicy jako głównego elementu.";
+        return QJsonArray();
+    }
+
+    return doc.array();
 }
 
 
+void AirQualityMonitor::backupJsonData(const QString& filename)
+{
+    QFile file(QDir::currentPath() + "/" + filename);
+    if (!file.exists()) {
+        return; // Nothing to backup
+    }
+
+    // Create backup directory if it doesn't exist
+    QDir dir(QDir::currentPath() + "/backups");
+    if (!dir.exists()) {
+        dir.mkpath(".");
+    }
+
+    // Create backup filename with timestamp
+    QString timestamp = QDateTime::currentDateTime().toString("yyyyMMdd_HHmmss");
+    QString backupFilename = QString("backups/%1_%2").arg(timestamp).arg(filename);
+
+    // Copy the file
+    if (file.copy(QDir::currentPath() + "/" + backupFilename)) {
+        qDebug() << "Backup created:" << backupFilename;
+    }
+    else {
+        qDebug() << "Failed to create backup of" << filename;
+    }
+}
 
 
 void AirQualityMonitor::downloadMeasurementData()
 {
-    qDebug() << "Funkcja downloadMeasurementData została wywołana";  // Dodaj log, aby sprawdzić, czy funkcja jest wywoływana
+    qDebug() << "Funkcja downloadMeasurementData została wywołana";
 
     if (currentSensorId == -1) {
+        QMessageBox::warning(this, "Błąd", "Nie wybrano sensora.", QMessageBox::Ok);
         qDebug() << "Brak wybranego sensora";
-        return;  // Brak wybranego sensora
+        return;
     }
 
-    QFile file(QDir::currentPath() + "/measurements.json");
-    if (file.exists()) {
-        qDebug() << "Plik measurements.json istnieje";
-        QJsonArray measurementData = loadMeasurementsFromFile();
-        bool sensorExists = false;
-        for (const QJsonValue& value : measurementData) {
-            QJsonObject obj = value.toObject();
-            if (obj.value("sensorId").toInt() == currentSensorId) {
-                sensorExists = true;
-                break;
-            }
-        }
-        if (sensorExists) {
-            qDebug() << "Dane dla tego sensora są już zapisane";
-            onMeasurementsLoadedFromFile(currentSensorId);
-            QMessageBox::information(this, "Informacja", "Dane dla tego sensora są już zapisane.", QMessageBox::Ok);
-            return;
-        }
+    // Check if we're online
+    if (!isInternetAvailable()) {
+        QMessageBox::warning(this, "Brak połączenia",
+            "Brak połączenia z internetem. Nie można pobrać nowych danych.\n"
+            "Sprawdzam dane lokalne...", QMessageBox::Ok);
+
+        // Try to load from local storage
+        onMeasurementsLoadedFromFile(currentSensorId);
+        return;
     }
 
-    // Pobieramy dane z API, jeśli nie znaleźliśmy ich w pliku
-    qDebug() << "Pobieranie danych z API...";
+    // We have internet connection, proceed with downloading
     QUrl url(QString("https://api.gios.gov.pl/pjp-api/rest/data/getData/%1").arg(currentSensorId));
     QNetworkRequest request(url);
     QNetworkReply* reply = networkManager->get(request);
-    connect(reply, &QNetworkReply::finished, this, &AirQualityMonitor::onMeasurementsDownloaded);
+
+    // Store the sensor ID as a property of the reply
+    reply->setProperty("sensorId", currentSensorId);
+
+    // Set up a timeout for the request
+    QTimer* timer = new QTimer(this);
+    timer->setSingleShot(true);
+    connect(timer, &QTimer::timeout, [=]() {
+        if (reply && reply->isRunning()) {
+            reply->abort();
+            QMessageBox::warning(this, "Timeout",
+                "Serwer nie odpowiada w wymaganym czasie. Sprawdzam dane lokalne...",
+                QMessageBox::Ok);
+            onMeasurementsLoadedFromFile(currentSensorId);
+        }
+        timer->deleteLater();
+        });
+    timer->start(10000);  // 10 second timeout
+
+    // Connect to the finished signal
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        timer->stop();
+        timer->deleteLater();
+        onMeasurementsDownloaded();
+        });
 }
 
 
@@ -363,8 +432,17 @@ void AirQualityMonitor::onMeasurementsDownloaded()
     QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
     if (!reply) return;
 
+    int sensorId = reply->property("sensorId").toInt();
+
     if (reply->error() != QNetworkReply::NoError) {
         qDebug() << "Błąd sieci przy pobieraniu pomiarów:" << reply->errorString();
+        QMessageBox::warning(this, "Błąd pobierania",
+            QString("Nie udało się pobrać danych z serwera: %1\n"
+                "Sprawdzam dane lokalne...")
+            .arg(reply->errorString()), QMessageBox::Ok);
+
+        // Try to load offline data
+        onMeasurementsLoadedFromFile(sensorId);
         reply->deleteLater();
         return;
     }
@@ -374,23 +452,55 @@ void AirQualityMonitor::onMeasurementsDownloaded()
 
     if (!doc.isObject()) {
         qDebug() << "Nieprawidłowy format danych z API";
+        QMessageBox::warning(this, "Błąd formatu",
+            "Dane pobrane z serwera mają nieprawidłowy format.\n"
+            "Sprawdzam dane lokalne...", QMessageBox::Ok);
+
+        // Try to load offline data
+        onMeasurementsLoadedFromFile(sensorId);
         reply->deleteLater();
         return;
     }
 
     QJsonObject root = doc.object();
     QJsonArray values = root.value("values").toArray();
-    int sensorId = reply->property("sensorId").toInt();  // z setProperty()
 
+    // Check if we got any valid data
+    bool hasValidData = false;
+    for (const QJsonValue& val : values) {
+        QJsonObject obj = val.toObject();
+        if (obj.contains("value") && !obj.value("value").isNull()) {
+            hasValidData = true;
+            break;
+        }
+    }
 
-    // Zapisz dane
+    if (!hasValidData) {
+        QMessageBox::warning(this, "Brak danych",
+            "Serwer nie zwrócił żadnych ważnych danych pomiarowych.\n"
+            "Sprawdzam dane lokalne...", QMessageBox::Ok);
+
+        // Try to load offline data
+        onMeasurementsLoadedFromFile(sensorId);
+        reply->deleteLater();
+        return;
+    }
+
+    // Got valid data, save it
     updateMeasurementsFile(sensorId, values);
 
-    // Zaktualizuj widok
+    // Update the display
     updateMeasurementsList(values);
 
+    // Also update the measurement display with chart
+    displayMeasurementData(values);
+
     reply->deleteLater();
+
+    QMessageBox::information(this, "Sukces",
+        "Pomyślnie pobrano najnowsze dane z serwera.", QMessageBox::Ok);
 }
+
 
 
 
@@ -398,76 +508,140 @@ void AirQualityMonitor::onMeasurementsLoadedFromFile(int sensorId)
 {
     QJsonArray allMeasurements = loadMeasurementsFromFile();
     QJsonArray sensorMeasurements;
+    QString lastUpdated = "Nieznany";
 
+    // Find measurements for the requested sensor
     for (const QJsonValue& value : allMeasurements) {
         QJsonObject obj = value.toObject();
         if (obj.value("id").toInt() == sensorId) {
             sensorMeasurements = obj.value("values").toArray();
+            // Get the last update timestamp if available
+            if (obj.contains("lastUpdated")) {
+                lastUpdated = obj.value("lastUpdated").toString();
+            }
             break;
         }
     }
 
     if (sensorMeasurements.isEmpty()) {
+        // Try to get online data if possible
         if (!isInternetAvailable()) {
-            QMessageBox::critical(this, "Błąd", "Brak danych pomiarowych oraz brak połączenia z internetem.", QMessageBox::Ok);
+            QMessageBox::warning(this, "Brak danych",
+                "Nie znaleziono zapisanych danych pomiarowych dla tego sensora.\n"
+                "Dodatkowo brak połączenia z internetem - nie można pobrać nowych danych.",
+                QMessageBox::Ok);
             return;
         }
 
-        // Pobieramy z API
+        // If we're online, fetch new data
         QUrl url(QString("https://api.gios.gov.pl/pjp-api/rest/data/getData/%1").arg(sensorId));
         QNetworkRequest request(url);
         QNetworkReply* reply = networkManager->get(request);
+        reply->setProperty("sensorId", sensorId); // Store the sensor ID as a property
         connect(reply, &QNetworkReply::finished, this, &AirQualityMonitor::onMeasurementsDownloaded);
     }
     else {
+        // We have offline data, use it
         updateMeasurementsList(sensorMeasurements);
+        displayMeasurementData(sensorMeasurements);
+
+        // Tell the user we're using cached data and when it was last updated
+        QDateTime updateTime = QDateTime::fromString(lastUpdated, Qt::ISODate);
+        QString displayTime = updateTime.toString("dd.MM.yyyy HH:mm");
+
+        QMessageBox::information(this, "Używam danych lokalnych",
+            QString("Wyświetlam dane z lokalnej bazy. Ostatnia aktualizacja: %1\n\n"
+                "Naciśnij przycisk 'Pobierz dane' aby spróbować pobrać aktualne dane z internetu.")
+            .arg(displayTime),
+            QMessageBox::Ok);
+
+        // If internet is available, ask if they want fresh data
+        if (isInternetAvailable()) {
+            QMessageBox::StandardButton reply = QMessageBox::question(this, "Połączenie dostępne",
+                "Wykryto dostępne połączenie z internetem. Czy chcesz pobrać najnowsze dane?",
+                QMessageBox::Yes | QMessageBox::No);
+
+            if (reply == QMessageBox::Yes) {
+                // Download new data
+                QUrl url(QString("https://api.gios.gov.pl/pjp-api/rest/data/getData/%1").arg(sensorId));
+                QNetworkRequest request(url);
+                QNetworkReply* netReply = networkManager->get(request);
+                netReply->setProperty("sensorId", sensorId);
+                connect(netReply, &QNetworkReply::finished, this, &AirQualityMonitor::onMeasurementsDownloaded);
+            }
+        }
     }
 }
 
 void AirQualityMonitor::updateMeasurementsList(const QJsonArray& values)
 {
     ui.stationParameterListWidget->clear();
-    qDebug() << "Liczba wartości:" << values.size();  // Debugging line
+    qDebug() << "Liczba wartości:" << values.size();
 
-    // Jeśli nie ma danych
+    // If there's no data
     if (values.isEmpty()) {
         ui.stationParameterListWidget->addItem("Brak ważnych danych pomiarowych.");
         return;
     }
 
-    // Iteracja po danych
+    // Filter out null values for cleaner display
+    QList<QListWidgetItem*> validItems;
+    QList<QListWidgetItem*> nullItems;
+
+    // Iterate through the data
     for (const QJsonValue& val : values) {
         QJsonObject obj = val.toObject();
 
-        // Debugging, sprawdzenie wartości
-        qDebug() << "Data:" << obj.value("date").toString();
-        qDebug() << "Wartość:" << obj.value("value").toDouble();
-
-        // Sprawdzamy, czy wartość jest null
-        if (obj.contains("value")) {
+        if (obj.contains("date")) {
             QString dateStr = obj.value("date").toString();
             QDateTime dateTime = QDateTime::fromString(dateStr, "yyyy-MM-dd HH:mm:ss");
             QJsonValue value = obj.value("value");
 
-            // Jeśli wartość jest null, wyświetlamy "Brak danych"
+            QListWidgetItem* item;
+
+            // If value is null, add to null items
             if (value.isNull()) {
-                ui.stationParameterListWidget->addItem(
+                item = new QListWidgetItem(
                     QString("%1 - Brak danych")
                     .arg(dateTime.toString("dd.MM.yyyy HH:mm"))
                 );
+                item->setForeground(Qt::gray);
+                nullItems.append(item);
             }
             else {
+                // For valid values
                 double actualValue = value.toDouble();
-                ui.stationParameterListWidget->addItem(
+                item = new QListWidgetItem(
                     QString("%1 - %2")
                     .arg(dateTime.toString("dd.MM.yyyy HH:mm"))
                     .arg(actualValue, 0, 'f', 1)
                 );
+
+                // Add color coding based on value (you can customize thresholds)
+                if (actualValue > 50.0) {
+                    item->setForeground(Qt::red);
+                }
+                else if (actualValue > 25.0) {
+                    item->setForeground(QColor(255, 165, 0)); // Orange
+                }
+                else {
+                    item->setForeground(Qt::green);
+                }
+                validItems.append(item);
             }
         }
     }
 
-    // Jeśli lista jest pusta po dodaniu wartości
+    // Add valid items first, then null items
+    for (QListWidgetItem* item : validItems) {
+        ui.stationParameterListWidget->addItem(item);
+    }
+
+    for (QListWidgetItem* item : nullItems) {
+        ui.stationParameterListWidget->addItem(item);
+    }
+
+    // If after processing there are no items, show message
     if (ui.stationParameterListWidget->count() == 0) {
         ui.stationParameterListWidget->addItem("Brak ważnych danych pomiarowych.");
     }
@@ -475,18 +649,16 @@ void AirQualityMonitor::updateMeasurementsList(const QJsonArray& values)
 
 
 
-
-
-
-
-
-
-
 void AirQualityMonitor::updateMeasurementsFile(int sensorId, const QJsonArray& newValues)
 {
+    // Create a timestamp for the data
+    QDateTime currentTime = QDateTime::currentDateTime();
+    QString timestamp = currentTime.toString(Qt::ISODate);
+
     QFile file(QDir::currentPath() + "/measurements.json");
     QJsonArray allMeasurements;
 
+    // Read existing data if file exists
     if (file.exists() && file.open(QIODevice::ReadOnly)) {
         QByteArray data = file.readAll();
         QJsonDocument doc = QJsonDocument::fromJson(data);
@@ -494,26 +666,39 @@ void AirQualityMonitor::updateMeasurementsFile(int sensorId, const QJsonArray& n
         file.close();
     }
 
-    // Usuń stare dane dla sensorId
-    for (int i = allMeasurements.size() - 1; i >= 0; --i) {
-        if (allMeasurements.at(i).toObject().value("id").toInt() == sensorId) {
-            allMeasurements.removeAt(i);
+    // Check if we have data for this sensor already
+    bool sensorFound = false;
+    for (int i = 0; i < allMeasurements.size(); i++) {
+        QJsonObject obj = allMeasurements[i].toObject();
+        if (obj.value("id").toInt() == sensorId) {
+            // Update existing sensor data
+            sensorFound = true;
+
+            // Add timestamp to indicate when data was last updated
+            obj["lastUpdated"] = timestamp;
+            obj["values"] = newValues;
+            allMeasurements[i] = obj;
+            break;
         }
     }
 
-    // Dodaj nowe dane
-    QJsonObject newEntry;
-    newEntry["id"] = sensorId;
-    newEntry["values"] = newValues;
-    allMeasurements.append(newEntry);
+    // If sensor doesn't exist in our storage, add it
+    if (!sensorFound) {
+        QJsonObject newEntry;
+        newEntry["id"] = sensorId;
+        newEntry["values"] = newValues;
+        newEntry["lastUpdated"] = timestamp;
+        allMeasurements.append(newEntry);
+    }
 
-    // Zapisz do pliku
+    // Save all measurements back to file
     if (file.open(QIODevice::WriteOnly)) {
         file.write(QJsonDocument(allMeasurements).toJson());
         file.close();
         QMessageBox::information(this, "Informacja", "Dane pomiarowe zostały zapisane do pliku", QMessageBox::Ok);
     }
     else {
+        QMessageBox::warning(this, "Błąd", "Nie udało się zapisać danych do pliku. Sprawdź uprawnienia.", QMessageBox::Ok);
         qDebug() << "Błąd zapisu do measurements.json";
     }
 }

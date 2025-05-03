@@ -79,23 +79,18 @@ private:
     void loadStations();
     void loadStationsFromApi();
     void loadSensorMeasurements(int sensorId);
-
-
     void saveStationsToFile(const QJsonArray& stations);
     QJsonArray loadStationsFromFile();
-
     void saveSensorsToFile(const QJsonArray& stations);
     QJsonArray loadSensorsFromFile();
-
     void loadMeasurementData(int sensorId);
-
-
     void displayMeasurementData(const QJsonArray& values);
-
     void saveMeasurementsToFile(const QJsonArray& allMeasurements);
     QJsonArray loadMeasurementsFromFile();
     void onMeasurementsLoadedFromFile(int sensorId);
 
+    
+    void backupJsonData(const QString& filename);
 
     
     void geocodeAddress(const QString& address, double radiusKm);
