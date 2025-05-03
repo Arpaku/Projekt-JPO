@@ -1,0 +1,26 @@
+/**
+ * @mainpage AirQualityMonitor - Dokumentacja projektu
+ * 
+ * @section intro_sec Wprowadzenie
+ * AirQualityMonitor to aplikacja do monitorowania jakości powietrza w Polsce.
+ * Umożliwia pobieranie, wyświetlanie i analizę danych pomiarowych ze stacji monitorujących.
+ * 
+ * @section features_sec Główne funkcje
+ * - Pobieranie danych z API Głównego Inspektoratu Ochrony Środowiska
+ * - Zapisywanie danych lokalnie w formacie JSON
+ * - Wyświetlanie stacji pomiarowych na interaktywnej mapie
+ * - Filtrowanie stacji według lokalizacji
+ * - Wyświetlanie pomiarów w formie wykresów
+ * - Obliczanie statystyk (min, max, średnia, trend)
+ * 
+ * @section install_sec Instalacja
+ * 1. Sklonuj repozytorium
+ * 2. Otwórz projekt w Qt Creator
+ * 3. Skompiluj i uruchom
+ * 
+ * @section usage_sec Jak używać
+ * 1. Po uruchomieniu aplikacji zobaczysz listę dostępnych stacji
+ * 2. Wybierz stację, aby zobaczyć dostępne sensory
+ * 3. Wybierz sensor, aby zobaczyć pomiary i wykres
+ * 4. Użyj mapy, aby znaleźć stacje w określonej lokalizacji
+ */

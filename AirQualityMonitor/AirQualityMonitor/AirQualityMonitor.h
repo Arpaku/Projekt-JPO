@@ -5,7 +5,7 @@
  * Aplikacja pobiera dane pomiarowe ze stacji w Polsce, prezentuje je na mapie,
  * umożliwia analizę danych oraz zapis i odczyt danych lokalnie.
  *
- * @author Twoje Imię
+ * @author Jakub Frąckowiak
  * @date Maj 2025
  */
 
@@ -43,6 +43,12 @@ public:
      * @brief Destruktor klasy AirQualityMonitor.
      */
     ~AirQualityMonitor();
+
+    /**
+     * @brief Sprawdza czy połączenie z internetem jest dostępne.
+     * @return True jeśli internet jest dostępny, false w przeciwnym razie.
+     */
+    bool isInternetAvailable();
 
 public slots:
     /**
@@ -133,11 +139,7 @@ private slots:
      */
     void onSearchNearbyClicked();
 
-    /**
-     * @brief Sprawdza czy połączenie z internetem jest dostępne.
-     * @return True jeśli internet jest dostępny, false w przeciwnym razie.
-     */
-    bool isInternetAvailable();
+    
 
     /**
      * @brief Obsługuje zakończenie pobierania danych sensorów.

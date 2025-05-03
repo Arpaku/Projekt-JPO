@@ -37,9 +37,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Bridge.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AirQualityMonitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

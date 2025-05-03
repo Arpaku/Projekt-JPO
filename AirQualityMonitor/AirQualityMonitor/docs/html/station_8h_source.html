@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AirQualityMonitor: Plik źródłowy C:/Users/frack/source/repos/AirQualityMonitor1/AirQualityMonitor/AirQualityMonitor/station.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">AirQualityMonitor<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Aplikacja do monitorowania jakości powietrza w Polsce</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('station_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">C:/Users/frack/source/repos/AirQualityMonitor1/AirQualityMonitor/AirQualityMonitor/station.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="station_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef STATION_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define STATION_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_station.html">    6</a></span><span class="keyword">class </span><a class="code hl_function" href="class_station.html#ad69ead903c8753cd449ec49509af500c">Station</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    Q_OBJECT</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_station.html#a1a9b7bfb37cbb0d5de4a8c14df6987d9">    9</a></span>        Q_PROPERTY(QString <a class="code hl_property" href="class_station.html#a1a9b7bfb37cbb0d5de4a8c14df6987d9">name</a> READ <a class="code hl_property" href="class_station.html#a1a9b7bfb37cbb0d5de4a8c14df6987d9">name</a> CONSTANT)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_station.html#a0d44ca4230c5ffafaa96b1df701b8e82">   10</a></span>        Q_PROPERTY(<span class="keywordtype">double</span> <a class="code hl_property" href="class_station.html#a0d44ca4230c5ffafaa96b1df701b8e82">latitude</a> READ <a class="code hl_property" href="class_station.html#a0d44ca4230c5ffafaa96b1df701b8e82">latitude</a> CONSTANT)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_station.html#a626e719bd9af059a5d8a1bedc1c43b3e">   11</a></span>        Q_PROPERTY(<span class="keywordtype">double</span> <a class="code hl_property" href="class_station.html#a626e719bd9af059a5d8a1bedc1c43b3e">longitude</a> READ <a class="code hl_property" href="class_station.html#a626e719bd9af059a5d8a1bedc1c43b3e">longitude</a> CONSTANT)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>public:</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_station.html#ad69ead903c8753cd449ec49509af500c">   14</a></span>    <a class="code hl_function" href="class_station.html#ad69ead903c8753cd449ec49509af500c">Station</a>(const QString&amp; <a class="code hl_property" href="class_station.html#a1a9b7bfb37cbb0d5de4a8c14df6987d9">name</a>, <span class="keywordtype">double</span> <a class="code hl_property" href="class_station.html#a0d44ca4230c5ffafaa96b1df701b8e82">latitude</a>, <span class="keywordtype">double</span> <a class="code hl_property" href="class_station.html#a626e719bd9af059a5d8a1bedc1c43b3e">longitude</a>, QObject* parent = <span class="keywordtype">nullptr</span>)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        : QObject(parent), <a class="code hl_variable" href="class_station.html#aa7bb59e29d50870151831a25cf47f277">m_name</a>(<a class="code hl_property" href="class_station.html#a1a9b7bfb37cbb0d5de4a8c14df6987d9">name</a>), <a class="code hl_variable" href="class_station.html#afd3cc9f60826f2b9d513ddf379c96b4f">m_latitude</a>(<a class="code hl_property" href="class_station.html#a0d44ca4230c5ffafaa96b1df701b8e82">latitude</a>), <a class="code hl_variable" href="class_station.html#a6cd4696f66ebbba50359a1d0850341eb">m_longitude</a>(<a class="code hl_property" href="class_station.html#a626e719bd9af059a5d8a1bedc1c43b3e">longitude</a>) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
+</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_station.html#adc5568633deea68366b8a82d7be8ffc3">   18</a></span>    QString <a class="code hl_function" href="class_station.html#adc5568633deea68366b8a82d7be8ffc3">name</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_station.html#aa7bb59e29d50870151831a25cf47f277">m_name</a>; }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_station.html#abb7d138bdd4e819c4baebf92771bb1e6">   19</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_station.html#abb7d138bdd4e819c4baebf92771bb1e6">latitude</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_station.html#afd3cc9f60826f2b9d513ddf379c96b4f">m_latitude</a>; }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_station.html#a19384e3c7586b87be4389891f0089ac1">   20</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_station.html#a19384e3c7586b87be4389891f0089ac1">longitude</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_station.html#a6cd4696f66ebbba50359a1d0850341eb">m_longitude</a>; }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_station.html#aa7bb59e29d50870151831a25cf47f277">   23</a></span>    QString <a class="code hl_variable" href="class_station.html#aa7bb59e29d50870151831a25cf47f277">m_name</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_station.html#afd3cc9f60826f2b9d513ddf379c96b4f">   24</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_station.html#afd3cc9f60826f2b9d513ddf379c96b4f">m_latitude</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_station.html#a6cd4696f66ebbba50359a1d0850341eb">   25</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_station.html#a6cd4696f66ebbba50359a1d0850341eb">m_longitude</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif </span><span class="comment">// STATION_H</span></div>
+<div class="ttc" id="aclass_station_html_a0d44ca4230c5ffafaa96b1df701b8e82"><div class="ttname"><a href="class_station.html#a0d44ca4230c5ffafaa96b1df701b8e82">Station::latitude</a></div><div class="ttdeci">double latitude</div><div class="ttdef"><b>Definicja</b> <a href="#l00010">station.h:10</a></div></div>
+<div class="ttc" id="aclass_station_html_a19384e3c7586b87be4389891f0089ac1"><div class="ttname"><a href="class_station.html#a19384e3c7586b87be4389891f0089ac1">Station::longitude</a></div><div class="ttdeci">double longitude() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00020">station.h:20</a></div></div>
+<div class="ttc" id="aclass_station_html_a1a9b7bfb37cbb0d5de4a8c14df6987d9"><div class="ttname"><a href="class_station.html#a1a9b7bfb37cbb0d5de4a8c14df6987d9">Station::name</a></div><div class="ttdeci">QString name</div><div class="ttdef"><b>Definicja</b> <a href="#l00009">station.h:9</a></div></div>
+<div class="ttc" id="aclass_station_html_a626e719bd9af059a5d8a1bedc1c43b3e"><div class="ttname"><a href="class_station.html#a626e719bd9af059a5d8a1bedc1c43b3e">Station::longitude</a></div><div class="ttdeci">double longitude</div><div class="ttdef"><b>Definicja</b> <a href="#l00011">station.h:11</a></div></div>
+<div class="ttc" id="aclass_station_html_a6cd4696f66ebbba50359a1d0850341eb"><div class="ttname"><a href="class_station.html#a6cd4696f66ebbba50359a1d0850341eb">Station::m_longitude</a></div><div class="ttdeci">double m_longitude</div><div class="ttdef"><b>Definicja</b> <a href="#l00025">station.h:25</a></div></div>
+<div class="ttc" id="aclass_station_html_aa7bb59e29d50870151831a25cf47f277"><div class="ttname"><a href="class_station.html#aa7bb59e29d50870151831a25cf47f277">Station::m_name</a></div><div class="ttdeci">QString m_name</div><div class="ttdef"><b>Definicja</b> <a href="#l00023">station.h:23</a></div></div>
+<div class="ttc" id="aclass_station_html_abb7d138bdd4e819c4baebf92771bb1e6"><div class="ttname"><a href="class_station.html#abb7d138bdd4e819c4baebf92771bb1e6">Station::latitude</a></div><div class="ttdeci">double latitude() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00019">station.h:19</a></div></div>
+<div class="ttc" id="aclass_station_html_ad69ead903c8753cd449ec49509af500c"><div class="ttname"><a href="class_station.html#ad69ead903c8753cd449ec49509af500c">Station::Station</a></div><div class="ttdeci">Station(const QString &amp;name, double latitude, double longitude, QObject *parent=nullptr)</div><div class="ttdef"><b>Definicja</b> <a href="#l00014">station.h:14</a></div></div>
+<div class="ttc" id="aclass_station_html_adc5568633deea68366b8a82d7be8ffc3"><div class="ttname"><a href="class_station.html#adc5568633deea68366b8a82d7be8ffc3">Station::name</a></div><div class="ttdeci">QString name() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00018">station.h:18</a></div></div>
+<div class="ttc" id="aclass_station_html_afd3cc9f60826f2b9d513ddf379c96b4f"><div class="ttname"><a href="class_station.html#afd3cc9f60826f2b9d513ddf379c96b4f">Station::m_latitude</a></div><div class="ttdeci">double m_latitude</div><div class="ttdef"><b>Definicja</b> <a href="#l00024">station.h:24</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="station_8h.html">station.h</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

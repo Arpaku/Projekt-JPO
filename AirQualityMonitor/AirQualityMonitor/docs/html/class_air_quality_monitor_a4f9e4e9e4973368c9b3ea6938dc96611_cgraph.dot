@@ -1,0 +1,27 @@
+digraph "AirQualityMonitor::downloadSensorData"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="AirQualityMonitor::\ldownloadSensorData",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Pobiera i zapisuje dane sensorów dla aktualnie wybranej stacji."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="AirQualityMonitor::\lloadSensorsFromFile",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_air_quality_monitor.html#a2a090f294f025baefa1a94e3f64695cf",tooltip="Ładuje dane sensorów z lokalnego pliku JSON."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="AirQualityMonitor::\lonSensorsDownloaded",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_air_quality_monitor.html#a0f41dd3a7a6fc7f550b9d277d5d1b319",tooltip="Obsługuje zakończenie pobierania danych sensorów."];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="AirQualityMonitor::\lonSensorsLoadedFromFile",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_air_quality_monitor.html#a2021de10613f9147c9138d325eea0f31",tooltip="Ładuje dane sensorów z pliku lokalnego dla stacji."];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="AirQualityMonitor::\lisInternetAvailable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_air_quality_monitor.html#ae4866c5caafda9b0f2e2120d3bba6e9d",tooltip="Sprawdza czy połączenie z internetem jest dostępne."];
+  Node4 -> Node2 [id="edge5_Node000004_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node3 [id="edge6_Node000004_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node6 [id="edge7_Node000004_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="AirQualityMonitor::\lupdateSensorsList",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_air_quality_monitor.html#aa921cac9624064d22d7bad1b683f924d",tooltip="Aktualizuje interfejs użytkownika danymi sensorów dla stacji."];
+  Node3 -> Node7 [id="edge8_Node000003_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="AirQualityMonitor::\lupdateSensorsFile",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_air_quality_monitor.html#ac9c590507f4638b56fccc4ac77069d3d",tooltip="Aktualizuje lokalny plik sensorów nowymi danymi."];
+  Node7 -> Node8 [id="edge9_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="AirQualityMonitor::\lsaveSensorsToFile",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_air_quality_monitor.html#a4482d6b0c3bd888ff64ca0b22f95f09f",tooltip="Zapisuje dane sensorów do lokalnego pliku JSON."];
+  Node3 -> Node6 [id="edge10_Node000003_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node4 [id="edge11_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+}

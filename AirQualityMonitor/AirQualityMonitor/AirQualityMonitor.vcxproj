@@ -92,7 +92,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bridge.cpp" />
     <QtRcc Include="AirQualityMonitor.qrc" />
     <QtUic Include="AirQualityMonitor.ui" />
     <QtMoc Include="AirQualityMonitor.h" />

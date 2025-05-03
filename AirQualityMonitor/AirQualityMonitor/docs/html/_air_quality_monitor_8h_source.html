@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AirQualityMonitor: Plik źródłowy C:/Users/frack/source/repos/AirQualityMonitor1/AirQualityMonitor/AirQualityMonitor/AirQualityMonitor.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">AirQualityMonitor<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Aplikacja do monitorowania jakości powietrza w Polsce</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_air_quality_monitor_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">C:/Users/frack/source/repos/AirQualityMonitor1/AirQualityMonitor/AirQualityMonitor/AirQualityMonitor.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_air_quality_monitor_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QtWidgets/QMainWindow&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;ui_AirQualityMonitor.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="_bridge_8h.html">Bridge.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;QNetworkAccessManager&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;QJsonArray&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;QMap&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;QUrlQuery&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;QWebEngineView&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;QWebChannel&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html">   31</a></span><span class="keyword">class </span><a class="code hl_function" href="class_air_quality_monitor.html#a5c1e078e2b1c45ecfacef7f3a0d31322">AirQualityMonitor</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    Q_OBJECT</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="class_air_quality_monitor.html#a5c1e078e2b1c45ecfacef7f3a0d31322">AirQualityMonitor</a>(QWidget* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="class_air_quality_monitor.html#a717b443c521101fc82b51ed16c9cd299">~AirQualityMonitor</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#a30b2d56cd068c8e1b97360e1a1c323eb">onMarkerClicked</a>(<span class="keyword">const</span> QString&amp; stationName);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#a4f9e4e9e4973368c9b3ea6938dc96611">downloadSensorData</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#a4b897122ddbc3c0b1037710f33e7a309">downloadMeasurementData</a>();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#abdeb3354b91cda4d6795d8ce0c527a08">filterStations</a>(<span class="keyword">const</span> QString&amp; text);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#afc1d4f0a0d6bff7fbd6d08724f7ac91c">showStationListView</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#ac03a1d30c2b22972bb9f1333c659b75e">showStationDetails</a>(QListWidgetItem* item);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#a767c8e00f14c1436435e9b47855acd49">showSensorDetails</a>(QListWidgetItem* item);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#a850990845f595dd797522a17797f2663">onStationsFinished</a>();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#aebcc5ba987dc511c966a5704694345c6">onSensorsFinished</a>();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#a08a162d000d3ab9cf4840ab114a275c3">onMeasurementDataFinished</a>();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#acd41767c5abd0e7f5ede406615b548e2">updateMeasurementDisplay</a>();</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#a5fc0d1b611a2ab155ca97f0eb239b283">loadMap</a>();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#a465fa386235bae18dff1fe71bd894c6c">onSearchNearbyClicked</a>();</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordtype">bool</span> <a class="code hl_slot" href="class_air_quality_monitor.html#ae4866c5caafda9b0f2e2120d3bba6e9d">isInternetAvailable</a>();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#a0f41dd3a7a6fc7f550b9d277d5d1b319">onSensorsDownloaded</a>();</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#ad8eb21eda0655b47e5062514017324fc">onMeasurementsDownloaded</a>();</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#a2021de10613f9147c9138d325eea0f31">onSensorsLoadedFromFile</a>(<span class="keywordtype">int</span> stationId);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#aa921cac9624064d22d7bad1b683f924d">updateSensorsList</a>(<span class="keyword">const</span> QJsonArray&amp; sensorsData);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#ac9c590507f4638b56fccc4ac77069d3d">updateSensorsFile</a>(<span class="keyword">const</span> QJsonArray&amp; newSensors);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#aa1fd12adcf51568a3df5355f5e7faa33">updateMeasurementsList</a>(<span class="keyword">const</span> QJsonArray&amp; measurementData);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_air_quality_monitor.html#a9602565754f315cb0106ce9950c3552e">updateMeasurementsFile</a>(<span class="keywordtype">int</span> sensorId, <span class="keyword">const</span> QJsonArray&amp; newValues);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="comment">// ===== FUNKCJE INICJALIZACYJNE I PODSTAWOWE =====</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#a0d5986b8b5578346bc973699b56b73c5">connectSignalsAndSlots</a>();</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#ab36994d80512a73bf84cd2bbafdc79bb">setupWebView</a>();</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="comment">// ===== FUNKCJE ZARZĄDZANIA STACJAMI =====</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#a495d69688b33ce31e1914ce348d336f5">loadStations</a>();</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#ad91e2f75313bfbccd0c08c795b8bb0c3">loadStationsFromApi</a>();</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#af2171a17af73ab8e50efb374ff8ddf19">saveStationsToFile</a>(<span class="keyword">const</span> QJsonArray&amp; stations);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    QJsonArray <a class="code hl_function" href="class_air_quality_monitor.html#a79dbbb95a1e239da80aa4e3df1265236">loadStationsFromFile</a>();</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="comment">// ===== FUNKCJE ZARZĄDZANIA SENSORAMI =====</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#a4482d6b0c3bd888ff64ca0b22f95f09f">saveSensorsToFile</a>(<span class="keyword">const</span> QJsonArray&amp; sensors);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    QJsonArray <a class="code hl_function" href="class_air_quality_monitor.html#a2a090f294f025baefa1a94e3f64695cf">loadSensorsFromFile</a>();</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="comment">// ===== FUNKCJE ZARZĄDZANIA POMIARAMI =====</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#a2024fbb8b692c06cf16c8a90792e9cbc">loadMeasurementData</a>(<span class="keywordtype">int</span> sensorId);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#a6f9d42c4395c7be44d34de4be6aa21da">loadSensorMeasurements</a>(<span class="keywordtype">int</span> sensorId);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#a8942b05c57dbe9a6886d4c633e718f46">displayMeasurementData</a>(<span class="keyword">const</span> QJsonArray&amp; values);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#a517f6382a65f84e45ecdede67d5c3cf1">saveMeasurementsToFile</a>(<span class="keyword">const</span> QJsonArray&amp; allMeasurements);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    QJsonArray <a class="code hl_function" href="class_air_quality_monitor.html#a759ee5a814969eaf3bbc70a68b5ed09d">loadMeasurementsFromFile</a>();</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#a8ce222412580a45a82124e1a4ad821df">onMeasurementsLoadedFromFile</a>(<span class="keywordtype">int</span> sensorId);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <span class="comment">// ===== FUNKCJE KOPII ZAPASOWYCH I BEZPIECZEŃSTWA =====</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#a77aec46467b86d8b7b2e4802842d37a3">backupJsonData</a>(<span class="keyword">const</span> QString&amp; filename);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="comment">// ===== FUNKCJE GEOLOKALIZACJI I MAPY =====</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#a4abdf2fe50f69d8bbe3542546ab8ff30">geocodeAddress</a>(<span class="keyword">const</span> QString&amp; address, <span class="keywordtype">double</span> radiusKm);</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span></div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#ac5704e0d80e36d04b1e1308b7ac0ea12">findStationsInRadius</a>(<span class="keywordtype">double</span> centerLat, <span class="keywordtype">double</span> centerLon, <span class="keywordtype">double</span> radiusKm);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#a4b738a6079bab6f726ab3cf721b2f58d">updateMapWithStations</a>(<span class="keyword">const</span> QVector&lt;QJsonObject&gt;&amp; stations);</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span></div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_air_quality_monitor.html#a80dc34f2ddc776c2a23dae911f994150">haversineDistance</a>(<span class="keywordtype">double</span> lat1, <span class="keywordtype">double</span> lon1, <span class="keywordtype">double</span> lat2, <span class="keywordtype">double</span> lon2);</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_air_quality_monitor.html#a5ad33f1c9d9db274b3c73daa0761cc19">showAllStationsOnMap</a>();</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#a07a89a474e2816b6a263b742fb4b248c">  331</a></span>    Ui::AirQualityMonitorClass <a class="code hl_variable" href="class_air_quality_monitor.html#a07a89a474e2816b6a263b742fb4b248c">ui</a>;              </div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#af430722ab0f7eb09f64f8a71a0b0ac8f">  332</a></span>    QNetworkAccessManager* <a class="code hl_variable" href="class_air_quality_monitor.html#af430722ab0f7eb09f64f8a71a0b0ac8f">networkManager</a>;      </div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#a90fc2cc9f1ef22388d90822c19e023ec">  333</a></span>    QJsonArray <a class="code hl_variable" href="class_air_quality_monitor.html#a90fc2cc9f1ef22388d90822c19e023ec">cachedStations</a>;                  </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#a33440b75eb85aa4578aaa03b9dc2f41c">  334</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_air_quality_monitor.html#a33440b75eb85aa4578aaa03b9dc2f41c">currentStationId</a>;                       </div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#a370c4faeb260fd0131d1fa21bffad6c5">  335</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_air_quality_monitor.html#a370c4faeb260fd0131d1fa21bffad6c5">currentSensorId</a>;                        </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#acb4b26d06a8992435e76dc74ddf7ba8a">  336</a></span>    QMap&lt;QString, int&gt; <a class="code hl_variable" href="class_air_quality_monitor.html#acb4b26d06a8992435e76dc74ddf7ba8a">sensorMap</a>;               </div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#a2af88bfce2a839f8fbb29c88c89e64c2">  337</a></span>    QJsonArray <a class="code hl_variable" href="class_air_quality_monitor.html#a2af88bfce2a839f8fbb29c88c89e64c2">lastMeasurements</a>;                </div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#ae4e0c5b441d11a04fe242b705be662d3">  338</a></span>    QWebChannel* <a class="code hl_variable" href="class_air_quality_monitor.html#ae4e0c5b441d11a04fe242b705be662d3">channel</a>;                       </div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#aa2a0fbc558e64fb5147beee7a2afb8a8">  339</a></span>    QWebEngineView* <a class="code hl_variable" href="class_air_quality_monitor.html#aa2a0fbc558e64fb5147beee7a2afb8a8">webView</a>;                    </div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#a9d27e88bb8bc5b27ae0e67111093ddc8">  340</a></span>    <a class="code hl_class" href="class_bridge.html">Bridge</a>* <a class="code hl_variable" href="class_air_quality_monitor.html#a9d27e88bb8bc5b27ae0e67111093ddc8">bridge</a>;                             </div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    <span class="comment">// Komponenty UI</span></div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#a127cf719f5ff1c505e214e0332bf3eb0">  343</a></span>    QLineEdit* <a class="code hl_variable" href="class_air_quality_monitor.html#a127cf719f5ff1c505e214e0332bf3eb0">addressSearchBox</a>;                </div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#a53756bfddac2174739b197a6b1a4d51e">  344</a></span>    QLineEdit* <a class="code hl_variable" href="class_air_quality_monitor.html#a53756bfddac2174739b197a6b1a4d51e">radiusSearchBox</a>;                 </div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#ac482e6195f9d83d43d3d7e86949cc2b4">  345</a></span>    QPushButton* <a class="code hl_variable" href="class_air_quality_monitor.html#ac482e6195f9d83d43d3d7e86949cc2b4">searchNearbyButton</a>;            </div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#ade78daed3c2037d81059d53bc7c29c66">  346</a></span>    QPushButton* <a class="code hl_variable" href="class_air_quality_monitor.html#ade78daed3c2037d81059d53bc7c29c66">showAllStationsButton</a>;         </div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#a8b076ea0270d089f4155913a4a61d030">  347</a></span>    QPushButton* <a class="code hl_variable" href="class_air_quality_monitor.html#a8b076ea0270d089f4155913a4a61d030">downloadStationDetail</a>;         </div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno"><a class="line" href="class_air_quality_monitor.html#ab998074f4b97d575b05fce5c96853970">  348</a></span>    QPushButton* <a class="code hl_variable" href="class_air_quality_monitor.html#ab998074f4b97d575b05fce5c96853970">downloadMeasurementButton</a>;     </div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>};</div>
+</div>
+<div class="ttc" id="a_bridge_8h_html"><div class="ttname"><a href="_bridge_8h.html">Bridge.h</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a07a89a474e2816b6a263b742fb4b248c"><div class="ttname"><a href="class_air_quality_monitor.html#a07a89a474e2816b6a263b742fb4b248c">AirQualityMonitor::ui</a></div><div class="ttdeci">Ui::AirQualityMonitorClass ui</div><div class="ttdoc">Komponenty interfejsu użytkownika.</div><div class="ttdef"><b>Definicja</b> <a href="#l00331">AirQualityMonitor.h:331</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a08a162d000d3ab9cf4840ab114a275c3"><div class="ttname"><a href="class_air_quality_monitor.html#a08a162d000d3ab9cf4840ab114a275c3">AirQualityMonitor::onMeasurementDataFinished</a></div><div class="ttdeci">void onMeasurementDataFinished()</div><div class="ttdoc">Obsługuje zakończenie pobierania danych pomiarowych.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01374">AirQualityMonitor.cpp:1374</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a0d5986b8b5578346bc973699b56b73c5"><div class="ttname"><a href="class_air_quality_monitor.html#a0d5986b8b5578346bc973699b56b73c5">AirQualityMonitor::connectSignalsAndSlots</a></div><div class="ttdeci">void connectSignalsAndSlots()</div><div class="ttdoc">Łączy sygnały interfejsu użytkownika z odpowiednimi slotami.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01343">AirQualityMonitor.cpp:1343</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a0f41dd3a7a6fc7f550b9d277d5d1b319"><div class="ttname"><a href="class_air_quality_monitor.html#a0f41dd3a7a6fc7f550b9d277d5d1b319">AirQualityMonitor::onSensorsDownloaded</a></div><div class="ttdeci">void onSensorsDownloaded()</div><div class="ttdoc">Obsługuje zakończenie pobierania danych sensorów.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00176">AirQualityMonitor.cpp:176</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a127cf719f5ff1c505e214e0332bf3eb0"><div class="ttname"><a href="class_air_quality_monitor.html#a127cf719f5ff1c505e214e0332bf3eb0">AirQualityMonitor::addressSearchBox</a></div><div class="ttdeci">QLineEdit * addressSearchBox</div><div class="ttdoc">Pole wprowadzania adresu do wyszukiwania.</div><div class="ttdef"><b>Definicja</b> <a href="#l00343">AirQualityMonitor.h:343</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a2021de10613f9147c9138d325eea0f31"><div class="ttname"><a href="class_air_quality_monitor.html#a2021de10613f9147c9138d325eea0f31">AirQualityMonitor::onSensorsLoadedFromFile</a></div><div class="ttdeci">void onSensorsLoadedFromFile(int stationId)</div><div class="ttdoc">Ładuje dane sensorów z pliku lokalnego dla stacji.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00276">AirQualityMonitor.cpp:276</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a2024fbb8b692c06cf16c8a90792e9cbc"><div class="ttname"><a href="class_air_quality_monitor.html#a2024fbb8b692c06cf16c8a90792e9cbc">AirQualityMonitor::loadMeasurementData</a></div><div class="ttdeci">void loadMeasurementData(int sensorId)</div><div class="ttdoc">Ładuje dane pomiarowe dla określonego sensora.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01429">AirQualityMonitor.cpp:1429</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a2a090f294f025baefa1a94e3f64695cf"><div class="ttname"><a href="class_air_quality_monitor.html#a2a090f294f025baefa1a94e3f64695cf">AirQualityMonitor::loadSensorsFromFile</a></div><div class="ttdeci">QJsonArray loadSensorsFromFile()</div><div class="ttdoc">Ładuje dane sensorów z lokalnego pliku JSON.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01525">AirQualityMonitor.cpp:1525</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a2af88bfce2a839f8fbb29c88c89e64c2"><div class="ttname"><a href="class_air_quality_monitor.html#a2af88bfce2a839f8fbb29c88c89e64c2">AirQualityMonitor::lastMeasurements</a></div><div class="ttdeci">QJsonArray lastMeasurements</div><div class="ttdoc">Ostatnio pobrane pomiary.</div><div class="ttdef"><b>Definicja</b> <a href="#l00337">AirQualityMonitor.h:337</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a30b2d56cd068c8e1b97360e1a1c323eb"><div class="ttname"><a href="class_air_quality_monitor.html#a30b2d56cd068c8e1b97360e1a1c323eb">AirQualityMonitor::onMarkerClicked</a></div><div class="ttdeci">void onMarkerClicked(const QString &amp;stationName)</div><div class="ttdoc">Obsługuje kliknięcie w marker na mapie.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00960">AirQualityMonitor.cpp:960</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a33440b75eb85aa4578aaa03b9dc2f41c"><div class="ttname"><a href="class_air_quality_monitor.html#a33440b75eb85aa4578aaa03b9dc2f41c">AirQualityMonitor::currentStationId</a></div><div class="ttdeci">int currentStationId</div><div class="ttdoc">ID aktualnie wybranej stacji.</div><div class="ttdef"><b>Definicja</b> <a href="#l00334">AirQualityMonitor.h:334</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a370c4faeb260fd0131d1fa21bffad6c5"><div class="ttname"><a href="class_air_quality_monitor.html#a370c4faeb260fd0131d1fa21bffad6c5">AirQualityMonitor::currentSensorId</a></div><div class="ttdeci">int currentSensorId</div><div class="ttdoc">ID aktualnie wybranego sensora.</div><div class="ttdef"><b>Definicja</b> <a href="#l00335">AirQualityMonitor.h:335</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a4482d6b0c3bd888ff64ca0b22f95f09f"><div class="ttname"><a href="class_air_quality_monitor.html#a4482d6b0c3bd888ff64ca0b22f95f09f">AirQualityMonitor::saveSensorsToFile</a></div><div class="ttdeci">void saveSensorsToFile(const QJsonArray &amp;sensors)</div><div class="ttdoc">Zapisuje dane sensorów do lokalnego pliku JSON.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00256">AirQualityMonitor.cpp:256</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a465fa386235bae18dff1fe71bd894c6c"><div class="ttname"><a href="class_air_quality_monitor.html#a465fa386235bae18dff1fe71bd894c6c">AirQualityMonitor::onSearchNearbyClicked</a></div><div class="ttdeci">void onSearchNearbyClicked()</div><div class="ttdoc">Obsługuje kliknięcie przycisku &quot;Szukaj w pobliżu&quot;.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00977">AirQualityMonitor.cpp:977</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a495d69688b33ce31e1914ce348d336f5"><div class="ttname"><a href="class_air_quality_monitor.html#a495d69688b33ce31e1914ce348d336f5">AirQualityMonitor::loadStations</a></div><div class="ttdeci">void loadStations()</div><div class="ttdoc">Ładuje dane stacji z pliku lokalnego lub API.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01120">AirQualityMonitor.cpp:1120</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a4abdf2fe50f69d8bbe3542546ab8ff30"><div class="ttname"><a href="class_air_quality_monitor.html#a4abdf2fe50f69d8bbe3542546ab8ff30">AirQualityMonitor::geocodeAddress</a></div><div class="ttdeci">void geocodeAddress(const QString &amp;address, double radiusKm)</div><div class="ttdoc">Konwertuje adres na współrzędne geograficzne.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01005">AirQualityMonitor.cpp:1005</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a4b738a6079bab6f726ab3cf721b2f58d"><div class="ttname"><a href="class_air_quality_monitor.html#a4b738a6079bab6f726ab3cf721b2f58d">AirQualityMonitor::updateMapWithStations</a></div><div class="ttdeci">void updateMapWithStations(const QVector&lt; QJsonObject &gt; &amp;stations)</div><div class="ttdoc">Aktualizuje mapę znacznikami stacji.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01098">AirQualityMonitor.cpp:1098</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a4b897122ddbc3c0b1037710f33e7a309"><div class="ttname"><a href="class_air_quality_monitor.html#a4b897122ddbc3c0b1037710f33e7a309">AirQualityMonitor::downloadMeasurementData</a></div><div class="ttdeci">void downloadMeasurementData()</div><div class="ttdoc">Pobiera i zapisuje dane pomiarowe dla aktualnie wybranego sensora.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00344">AirQualityMonitor.cpp:344</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a4f9e4e9e4973368c9b3ea6938dc96611"><div class="ttname"><a href="class_air_quality_monitor.html#a4f9e4e9e4973368c9b3ea6938dc96611">AirQualityMonitor::downloadSensorData</a></div><div class="ttdeci">void downloadSensorData()</div><div class="ttdoc">Pobiera i zapisuje dane sensorów dla aktualnie wybranej stacji.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00136">AirQualityMonitor.cpp:136</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a517f6382a65f84e45ecdede67d5c3cf1"><div class="ttname"><a href="class_air_quality_monitor.html#a517f6382a65f84e45ecdede67d5c3cf1">AirQualityMonitor::saveMeasurementsToFile</a></div><div class="ttdeci">void saveMeasurementsToFile(const QJsonArray &amp;allMeasurements)</div><div class="ttdoc">Zapisuje dane pomiarowe do lokalnego pliku JSON.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01472">AirQualityMonitor.cpp:1472</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a53756bfddac2174739b197a6b1a4d51e"><div class="ttname"><a href="class_air_quality_monitor.html#a53756bfddac2174739b197a6b1a4d51e">AirQualityMonitor::radiusSearchBox</a></div><div class="ttdeci">QLineEdit * radiusSearchBox</div><div class="ttdoc">Pole wprowadzania promienia wyszukiwania.</div><div class="ttdef"><b>Definicja</b> <a href="#l00344">AirQualityMonitor.h:344</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a5ad33f1c9d9db274b3c73daa0761cc19"><div class="ttname"><a href="class_air_quality_monitor.html#a5ad33f1c9d9db274b3c73daa0761cc19">AirQualityMonitor::showAllStationsOnMap</a></div><div class="ttdeci">void showAllStationsOnMap()</div><div class="ttdoc">Pokazuje wszystkie stacje na mapie.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00935">AirQualityMonitor.cpp:935</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a5c1e078e2b1c45ecfacef7f3a0d31322"><div class="ttname"><a href="class_air_quality_monitor.html#a5c1e078e2b1c45ecfacef7f3a0d31322">AirQualityMonitor::AirQualityMonitor</a></div><div class="ttdeci">AirQualityMonitor(QWidget *parent=nullptr)</div><div class="ttdoc">Konstruktor klasy AirQualityMonitor.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00039">AirQualityMonitor.cpp:39</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a5fc0d1b611a2ab155ca97f0eb239b283"><div class="ttname"><a href="class_air_quality_monitor.html#a5fc0d1b611a2ab155ca97f0eb239b283">AirQualityMonitor::loadMap</a></div><div class="ttdeci">void loadMap()</div><div class="ttdoc">Ładuje interfejs mapy.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00869">AirQualityMonitor.cpp:869</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a6f9d42c4395c7be44d34de4be6aa21da"><div class="ttname"><a href="class_air_quality_monitor.html#a6f9d42c4395c7be44d34de4be6aa21da">AirQualityMonitor::loadSensorMeasurements</a></div><div class="ttdeci">void loadSensorMeasurements(int sensorId)</div><div class="ttdoc">Ładuje dane pomiarowe dla konkretnego sensora.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01441">AirQualityMonitor.cpp:1441</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a717b443c521101fc82b51ed16c9cd299"><div class="ttname"><a href="class_air_quality_monitor.html#a717b443c521101fc82b51ed16c9cd299">AirQualityMonitor::~AirQualityMonitor</a></div><div class="ttdeci">~AirQualityMonitor()</div><div class="ttdoc">Destruktor klasy AirQualityMonitor.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00093">AirQualityMonitor.cpp:93</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a759ee5a814969eaf3bbc70a68b5ed09d"><div class="ttname"><a href="class_air_quality_monitor.html#a759ee5a814969eaf3bbc70a68b5ed09d">AirQualityMonitor::loadMeasurementsFromFile</a></div><div class="ttdeci">QJsonArray loadMeasurementsFromFile()</div><div class="ttdoc">Ładuje dane pomiarowe z lokalnego pliku JSON.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01489">AirQualityMonitor.cpp:1489</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a767c8e00f14c1436435e9b47855acd49"><div class="ttname"><a href="class_air_quality_monitor.html#a767c8e00f14c1436435e9b47855acd49">AirQualityMonitor::showSensorDetails</a></div><div class="ttdeci">void showSensorDetails(QListWidgetItem *item)</div><div class="ttdoc">Wyświetla szczegóły wybranego sensora.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01247">AirQualityMonitor.cpp:1247</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a77aec46467b86d8b7b2e4802842d37a3"><div class="ttname"><a href="class_air_quality_monitor.html#a77aec46467b86d8b7b2e4802842d37a3">AirQualityMonitor::backupJsonData</a></div><div class="ttdeci">void backupJsonData(const QString &amp;filename)</div><div class="ttdoc">Tworzy kopię zapasową pliku JSON.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01556">AirQualityMonitor.cpp:1556</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a79dbbb95a1e239da80aa4e3df1265236"><div class="ttname"><a href="class_air_quality_monitor.html#a79dbbb95a1e239da80aa4e3df1265236">AirQualityMonitor::loadStationsFromFile</a></div><div class="ttdeci">QJsonArray loadStationsFromFile()</div><div class="ttdoc">Ładuje dane stacji z lokalnego pliku JSON.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01273">AirQualityMonitor.cpp:1273</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a80dc34f2ddc776c2a23dae911f994150"><div class="ttname"><a href="class_air_quality_monitor.html#a80dc34f2ddc776c2a23dae911f994150">AirQualityMonitor::haversineDistance</a></div><div class="ttdeci">double haversineDistance(double lat1, double lon1, double lat2, double lon2)</div><div class="ttdoc">Oblicza odległość między dwoma punktami geograficznymi.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01077">AirQualityMonitor.cpp:1077</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a850990845f595dd797522a17797f2663"><div class="ttname"><a href="class_air_quality_monitor.html#a850990845f595dd797522a17797f2663">AirQualityMonitor::onStationsFinished</a></div><div class="ttdeci">void onStationsFinished()</div><div class="ttdoc">Obsługuje zakończenie pobierania danych stacji.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01156">AirQualityMonitor.cpp:1156</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a8942b05c57dbe9a6886d4c633e718f46"><div class="ttname"><a href="class_air_quality_monitor.html#a8942b05c57dbe9a6886d4c633e718f46">AirQualityMonitor::displayMeasurementData</a></div><div class="ttdeci">void displayMeasurementData(const QJsonArray &amp;values)</div><div class="ttdoc">Wyświetla dane pomiarowe w interfejsie użytkownika.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00701">AirQualityMonitor.cpp:701</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a8b076ea0270d089f4155913a4a61d030"><div class="ttname"><a href="class_air_quality_monitor.html#a8b076ea0270d089f4155913a4a61d030">AirQualityMonitor::downloadStationDetail</a></div><div class="ttdeci">QPushButton * downloadStationDetail</div><div class="ttdoc">Przycisk pobierania danych sensorów.</div><div class="ttdef"><b>Definicja</b> <a href="#l00347">AirQualityMonitor.h:347</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a8ce222412580a45a82124e1a4ad821df"><div class="ttname"><a href="class_air_quality_monitor.html#a8ce222412580a45a82124e1a4ad821df">AirQualityMonitor::onMeasurementsLoadedFromFile</a></div><div class="ttdeci">void onMeasurementsLoadedFromFile(int sensorId)</div><div class="ttdoc">Ładuje dane pomiarowe dla sensora z pliku lokalnego.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00483">AirQualityMonitor.cpp:483</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a90fc2cc9f1ef22388d90822c19e023ec"><div class="ttname"><a href="class_air_quality_monitor.html#a90fc2cc9f1ef22388d90822c19e023ec">AirQualityMonitor::cachedStations</a></div><div class="ttdeci">QJsonArray cachedStations</div><div class="ttdoc">Lokalnie buforowane dane stacji.</div><div class="ttdef"><b>Definicja</b> <a href="#l00333">AirQualityMonitor.h:333</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a9602565754f315cb0106ce9950c3552e"><div class="ttname"><a href="class_air_quality_monitor.html#a9602565754f315cb0106ce9950c3552e">AirQualityMonitor::updateMeasurementsFile</a></div><div class="ttdeci">void updateMeasurementsFile(int sensorId, const QJsonArray &amp;newValues)</div><div class="ttdoc">Aktualizuje lokalny plik pomiarów nowymi danymi.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00640">AirQualityMonitor.cpp:640</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_a9d27e88bb8bc5b27ae0e67111093ddc8"><div class="ttname"><a href="class_air_quality_monitor.html#a9d27e88bb8bc5b27ae0e67111093ddc8">AirQualityMonitor::bridge</a></div><div class="ttdeci">Bridge * bridge</div><div class="ttdoc">Most między JS a Qt.</div><div class="ttdef"><b>Definicja</b> <a href="#l00340">AirQualityMonitor.h:340</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_aa1fd12adcf51568a3df5355f5e7faa33"><div class="ttname"><a href="class_air_quality_monitor.html#aa1fd12adcf51568a3df5355f5e7faa33">AirQualityMonitor::updateMeasurementsList</a></div><div class="ttdeci">void updateMeasurementsList(const QJsonArray &amp;measurementData)</div><div class="ttdoc">Aktualizuje interfejs użytkownika danymi pomiarowymi.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00558">AirQualityMonitor.cpp:558</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_aa2a0fbc558e64fb5147beee7a2afb8a8"><div class="ttname"><a href="class_air_quality_monitor.html#aa2a0fbc558e64fb5147beee7a2afb8a8">AirQualityMonitor::webView</a></div><div class="ttdeci">QWebEngineView * webView</div><div class="ttdoc">Widok webowy do wyświetlania mapy.</div><div class="ttdef"><b>Definicja</b> <a href="#l00339">AirQualityMonitor.h:339</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_aa921cac9624064d22d7bad1b683f924d"><div class="ttname"><a href="class_air_quality_monitor.html#aa921cac9624064d22d7bad1b683f924d">AirQualityMonitor::updateSensorsList</a></div><div class="ttdeci">void updateSensorsList(const QJsonArray &amp;sensorsData)</div><div class="ttdoc">Aktualizuje interfejs użytkownika danymi sensorów dla stacji.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00318">AirQualityMonitor.cpp:318</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_ab36994d80512a73bf84cd2bbafdc79bb"><div class="ttname"><a href="class_air_quality_monitor.html#ab36994d80512a73bf84cd2bbafdc79bb">AirQualityMonitor::setupWebView</a></div><div class="ttdeci">void setupWebView()</div><div class="ttdoc">Konfiguruje widok webowy dla mapy.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01320">AirQualityMonitor.cpp:1320</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_ab998074f4b97d575b05fce5c96853970"><div class="ttname"><a href="class_air_quality_monitor.html#ab998074f4b97d575b05fce5c96853970">AirQualityMonitor::downloadMeasurementButton</a></div><div class="ttdeci">QPushButton * downloadMeasurementButton</div><div class="ttdoc">Przycisk pobierania danych pomiarowych.</div><div class="ttdef"><b>Definicja</b> <a href="#l00348">AirQualityMonitor.h:348</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_abdeb3354b91cda4d6795d8ce0c527a08"><div class="ttname"><a href="class_air_quality_monitor.html#abdeb3354b91cda4d6795d8ce0c527a08">AirQualityMonitor::filterStations</a></div><div class="ttdeci">void filterStations(const QString &amp;text)</div><div class="ttdoc">Filtruje listę stacji na podstawie tekstu wyszukiwania.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01186">AirQualityMonitor.cpp:1186</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_ac03a1d30c2b22972bb9f1333c659b75e"><div class="ttname"><a href="class_air_quality_monitor.html#ac03a1d30c2b22972bb9f1333c659b75e">AirQualityMonitor::showStationDetails</a></div><div class="ttdeci">void showStationDetails(QListWidgetItem *item)</div><div class="ttdoc">Wyświetla szczegóły wybranej stacji.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01215">AirQualityMonitor.cpp:1215</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_ac482e6195f9d83d43d3d7e86949cc2b4"><div class="ttname"><a href="class_air_quality_monitor.html#ac482e6195f9d83d43d3d7e86949cc2b4">AirQualityMonitor::searchNearbyButton</a></div><div class="ttdeci">QPushButton * searchNearbyButton</div><div class="ttdoc">Przycisk wyszukiwania.</div><div class="ttdef"><b>Definicja</b> <a href="#l00345">AirQualityMonitor.h:345</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_ac5704e0d80e36d04b1e1308b7ac0ea12"><div class="ttname"><a href="class_air_quality_monitor.html#ac5704e0d80e36d04b1e1308b7ac0ea12">AirQualityMonitor::findStationsInRadius</a></div><div class="ttdeci">void findStationsInRadius(double centerLat, double centerLon, double radiusKm)</div><div class="ttdoc">Znajduje stacje w promieniu od współrzędnych.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01048">AirQualityMonitor.cpp:1048</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_ac9c590507f4638b56fccc4ac77069d3d"><div class="ttname"><a href="class_air_quality_monitor.html#ac9c590507f4638b56fccc4ac77069d3d">AirQualityMonitor::updateSensorsFile</a></div><div class="ttdeci">void updateSensorsFile(const QJsonArray &amp;newSensors)</div><div class="ttdoc">Aktualizuje lokalny plik sensorów nowymi danymi.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00213">AirQualityMonitor.cpp:213</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_acb4b26d06a8992435e76dc74ddf7ba8a"><div class="ttname"><a href="class_air_quality_monitor.html#acb4b26d06a8992435e76dc74ddf7ba8a">AirQualityMonitor::sensorMap</a></div><div class="ttdeci">QMap&lt; QString, int &gt; sensorMap</div><div class="ttdoc">Mapuje nazwy wyświetlane sensorów na ID.</div><div class="ttdef"><b>Definicja</b> <a href="#l00336">AirQualityMonitor.h:336</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_acd41767c5abd0e7f5ede406615b548e2"><div class="ttname"><a href="class_air_quality_monitor.html#acd41767c5abd0e7f5ede406615b548e2">AirQualityMonitor::updateMeasurementDisplay</a></div><div class="ttdeci">void updateMeasurementDisplay()</div><div class="ttdoc">Aktualizuje wyświetlanie wykresu i statystyk pomiarów.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00732">AirQualityMonitor.cpp:732</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_ad8eb21eda0655b47e5062514017324fc"><div class="ttname"><a href="class_air_quality_monitor.html#ad8eb21eda0655b47e5062514017324fc">AirQualityMonitor::onMeasurementsDownloaded</a></div><div class="ttdeci">void onMeasurementsDownloaded()</div><div class="ttdoc">Obsługuje zakończenie pobierania danych pomiarowych.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00402">AirQualityMonitor.cpp:402</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_ad91e2f75313bfbccd0c08c795b8bb0c3"><div class="ttname"><a href="class_air_quality_monitor.html#ad91e2f75313bfbccd0c08c795b8bb0c3">AirQualityMonitor::loadStationsFromApi</a></div><div class="ttdeci">void loadStationsFromApi()</div><div class="ttdoc">Ładuje dane stacji z API GIOŚ.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01138">AirQualityMonitor.cpp:1138</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_ade78daed3c2037d81059d53bc7c29c66"><div class="ttname"><a href="class_air_quality_monitor.html#ade78daed3c2037d81059d53bc7c29c66">AirQualityMonitor::showAllStationsButton</a></div><div class="ttdeci">QPushButton * showAllStationsButton</div><div class="ttdoc">Przycisk pokazania wszystkich stacji.</div><div class="ttdef"><b>Definicja</b> <a href="#l00346">AirQualityMonitor.h:346</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_ae4866c5caafda9b0f2e2120d3bba6e9d"><div class="ttname"><a href="class_air_quality_monitor.html#ae4866c5caafda9b0f2e2120d3bba6e9d">AirQualityMonitor::isInternetAvailable</a></div><div class="ttdeci">bool isInternetAvailable()</div><div class="ttdoc">Sprawdza czy połączenie z internetem jest dostępne.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l00105">AirQualityMonitor.cpp:105</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_ae4e0c5b441d11a04fe242b705be662d3"><div class="ttname"><a href="class_air_quality_monitor.html#ae4e0c5b441d11a04fe242b705be662d3">AirQualityMonitor::channel</a></div><div class="ttdeci">QWebChannel * channel</div><div class="ttdoc">Kanał webowy do komunikacji z mapą</div><div class="ttdef"><b>Definicja</b> <a href="#l00338">AirQualityMonitor.h:338</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_aebcc5ba987dc511c966a5704694345c6"><div class="ttname"><a href="class_air_quality_monitor.html#aebcc5ba987dc511c966a5704694345c6">AirQualityMonitor::onSensorsFinished</a></div><div class="ttdeci">void onSensorsFinished()</div><div class="ttdoc">Obsługuje zakończenie pobierania danych sensorów.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01399">AirQualityMonitor.cpp:1399</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_af2171a17af73ab8e50efb374ff8ddf19"><div class="ttname"><a href="class_air_quality_monitor.html#af2171a17af73ab8e50efb374ff8ddf19">AirQualityMonitor::saveStationsToFile</a></div><div class="ttdeci">void saveStationsToFile(const QJsonArray &amp;stations)</div><div class="ttdoc">Zapisuje dane stacji do lokalnego pliku JSON.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01304">AirQualityMonitor.cpp:1304</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_af430722ab0f7eb09f64f8a71a0b0ac8f"><div class="ttname"><a href="class_air_quality_monitor.html#af430722ab0f7eb09f64f8a71a0b0ac8f">AirQualityMonitor::networkManager</a></div><div class="ttdeci">QNetworkAccessManager * networkManager</div><div class="ttdoc">Manager żądań sieciowych.</div><div class="ttdef"><b>Definicja</b> <a href="#l00332">AirQualityMonitor.h:332</a></div></div>
+<div class="ttc" id="aclass_air_quality_monitor_html_afc1d4f0a0d6bff7fbd6d08724f7ac91c"><div class="ttname"><a href="class_air_quality_monitor.html#afc1d4f0a0d6bff7fbd6d08724f7ac91c">AirQualityMonitor::showStationListView</a></div><div class="ttdeci">void showStationListView()</div><div class="ttdoc">Pokazuje główny widok listy stacji.</div><div class="ttdef"><b>Definicja</b> <a href="_air_quality_monitor_8cpp_source.html#l01203">AirQualityMonitor.cpp:1203</a></div></div>
+<div class="ttc" id="aclass_bridge_html"><div class="ttname"><a href="class_bridge.html">Bridge</a></div><div class="ttdef"><b>Definicja</b> <a href="_bridge_8h_source.html#l00006">Bridge.h:7</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_air_quality_monitor_8h.html">AirQualityMonitor.h</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

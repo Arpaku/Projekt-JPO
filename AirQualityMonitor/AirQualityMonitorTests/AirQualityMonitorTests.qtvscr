@@ -1,0 +1,403 @@
+<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" FontFamily="Segoe UI" FontSize="12">
+  <FlowDocument.Tag><![CDATA[{
+  "timestamp": "2025-05-03 22:57:18",
+  "files": {
+    "C:\\Users\\frack\\source\\repos\\AirQualityMonitor1\\AirQualityMonitor\\AirQualityMonitorTests\\AirQualityMonitorTests.vcxproj": {
+      "before": "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",
+      "after": "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"
+    }
+  }
+}]]></FlowDocument.Tag>
+  <Section Margin="0,24" TextAlignment="Center">
+    <Paragraph FontSize="24" FontWeight="Bold" Margin="12,0">
+      <LineBreak />
+      <Span Foreground="Gray">Qt Visual Studio Tools</Span>
+    </Paragraph>
+    <Paragraph FontSize="42" Margin="12,0" FontWeight="Bold">
+      <Span TextDecorations="Underline">Project Format Conversion</Span>
+    </Paragraph>
+    <Paragraph Margin="12,8" FontSize="18">
+      <Span>Report generated on 2025-05-03 22:57:18</Span>
+    </Paragraph>
+  </Section>
+  <Section>
+    <Paragraph FontSize="32" FontWeight="Bold" Margin="12,0">
+      <Span>Files</Span>
+    </Paragraph>
+    <Paragraph Margin="24,12,0,0">
+      <Span FontFamily="Consolas" FontSize="14" Background="WhiteSmoke"><![CDATA[C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj]]></Span>
+      <LineBreak />
+      <Hyperlink NavigateUri="file://C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj?before">[Before]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj?after">[After]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj?diff&amp;before&amp;after">
+                        [Diff before/after]
+                    </Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj?diff&amp;before&amp;current">
+                        [Diff before/current]
+                    </Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj?diff&amp;after&amp;current">
+                        [Diff after/current]
+                    </Hyperlink>
+      <LineBreak />
+    </Paragraph>
+  </Section>
+  <Section>
+    <Paragraph FontSize="32" FontWeight="Bold" Margin="12,0">
+      <Span>Changes</Span>
+    </Paragraph>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Enabling multi-processor compilation]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Project format version]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Keyword>QtVS_v304</Keyword>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Fallback for QTMSBUILD environment variable]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Default Qt properties]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Qt build settings]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Warn if Qt/MSBuild is not found]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  </Target>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Qt property sheet]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Qt targets]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\frack\source\repos\AirQualityMonitor1\AirQualityMonitor\AirQualityMonitorTests\AirQualityMonitorTests.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+  </Section>
+  <Section>
+    <Paragraph />
+  </Section>
+</FlowDocument>
+<!--LrobJTY0pmSjGXXORXFCfjQmmYZL1y5r+cE6ZxfjmoU=-->

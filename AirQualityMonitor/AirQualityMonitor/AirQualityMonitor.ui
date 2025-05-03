@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>961</width>
-    <height>825</height>
+    <width>906</width>
+    <height>791</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -47,7 +47,7 @@
        <item>
         <widget class="QStackedWidget" name="confirmButton">
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="page">
           <widget class="QListWidget" name="stationListWidget">
@@ -230,7 +230,7 @@
               <height>31</height>
              </rect>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="2,2,1,1,1,1">
+            <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="2,2,1,1,1">
              <item>
               <widget class="QLineEdit" name="addressSearchBox">
                <property name="placeholderText">
@@ -242,13 +242,6 @@
               <widget class="QLineEdit" name="radiusSearchBox">
                <property name="placeholderText">
                 <string>Wpisz promien</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="measurementTypeList">
-               <property name="placeholderText">
-                <string>Rodzaj pomiaru</string>
                </property>
               </widget>
              </item>
@@ -289,7 +282,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>961</width>
+     <width>906</width>
      <height>33</height>
     </rect>
    </property>

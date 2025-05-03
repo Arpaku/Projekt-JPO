@@ -1,0 +1,2558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AirQualityMonitor: Dokumentacja klasy AirQualityMonitor</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">AirQualityMonitor<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Aplikacja do monitorowania jakości powietrza w Polsce</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_air_quality_monitor.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Sloty publiczne</a> &#124;
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-slots">Sloty prywatne</a> &#124;
+<a href="#pri-methods">Metody prywatne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
+<a href="class_air_quality_monitor-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy AirQualityMonitor</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa głównego okna aplikacji monitorującej jakość powietrza.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla AirQualityMonitor</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor__inherit__graph.png" border="0" usemap="#a_air_quality_monitor_inherit__map" alt="Inheritance graph"/></div>
+</div>
+<div class="dynheader">
+Diagram współpracy dla AirQualityMonitor:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor__coll__graph.png" border="0" usemap="#a_air_quality_monitor_coll__map" alt="Collaboration graph"/></div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Sloty publiczne</h2></td></tr>
+<tr class="memitem:a30b2d56cd068c8e1b97360e1a1c323eb" id="r_a30b2d56cd068c8e1b97360e1a1c323eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30b2d56cd068c8e1b97360e1a1c323eb">onMarkerClicked</a> (const QString &amp;stationName)</td></tr>
+<tr class="memdesc:a30b2d56cd068c8e1b97360e1a1c323eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje kliknięcie w marker na mapie.  <br /></td></tr>
+<tr class="separator:a30b2d56cd068c8e1b97360e1a1c323eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f9e4e9e4973368c9b3ea6938dc96611" id="r_a4f9e4e9e4973368c9b3ea6938dc96611"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f9e4e9e4973368c9b3ea6938dc96611">downloadSensorData</a> ()</td></tr>
+<tr class="memdesc:a4f9e4e9e4973368c9b3ea6938dc96611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera i zapisuje dane sensorów dla aktualnie wybranej stacji.  <br /></td></tr>
+<tr class="separator:a4f9e4e9e4973368c9b3ea6938dc96611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b897122ddbc3c0b1037710f33e7a309" id="r_a4b897122ddbc3c0b1037710f33e7a309"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b897122ddbc3c0b1037710f33e7a309">downloadMeasurementData</a> ()</td></tr>
+<tr class="memdesc:a4b897122ddbc3c0b1037710f33e7a309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera i zapisuje dane pomiarowe dla aktualnie wybranego sensora.  <br /></td></tr>
+<tr class="separator:a4b897122ddbc3c0b1037710f33e7a309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a5c1e078e2b1c45ecfacef7f3a0d31322" id="r_a5c1e078e2b1c45ecfacef7f3a0d31322"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c1e078e2b1c45ecfacef7f3a0d31322">AirQualityMonitor</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a5c1e078e2b1c45ecfacef7f3a0d31322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor klasy <a class="el" href="class_air_quality_monitor.html" title="Klasa głównego okna aplikacji monitorującej jakość powietrza.">AirQualityMonitor</a>.  <br /></td></tr>
+<tr class="separator:a5c1e078e2b1c45ecfacef7f3a0d31322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a717b443c521101fc82b51ed16c9cd299" id="r_a717b443c521101fc82b51ed16c9cd299"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a717b443c521101fc82b51ed16c9cd299">~AirQualityMonitor</a> ()</td></tr>
+<tr class="memdesc:a717b443c521101fc82b51ed16c9cd299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor klasy <a class="el" href="class_air_quality_monitor.html" title="Klasa głównego okna aplikacji monitorującej jakość powietrza.">AirQualityMonitor</a>.  <br /></td></tr>
+<tr class="separator:a717b443c521101fc82b51ed16c9cd299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Sloty prywatne</h2></td></tr>
+<tr class="memitem:abdeb3354b91cda4d6795d8ce0c527a08" id="r_abdeb3354b91cda4d6795d8ce0c527a08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdeb3354b91cda4d6795d8ce0c527a08">filterStations</a> (const QString &amp;text)</td></tr>
+<tr class="memdesc:abdeb3354b91cda4d6795d8ce0c527a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filtruje listę stacji na podstawie tekstu wyszukiwania.  <br /></td></tr>
+<tr class="separator:abdeb3354b91cda4d6795d8ce0c527a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc1d4f0a0d6bff7fbd6d08724f7ac91c" id="r_afc1d4f0a0d6bff7fbd6d08724f7ac91c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc1d4f0a0d6bff7fbd6d08724f7ac91c">showStationListView</a> ()</td></tr>
+<tr class="memdesc:afc1d4f0a0d6bff7fbd6d08724f7ac91c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pokazuje główny widok listy stacji.  <br /></td></tr>
+<tr class="separator:afc1d4f0a0d6bff7fbd6d08724f7ac91c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac03a1d30c2b22972bb9f1333c659b75e" id="r_ac03a1d30c2b22972bb9f1333c659b75e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac03a1d30c2b22972bb9f1333c659b75e">showStationDetails</a> (QListWidgetItem *item)</td></tr>
+<tr class="memdesc:ac03a1d30c2b22972bb9f1333c659b75e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla szczegóły wybranej stacji.  <br /></td></tr>
+<tr class="separator:ac03a1d30c2b22972bb9f1333c659b75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a767c8e00f14c1436435e9b47855acd49" id="r_a767c8e00f14c1436435e9b47855acd49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a767c8e00f14c1436435e9b47855acd49">showSensorDetails</a> (QListWidgetItem *item)</td></tr>
+<tr class="memdesc:a767c8e00f14c1436435e9b47855acd49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla szczegóły wybranego sensora.  <br /></td></tr>
+<tr class="separator:a767c8e00f14c1436435e9b47855acd49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a850990845f595dd797522a17797f2663" id="r_a850990845f595dd797522a17797f2663"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a850990845f595dd797522a17797f2663">onStationsFinished</a> ()</td></tr>
+<tr class="memdesc:a850990845f595dd797522a17797f2663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zakończenie pobierania danych stacji.  <br /></td></tr>
+<tr class="separator:a850990845f595dd797522a17797f2663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebcc5ba987dc511c966a5704694345c6" id="r_aebcc5ba987dc511c966a5704694345c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebcc5ba987dc511c966a5704694345c6">onSensorsFinished</a> ()</td></tr>
+<tr class="memdesc:aebcc5ba987dc511c966a5704694345c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zakończenie pobierania danych sensorów.  <br /></td></tr>
+<tr class="separator:aebcc5ba987dc511c966a5704694345c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08a162d000d3ab9cf4840ab114a275c3" id="r_a08a162d000d3ab9cf4840ab114a275c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08a162d000d3ab9cf4840ab114a275c3">onMeasurementDataFinished</a> ()</td></tr>
+<tr class="memdesc:a08a162d000d3ab9cf4840ab114a275c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zakończenie pobierania danych pomiarowych.  <br /></td></tr>
+<tr class="separator:a08a162d000d3ab9cf4840ab114a275c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd41767c5abd0e7f5ede406615b548e2" id="r_acd41767c5abd0e7f5ede406615b548e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd41767c5abd0e7f5ede406615b548e2">updateMeasurementDisplay</a> ()</td></tr>
+<tr class="memdesc:acd41767c5abd0e7f5ede406615b548e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje wyświetlanie wykresu i statystyk pomiarów.  <br /></td></tr>
+<tr class="separator:acd41767c5abd0e7f5ede406615b548e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fc0d1b611a2ab155ca97f0eb239b283" id="r_a5fc0d1b611a2ab155ca97f0eb239b283"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fc0d1b611a2ab155ca97f0eb239b283">loadMap</a> ()</td></tr>
+<tr class="memdesc:a5fc0d1b611a2ab155ca97f0eb239b283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ładuje interfejs mapy.  <br /></td></tr>
+<tr class="separator:a5fc0d1b611a2ab155ca97f0eb239b283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a465fa386235bae18dff1fe71bd894c6c" id="r_a465fa386235bae18dff1fe71bd894c6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a465fa386235bae18dff1fe71bd894c6c">onSearchNearbyClicked</a> ()</td></tr>
+<tr class="memdesc:a465fa386235bae18dff1fe71bd894c6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje kliknięcie przycisku "Szukaj w pobliżu".  <br /></td></tr>
+<tr class="separator:a465fa386235bae18dff1fe71bd894c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4866c5caafda9b0f2e2120d3bba6e9d" id="r_ae4866c5caafda9b0f2e2120d3bba6e9d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4866c5caafda9b0f2e2120d3bba6e9d">isInternetAvailable</a> ()</td></tr>
+<tr class="memdesc:ae4866c5caafda9b0f2e2120d3bba6e9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza czy połączenie z internetem jest dostępne.  <br /></td></tr>
+<tr class="separator:ae4866c5caafda9b0f2e2120d3bba6e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f41dd3a7a6fc7f550b9d277d5d1b319" id="r_a0f41dd3a7a6fc7f550b9d277d5d1b319"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f41dd3a7a6fc7f550b9d277d5d1b319">onSensorsDownloaded</a> ()</td></tr>
+<tr class="memdesc:a0f41dd3a7a6fc7f550b9d277d5d1b319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zakończenie pobierania danych sensorów.  <br /></td></tr>
+<tr class="separator:a0f41dd3a7a6fc7f550b9d277d5d1b319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8eb21eda0655b47e5062514017324fc" id="r_ad8eb21eda0655b47e5062514017324fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8eb21eda0655b47e5062514017324fc">onMeasurementsDownloaded</a> ()</td></tr>
+<tr class="memdesc:ad8eb21eda0655b47e5062514017324fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zakończenie pobierania danych pomiarowych.  <br /></td></tr>
+<tr class="separator:ad8eb21eda0655b47e5062514017324fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2021de10613f9147c9138d325eea0f31" id="r_a2021de10613f9147c9138d325eea0f31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2021de10613f9147c9138d325eea0f31">onSensorsLoadedFromFile</a> (int stationId)</td></tr>
+<tr class="memdesc:a2021de10613f9147c9138d325eea0f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ładuje dane sensorów z pliku lokalnego dla stacji.  <br /></td></tr>
+<tr class="separator:a2021de10613f9147c9138d325eea0f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa921cac9624064d22d7bad1b683f924d" id="r_aa921cac9624064d22d7bad1b683f924d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa921cac9624064d22d7bad1b683f924d">updateSensorsList</a> (const QJsonArray &amp;sensorsData)</td></tr>
+<tr class="memdesc:aa921cac9624064d22d7bad1b683f924d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje interfejs użytkownika danymi sensorów dla stacji.  <br /></td></tr>
+<tr class="separator:aa921cac9624064d22d7bad1b683f924d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9c590507f4638b56fccc4ac77069d3d" id="r_ac9c590507f4638b56fccc4ac77069d3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9c590507f4638b56fccc4ac77069d3d">updateSensorsFile</a> (const QJsonArray &amp;newSensors)</td></tr>
+<tr class="memdesc:ac9c590507f4638b56fccc4ac77069d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje lokalny plik sensorów nowymi danymi.  <br /></td></tr>
+<tr class="separator:ac9c590507f4638b56fccc4ac77069d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1fd12adcf51568a3df5355f5e7faa33" id="r_aa1fd12adcf51568a3df5355f5e7faa33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1fd12adcf51568a3df5355f5e7faa33">updateMeasurementsList</a> (const QJsonArray &amp;measurementData)</td></tr>
+<tr class="memdesc:aa1fd12adcf51568a3df5355f5e7faa33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje interfejs użytkownika danymi pomiarowymi.  <br /></td></tr>
+<tr class="separator:aa1fd12adcf51568a3df5355f5e7faa33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9602565754f315cb0106ce9950c3552e" id="r_a9602565754f315cb0106ce9950c3552e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9602565754f315cb0106ce9950c3552e">updateMeasurementsFile</a> (int sensorId, const QJsonArray &amp;newValues)</td></tr>
+<tr class="memdesc:a9602565754f315cb0106ce9950c3552e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje lokalny plik pomiarów nowymi danymi.  <br /></td></tr>
+<tr class="separator:a9602565754f315cb0106ce9950c3552e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Metody prywatne</h2></td></tr>
+<tr class="memitem:a0d5986b8b5578346bc973699b56b73c5" id="r_a0d5986b8b5578346bc973699b56b73c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d5986b8b5578346bc973699b56b73c5">connectSignalsAndSlots</a> ()</td></tr>
+<tr class="memdesc:a0d5986b8b5578346bc973699b56b73c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Łączy sygnały interfejsu użytkownika z odpowiednimi slotami.  <br /></td></tr>
+<tr class="separator:a0d5986b8b5578346bc973699b56b73c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab36994d80512a73bf84cd2bbafdc79bb" id="r_ab36994d80512a73bf84cd2bbafdc79bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab36994d80512a73bf84cd2bbafdc79bb">setupWebView</a> ()</td></tr>
+<tr class="memdesc:ab36994d80512a73bf84cd2bbafdc79bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konfiguruje widok webowy dla mapy.  <br /></td></tr>
+<tr class="separator:ab36994d80512a73bf84cd2bbafdc79bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a495d69688b33ce31e1914ce348d336f5" id="r_a495d69688b33ce31e1914ce348d336f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a495d69688b33ce31e1914ce348d336f5">loadStations</a> ()</td></tr>
+<tr class="memdesc:a495d69688b33ce31e1914ce348d336f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ładuje dane stacji z pliku lokalnego lub API.  <br /></td></tr>
+<tr class="separator:a495d69688b33ce31e1914ce348d336f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad91e2f75313bfbccd0c08c795b8bb0c3" id="r_ad91e2f75313bfbccd0c08c795b8bb0c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad91e2f75313bfbccd0c08c795b8bb0c3">loadStationsFromApi</a> ()</td></tr>
+<tr class="memdesc:ad91e2f75313bfbccd0c08c795b8bb0c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ładuje dane stacji z API GIOŚ.  <br /></td></tr>
+<tr class="separator:ad91e2f75313bfbccd0c08c795b8bb0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2171a17af73ab8e50efb374ff8ddf19" id="r_af2171a17af73ab8e50efb374ff8ddf19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2171a17af73ab8e50efb374ff8ddf19">saveStationsToFile</a> (const QJsonArray &amp;stations)</td></tr>
+<tr class="memdesc:af2171a17af73ab8e50efb374ff8ddf19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapisuje dane stacji do lokalnego pliku JSON.  <br /></td></tr>
+<tr class="separator:af2171a17af73ab8e50efb374ff8ddf19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79dbbb95a1e239da80aa4e3df1265236" id="r_a79dbbb95a1e239da80aa4e3df1265236"><td class="memItemLeft" align="right" valign="top">QJsonArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79dbbb95a1e239da80aa4e3df1265236">loadStationsFromFile</a> ()</td></tr>
+<tr class="memdesc:a79dbbb95a1e239da80aa4e3df1265236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ładuje dane stacji z lokalnego pliku JSON.  <br /></td></tr>
+<tr class="separator:a79dbbb95a1e239da80aa4e3df1265236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4482d6b0c3bd888ff64ca0b22f95f09f" id="r_a4482d6b0c3bd888ff64ca0b22f95f09f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4482d6b0c3bd888ff64ca0b22f95f09f">saveSensorsToFile</a> (const QJsonArray &amp;sensors)</td></tr>
+<tr class="memdesc:a4482d6b0c3bd888ff64ca0b22f95f09f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapisuje dane sensorów do lokalnego pliku JSON.  <br /></td></tr>
+<tr class="separator:a4482d6b0c3bd888ff64ca0b22f95f09f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a090f294f025baefa1a94e3f64695cf" id="r_a2a090f294f025baefa1a94e3f64695cf"><td class="memItemLeft" align="right" valign="top">QJsonArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a090f294f025baefa1a94e3f64695cf">loadSensorsFromFile</a> ()</td></tr>
+<tr class="memdesc:a2a090f294f025baefa1a94e3f64695cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ładuje dane sensorów z lokalnego pliku JSON.  <br /></td></tr>
+<tr class="separator:a2a090f294f025baefa1a94e3f64695cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2024fbb8b692c06cf16c8a90792e9cbc" id="r_a2024fbb8b692c06cf16c8a90792e9cbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2024fbb8b692c06cf16c8a90792e9cbc">loadMeasurementData</a> (int sensorId)</td></tr>
+<tr class="memdesc:a2024fbb8b692c06cf16c8a90792e9cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ładuje dane pomiarowe dla określonego sensora.  <br /></td></tr>
+<tr class="separator:a2024fbb8b692c06cf16c8a90792e9cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f9d42c4395c7be44d34de4be6aa21da" id="r_a6f9d42c4395c7be44d34de4be6aa21da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f9d42c4395c7be44d34de4be6aa21da">loadSensorMeasurements</a> (int sensorId)</td></tr>
+<tr class="memdesc:a6f9d42c4395c7be44d34de4be6aa21da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ładuje dane pomiarowe dla konkretnego sensora.  <br /></td></tr>
+<tr class="separator:a6f9d42c4395c7be44d34de4be6aa21da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8942b05c57dbe9a6886d4c633e718f46" id="r_a8942b05c57dbe9a6886d4c633e718f46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8942b05c57dbe9a6886d4c633e718f46">displayMeasurementData</a> (const QJsonArray &amp;values)</td></tr>
+<tr class="memdesc:a8942b05c57dbe9a6886d4c633e718f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla dane pomiarowe w interfejsie użytkownika.  <br /></td></tr>
+<tr class="separator:a8942b05c57dbe9a6886d4c633e718f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a517f6382a65f84e45ecdede67d5c3cf1" id="r_a517f6382a65f84e45ecdede67d5c3cf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a517f6382a65f84e45ecdede67d5c3cf1">saveMeasurementsToFile</a> (const QJsonArray &amp;allMeasurements)</td></tr>
+<tr class="memdesc:a517f6382a65f84e45ecdede67d5c3cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapisuje dane pomiarowe do lokalnego pliku JSON.  <br /></td></tr>
+<tr class="separator:a517f6382a65f84e45ecdede67d5c3cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a759ee5a814969eaf3bbc70a68b5ed09d" id="r_a759ee5a814969eaf3bbc70a68b5ed09d"><td class="memItemLeft" align="right" valign="top">QJsonArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a759ee5a814969eaf3bbc70a68b5ed09d">loadMeasurementsFromFile</a> ()</td></tr>
+<tr class="memdesc:a759ee5a814969eaf3bbc70a68b5ed09d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ładuje dane pomiarowe z lokalnego pliku JSON.  <br /></td></tr>
+<tr class="separator:a759ee5a814969eaf3bbc70a68b5ed09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ce222412580a45a82124e1a4ad821df" id="r_a8ce222412580a45a82124e1a4ad821df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ce222412580a45a82124e1a4ad821df">onMeasurementsLoadedFromFile</a> (int sensorId)</td></tr>
+<tr class="memdesc:a8ce222412580a45a82124e1a4ad821df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ładuje dane pomiarowe dla sensora z pliku lokalnego.  <br /></td></tr>
+<tr class="separator:a8ce222412580a45a82124e1a4ad821df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77aec46467b86d8b7b2e4802842d37a3" id="r_a77aec46467b86d8b7b2e4802842d37a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77aec46467b86d8b7b2e4802842d37a3">backupJsonData</a> (const QString &amp;filename)</td></tr>
+<tr class="memdesc:a77aec46467b86d8b7b2e4802842d37a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy kopię zapasową pliku JSON.  <br /></td></tr>
+<tr class="separator:a77aec46467b86d8b7b2e4802842d37a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4abdf2fe50f69d8bbe3542546ab8ff30" id="r_a4abdf2fe50f69d8bbe3542546ab8ff30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4abdf2fe50f69d8bbe3542546ab8ff30">geocodeAddress</a> (const QString &amp;address, double radiusKm)</td></tr>
+<tr class="memdesc:a4abdf2fe50f69d8bbe3542546ab8ff30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konwertuje adres na współrzędne geograficzne.  <br /></td></tr>
+<tr class="separator:a4abdf2fe50f69d8bbe3542546ab8ff30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5704e0d80e36d04b1e1308b7ac0ea12" id="r_ac5704e0d80e36d04b1e1308b7ac0ea12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5704e0d80e36d04b1e1308b7ac0ea12">findStationsInRadius</a> (double centerLat, double centerLon, double radiusKm)</td></tr>
+<tr class="memdesc:ac5704e0d80e36d04b1e1308b7ac0ea12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Znajduje stacje w promieniu od współrzędnych.  <br /></td></tr>
+<tr class="separator:ac5704e0d80e36d04b1e1308b7ac0ea12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b738a6079bab6f726ab3cf721b2f58d" id="r_a4b738a6079bab6f726ab3cf721b2f58d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b738a6079bab6f726ab3cf721b2f58d">updateMapWithStations</a> (const QVector&lt; QJsonObject &gt; &amp;stations)</td></tr>
+<tr class="memdesc:a4b738a6079bab6f726ab3cf721b2f58d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje mapę znacznikami stacji.  <br /></td></tr>
+<tr class="separator:a4b738a6079bab6f726ab3cf721b2f58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80dc34f2ddc776c2a23dae911f994150" id="r_a80dc34f2ddc776c2a23dae911f994150"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80dc34f2ddc776c2a23dae911f994150">haversineDistance</a> (double lat1, double lon1, double lat2, double lon2)</td></tr>
+<tr class="memdesc:a80dc34f2ddc776c2a23dae911f994150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oblicza odległość między dwoma punktami geograficznymi.  <br /></td></tr>
+<tr class="separator:a80dc34f2ddc776c2a23dae911f994150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ad33f1c9d9db274b3c73daa0761cc19" id="r_a5ad33f1c9d9db274b3c73daa0761cc19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ad33f1c9d9db274b3c73daa0761cc19">showAllStationsOnMap</a> ()</td></tr>
+<tr class="memdesc:a5ad33f1c9d9db274b3c73daa0761cc19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pokazuje wszystkie stacje na mapie.  <br /></td></tr>
+<tr class="separator:a5ad33f1c9d9db274b3c73daa0761cc19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a07a89a474e2816b6a263b742fb4b248c" id="r_a07a89a474e2816b6a263b742fb4b248c"><td class="memItemLeft" align="right" valign="top">Ui::AirQualityMonitorClass&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07a89a474e2816b6a263b742fb4b248c">ui</a></td></tr>
+<tr class="memdesc:a07a89a474e2816b6a263b742fb4b248c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Komponenty interfejsu użytkownika.  <br /></td></tr>
+<tr class="separator:a07a89a474e2816b6a263b742fb4b248c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af430722ab0f7eb09f64f8a71a0b0ac8f" id="r_af430722ab0f7eb09f64f8a71a0b0ac8f"><td class="memItemLeft" align="right" valign="top">QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af430722ab0f7eb09f64f8a71a0b0ac8f">networkManager</a></td></tr>
+<tr class="memdesc:af430722ab0f7eb09f64f8a71a0b0ac8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manager żądań sieciowych.  <br /></td></tr>
+<tr class="separator:af430722ab0f7eb09f64f8a71a0b0ac8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90fc2cc9f1ef22388d90822c19e023ec" id="r_a90fc2cc9f1ef22388d90822c19e023ec"><td class="memItemLeft" align="right" valign="top">QJsonArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90fc2cc9f1ef22388d90822c19e023ec">cachedStations</a></td></tr>
+<tr class="memdesc:a90fc2cc9f1ef22388d90822c19e023ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lokalnie buforowane dane stacji.  <br /></td></tr>
+<tr class="separator:a90fc2cc9f1ef22388d90822c19e023ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33440b75eb85aa4578aaa03b9dc2f41c" id="r_a33440b75eb85aa4578aaa03b9dc2f41c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33440b75eb85aa4578aaa03b9dc2f41c">currentStationId</a></td></tr>
+<tr class="memdesc:a33440b75eb85aa4578aaa03b9dc2f41c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID aktualnie wybranej stacji.  <br /></td></tr>
+<tr class="separator:a33440b75eb85aa4578aaa03b9dc2f41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a370c4faeb260fd0131d1fa21bffad6c5" id="r_a370c4faeb260fd0131d1fa21bffad6c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a370c4faeb260fd0131d1fa21bffad6c5">currentSensorId</a></td></tr>
+<tr class="memdesc:a370c4faeb260fd0131d1fa21bffad6c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID aktualnie wybranego sensora.  <br /></td></tr>
+<tr class="separator:a370c4faeb260fd0131d1fa21bffad6c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb4b26d06a8992435e76dc74ddf7ba8a" id="r_acb4b26d06a8992435e76dc74ddf7ba8a"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb4b26d06a8992435e76dc74ddf7ba8a">sensorMap</a></td></tr>
+<tr class="memdesc:acb4b26d06a8992435e76dc74ddf7ba8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapuje nazwy wyświetlane sensorów na ID.  <br /></td></tr>
+<tr class="separator:acb4b26d06a8992435e76dc74ddf7ba8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2af88bfce2a839f8fbb29c88c89e64c2" id="r_a2af88bfce2a839f8fbb29c88c89e64c2"><td class="memItemLeft" align="right" valign="top">QJsonArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2af88bfce2a839f8fbb29c88c89e64c2">lastMeasurements</a></td></tr>
+<tr class="memdesc:a2af88bfce2a839f8fbb29c88c89e64c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ostatnio pobrane pomiary.  <br /></td></tr>
+<tr class="separator:a2af88bfce2a839f8fbb29c88c89e64c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e0c5b441d11a04fe242b705be662d3" id="r_ae4e0c5b441d11a04fe242b705be662d3"><td class="memItemLeft" align="right" valign="top">QWebChannel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4e0c5b441d11a04fe242b705be662d3">channel</a></td></tr>
+<tr class="memdesc:ae4e0c5b441d11a04fe242b705be662d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kanał webowy do komunikacji z mapą  <br /></td></tr>
+<tr class="separator:ae4e0c5b441d11a04fe242b705be662d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2a0fbc558e64fb5147beee7a2afb8a8" id="r_aa2a0fbc558e64fb5147beee7a2afb8a8"><td class="memItemLeft" align="right" valign="top">QWebEngineView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2a0fbc558e64fb5147beee7a2afb8a8">webView</a></td></tr>
+<tr class="memdesc:aa2a0fbc558e64fb5147beee7a2afb8a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Widok webowy do wyświetlania mapy.  <br /></td></tr>
+<tr class="separator:aa2a0fbc558e64fb5147beee7a2afb8a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d27e88bb8bc5b27ae0e67111093ddc8" id="r_a9d27e88bb8bc5b27ae0e67111093ddc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bridge.html">Bridge</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d27e88bb8bc5b27ae0e67111093ddc8">bridge</a></td></tr>
+<tr class="memdesc:a9d27e88bb8bc5b27ae0e67111093ddc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most między JS a Qt.  <br /></td></tr>
+<tr class="separator:a9d27e88bb8bc5b27ae0e67111093ddc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a127cf719f5ff1c505e214e0332bf3eb0" id="r_a127cf719f5ff1c505e214e0332bf3eb0"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a127cf719f5ff1c505e214e0332bf3eb0">addressSearchBox</a></td></tr>
+<tr class="memdesc:a127cf719f5ff1c505e214e0332bf3eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pole wprowadzania adresu do wyszukiwania.  <br /></td></tr>
+<tr class="separator:a127cf719f5ff1c505e214e0332bf3eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53756bfddac2174739b197a6b1a4d51e" id="r_a53756bfddac2174739b197a6b1a4d51e"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53756bfddac2174739b197a6b1a4d51e">radiusSearchBox</a></td></tr>
+<tr class="memdesc:a53756bfddac2174739b197a6b1a4d51e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pole wprowadzania promienia wyszukiwania.  <br /></td></tr>
+<tr class="separator:a53756bfddac2174739b197a6b1a4d51e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac482e6195f9d83d43d3d7e86949cc2b4" id="r_ac482e6195f9d83d43d3d7e86949cc2b4"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac482e6195f9d83d43d3d7e86949cc2b4">searchNearbyButton</a></td></tr>
+<tr class="memdesc:ac482e6195f9d83d43d3d7e86949cc2b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przycisk wyszukiwania.  <br /></td></tr>
+<tr class="separator:ac482e6195f9d83d43d3d7e86949cc2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade78daed3c2037d81059d53bc7c29c66" id="r_ade78daed3c2037d81059d53bc7c29c66"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade78daed3c2037d81059d53bc7c29c66">showAllStationsButton</a></td></tr>
+<tr class="memdesc:ade78daed3c2037d81059d53bc7c29c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przycisk pokazania wszystkich stacji.  <br /></td></tr>
+<tr class="separator:ade78daed3c2037d81059d53bc7c29c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b076ea0270d089f4155913a4a61d030" id="r_a8b076ea0270d089f4155913a4a61d030"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b076ea0270d089f4155913a4a61d030">downloadStationDetail</a></td></tr>
+<tr class="memdesc:a8b076ea0270d089f4155913a4a61d030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przycisk pobierania danych sensorów.  <br /></td></tr>
+<tr class="separator:a8b076ea0270d089f4155913a4a61d030"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab998074f4b97d575b05fce5c96853970" id="r_ab998074f4b97d575b05fce5c96853970"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab998074f4b97d575b05fce5c96853970">downloadMeasurementButton</a></td></tr>
+<tr class="memdesc:ab998074f4b97d575b05fce5c96853970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przycisk pobierania danych pomiarowych.  <br /></td></tr>
+<tr class="separator:ab998074f4b97d575b05fce5c96853970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Klasa głównego okna aplikacji monitorującej jakość powietrza. </p>
+<p>Zarządza interfejsem użytkownika, komunikacją sieciową, zarządzaniem danymi i wizualizacją informacji o jakości powietrza. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00031">31</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a5c1e078e2b1c45ecfacef7f3a0d31322" name="a5c1e078e2b1c45ecfacef7f3a0d31322"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c1e078e2b1c45ecfacef7f3a0d31322">&#9670;&#160;</a></span>AirQualityMonitor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AirQualityMonitor::AirQualityMonitor </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor klasy <a class="el" href="class_air_quality_monitor.html" title="Klasa głównego okna aplikacji monitorującej jakość powietrza.">AirQualityMonitor</a>. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Wskaźnik na rodzica widgetu (opcjonalny).</td></tr>
+    <tr><td class="paramname">parent</td><td>Wskaźnik na rodzica widgetu. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00039">39</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a5c1e078e2b1c45ecfacef7f3a0d31322_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a5c1e078e2b1c45ecfacef7f3a0d31322_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a717b443c521101fc82b51ed16c9cd299" name="a717b443c521101fc82b51ed16c9cd299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a717b443c521101fc82b51ed16c9cd299">&#9670;&#160;</a></span>~AirQualityMonitor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AirQualityMonitor::~AirQualityMonitor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destruktor klasy <a class="el" href="class_air_quality_monitor.html" title="Klasa głównego okna aplikacji monitorującej jakość powietrza.">AirQualityMonitor</a>. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00093">93</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a77aec46467b86d8b7b2e4802842d37a3" name="a77aec46467b86d8b7b2e4802842d37a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77aec46467b86d8b7b2e4802842d37a3">&#9670;&#160;</a></span>backupJsonData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::backupJsonData </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tworzy kopię zapasową pliku JSON. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Nazwa pliku do wykonania kopii. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01556">1556</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0d5986b8b5578346bc973699b56b73c5" name="a0d5986b8b5578346bc973699b56b73c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d5986b8b5578346bc973699b56b73c5">&#9670;&#160;</a></span>connectSignalsAndSlots()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::connectSignalsAndSlots </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Łączy sygnały interfejsu użytkownika z odpowiednimi slotami. </p>
+<p>Konfiguruje połączenia między elementami UI a funkcjami obsługi. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01343">1343</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a0d5986b8b5578346bc973699b56b73c5_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a0d5986b8b5578346bc973699b56b73c5_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a8942b05c57dbe9a6886d4c633e718f46" name="a8942b05c57dbe9a6886d4c633e718f46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8942b05c57dbe9a6886d4c633e718f46">&#9670;&#160;</a></span>displayMeasurementData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::displayMeasurementData </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonArray &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wyświetla dane pomiarowe w interfejsie użytkownika. </p>
+<p>Wyświetla dane pomiarowe w formie wykresu i statystyk.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>Tablica JSON z wartościami pomiarów.</td></tr>
+    <tr><td class="paramname">values</td><td>Tablica JSON z wartościami pomiarów.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Tworzy wykres liniowy z danymi pomiarowymi oraz oblicza i wyświetla statystyki: wartość minimalną, maksymalną, średnią i trend. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00701">701</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a8942b05c57dbe9a6886d4c633e718f46_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a8942b05c57dbe9a6886d4c633e718f46_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a8942b05c57dbe9a6886d4c633e718f46_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a8942b05c57dbe9a6886d4c633e718f46_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a4b897122ddbc3c0b1037710f33e7a309" name="a4b897122ddbc3c0b1037710f33e7a309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b897122ddbc3c0b1037710f33e7a309">&#9670;&#160;</a></span>downloadMeasurementData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::downloadMeasurementData </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pobiera i zapisuje dane pomiarowe dla aktualnie wybranego sensora. </p>
+<p>Pobiera dane pomiarowe dla aktualnego sensora.</p>
+<p>Pobiera dane pomiarowe z API GIOŚ dla wybranego sensora i zapisuje je lokalnie. Jeśli nie ma połączenia z internetem, próbuje użyć lokalnie zapisanych danych. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00344">344</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a4b897122ddbc3c0b1037710f33e7a309_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a4b897122ddbc3c0b1037710f33e7a309_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a4b897122ddbc3c0b1037710f33e7a309_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a4b897122ddbc3c0b1037710f33e7a309_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a4f9e4e9e4973368c9b3ea6938dc96611" name="a4f9e4e9e4973368c9b3ea6938dc96611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f9e4e9e4973368c9b3ea6938dc96611">&#9670;&#160;</a></span>downloadSensorData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::downloadSensorData </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pobiera i zapisuje dane sensorów dla aktualnie wybranej stacji. </p>
+<p>Pobiera dane sensorów dla aktualnej stacji i zapisuje do pliku.</p>
+<p>Pobiera informacje o sensorach z API GIOŚ i zapisuje je lokalnie. Jeśli dane są już dostępne lokalnie, nie pobiera ich ponownie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00136">136</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a4f9e4e9e4973368c9b3ea6938dc96611_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a4f9e4e9e4973368c9b3ea6938dc96611_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a4f9e4e9e4973368c9b3ea6938dc96611_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a4f9e4e9e4973368c9b3ea6938dc96611_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="abdeb3354b91cda4d6795d8ce0c527a08" name="abdeb3354b91cda4d6795d8ce0c527a08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdeb3354b91cda4d6795d8ce0c527a08">&#9670;&#160;</a></span>filterStations</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::filterStations </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Filtruje listę stacji na podstawie tekstu wyszukiwania. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>Tekst, według którego filtrowane są stacje.</td></tr>
+    <tr><td class="paramname">text</td><td>Tekst filtrujący nazwy stacji.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Wyświetla w liście stacji tylko te, których nazwy zawierają podany tekst (bez uwzględniania wielkości liter). </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01186">1186</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_abdeb3354b91cda4d6795d8ce0c527a08_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_abdeb3354b91cda4d6795d8ce0c527a08_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ac5704e0d80e36d04b1e1308b7ac0ea12" name="ac5704e0d80e36d04b1e1308b7ac0ea12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5704e0d80e36d04b1e1308b7ac0ea12">&#9670;&#160;</a></span>findStationsInRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::findStationsInRadius </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>centerLat</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>centerLon</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>radiusKm</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Znajduje stacje w promieniu od współrzędnych. </p>
+<p>Znajduje stacje w promieniu od określonych współrzędnych.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">centerLat</td><td>Szerokość geograficzna środka. </td></tr>
+    <tr><td class="paramname">centerLon</td><td>Długość geograficzna środka. </td></tr>
+    <tr><td class="paramname">radiusKm</td><td>Promień w kilometrach.</td></tr>
+    <tr><td class="paramname">centerLat</td><td>Szerokość geograficzna środka obszaru wyszukiwania. </td></tr>
+    <tr><td class="paramname">centerLon</td><td>Długość geograficzna środka obszaru wyszukiwania. </td></tr>
+    <tr><td class="paramname">radiusKm</td><td>Promień wyszukiwania w kilometrach.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Przeszukuje buforowane stacje i wybiera te, które znajdują się w określonym promieniu od podanych współrzędnych. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01048">1048</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_ac5704e0d80e36d04b1e1308b7ac0ea12_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_ac5704e0d80e36d04b1e1308b7ac0ea12_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_ac5704e0d80e36d04b1e1308b7ac0ea12_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_ac5704e0d80e36d04b1e1308b7ac0ea12_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a4abdf2fe50f69d8bbe3542546ab8ff30" name="a4abdf2fe50f69d8bbe3542546ab8ff30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4abdf2fe50f69d8bbe3542546ab8ff30">&#9670;&#160;</a></span>geocodeAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::geocodeAddress </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>address</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>radius</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konwertuje adres na współrzędne geograficzne. </p>
+<p>Konwertuje adres tekstowy na współrzędne geograficzne.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>Adres do geokodowania. </td></tr>
+    <tr><td class="paramname">radiusKm</td><td>Promień wyszukiwania w kilometrach.</td></tr>
+    <tr><td class="paramname">address</td><td>Adres do geokodowania. </td></tr>
+    <tr><td class="paramname">radius</td><td>Promień wyszukiwania w kilometrach.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Wykorzystuje usługę Nominatim OpenStreetMap do geokodowania adresu, a następnie wywołuje funkcję wyszukiwania stacji w promieniu. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01005">1005</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a4abdf2fe50f69d8bbe3542546ab8ff30_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a4abdf2fe50f69d8bbe3542546ab8ff30_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a4abdf2fe50f69d8bbe3542546ab8ff30_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a4abdf2fe50f69d8bbe3542546ab8ff30_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a80dc34f2ddc776c2a23dae911f994150" name="a80dc34f2ddc776c2a23dae911f994150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80dc34f2ddc776c2a23dae911f994150">&#9670;&#160;</a></span>haversineDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double AirQualityMonitor::haversineDistance </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>lat1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>lon1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>lat2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>lon2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Oblicza odległość między dwoma punktami geograficznymi. </p>
+<p>Oblicza odległość między dwoma punktami geograficznymi używając formuły Haversine.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lat1</td><td>Szerokość geograficzna pierwszego punktu. </td></tr>
+    <tr><td class="paramname">lon1</td><td>Długość geograficzna pierwszego punktu. </td></tr>
+    <tr><td class="paramname">lat2</td><td>Szerokość geograficzna drugiego punktu. </td></tr>
+    <tr><td class="paramname">lon2</td><td>Długość geograficzna drugiego punktu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Odległość w kilometrach.</dd></dl>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lat1</td><td>Szerokość geograficzna pierwszego punktu. </td></tr>
+    <tr><td class="paramname">lon1</td><td>Długość geograficzna pierwszego punktu. </td></tr>
+    <tr><td class="paramname">lat2</td><td>Szerokość geograficzna drugiego punktu. </td></tr>
+    <tr><td class="paramname">lon2</td><td>Długość geograficzna drugiego punktu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Odległość w kilometrach.</dd></dl>
+<p>Implementacja formuły Haversine do obliczania odległości między punktami na powierzchni Ziemi, uwzględniając jej krzywiznę. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01077">1077</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a80dc34f2ddc776c2a23dae911f994150_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a80dc34f2ddc776c2a23dae911f994150_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ae4866c5caafda9b0f2e2120d3bba6e9d" name="ae4866c5caafda9b0f2e2120d3bba6e9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4866c5caafda9b0f2e2120d3bba6e9d">&#9670;&#160;</a></span>isInternetAvailable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AirQualityMonitor::isInternetAvailable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sprawdza czy połączenie z internetem jest dostępne. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>True jeśli internet jest dostępny, false w przeciwnym razie.</dd>
+<dd>
+True jeśli połączenie jest dostępne, false w przeciwnym razie. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00105">105</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_ae4866c5caafda9b0f2e2120d3bba6e9d_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_ae4866c5caafda9b0f2e2120d3bba6e9d_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a5fc0d1b611a2ab155ca97f0eb239b283" name="a5fc0d1b611a2ab155ca97f0eb239b283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fc0d1b611a2ab155ca97f0eb239b283">&#9670;&#160;</a></span>loadMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::loadMap </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ładuje interfejs mapy. </p>
+<p>Tworzy i inicjalizuje interfejs OpenStreetMap.</p>
+<p>Tworzy i inicjalizuje interfejs OpenStreetMap do wyświetlania stacji pomiarowych na mapie interaktywnej. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00869">869</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2024fbb8b692c06cf16c8a90792e9cbc" name="a2024fbb8b692c06cf16c8a90792e9cbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2024fbb8b692c06cf16c8a90792e9cbc">&#9670;&#160;</a></span>loadMeasurementData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::loadMeasurementData </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sensorId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ładuje dane pomiarowe dla określonego sensora. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sensorId</td><td>ID sensora, dla którego ładowane są dane.</td></tr>
+    <tr><td class="paramname">sensorId</td><td>ID sensora, dla którego ładowane są pomiary. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01429">1429</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a2024fbb8b692c06cf16c8a90792e9cbc_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a2024fbb8b692c06cf16c8a90792e9cbc_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a2024fbb8b692c06cf16c8a90792e9cbc_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a2024fbb8b692c06cf16c8a90792e9cbc_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a759ee5a814969eaf3bbc70a68b5ed09d" name="a759ee5a814969eaf3bbc70a68b5ed09d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a759ee5a814969eaf3bbc70a68b5ed09d">&#9670;&#160;</a></span>loadMeasurementsFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QJsonArray AirQualityMonitor::loadMeasurementsFromFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ładuje dane pomiarowe z lokalnego pliku JSON. </p>
+<p>Ładuje dane pomiarowe z pliku JSON.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>Tablica JSON z danymi pomiarowymi. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01489">1489</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a759ee5a814969eaf3bbc70a68b5ed09d_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a759ee5a814969eaf3bbc70a68b5ed09d_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a6f9d42c4395c7be44d34de4be6aa21da" name="a6f9d42c4395c7be44d34de4be6aa21da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f9d42c4395c7be44d34de4be6aa21da">&#9670;&#160;</a></span>loadSensorMeasurements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::loadSensorMeasurements </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sensorId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ładuje dane pomiarowe dla konkretnego sensora. </p>
+<p>Ładuje dane pomiarowe dla określonego sensora.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sensorId</td><td>ID sensora, dla którego ładowane są dane. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01441">1441</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a6f9d42c4395c7be44d34de4be6aa21da_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a6f9d42c4395c7be44d34de4be6aa21da_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a2a090f294f025baefa1a94e3f64695cf" name="a2a090f294f025baefa1a94e3f64695cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a090f294f025baefa1a94e3f64695cf">&#9670;&#160;</a></span>loadSensorsFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QJsonArray AirQualityMonitor::loadSensorsFromFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ładuje dane sensorów z lokalnego pliku JSON. </p>
+<p>Ładuje dane sensorów z pliku JSON.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>Tablica JSON z danymi sensorów. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01525">1525</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a2a090f294f025baefa1a94e3f64695cf_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a2a090f294f025baefa1a94e3f64695cf_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a495d69688b33ce31e1914ce348d336f5" name="a495d69688b33ce31e1914ce348d336f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a495d69688b33ce31e1914ce348d336f5">&#9670;&#160;</a></span>loadStations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::loadStations </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ładuje dane stacji z pliku lokalnego lub API. </p>
+<p>Ładuje dane stacji z API lub pliku lokalnego.</p>
+<p>Sprawdza najpierw pliki lokalne, a jeśli potrzeba, pobiera z API.</p>
+<p>Sprawdza najpierw, czy plik ze stacjami istnieje lokalnie. Jeśli tak, ładuje dane z pliku, w przeciwnym razie pobiera z API. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01120">1120</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a495d69688b33ce31e1914ce348d336f5_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a495d69688b33ce31e1914ce348d336f5_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a495d69688b33ce31e1914ce348d336f5_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a495d69688b33ce31e1914ce348d336f5_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ad91e2f75313bfbccd0c08c795b8bb0c3" name="ad91e2f75313bfbccd0c08c795b8bb0c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad91e2f75313bfbccd0c08c795b8bb0c3">&#9670;&#160;</a></span>loadStationsFromApi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::loadStationsFromApi </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ładuje dane stacji z API GIOŚ. </p>
+<p>Pobiera dane stacji z API GIOŚ.</p>
+<p>Używa wielowątkowości, aby uniknąć blokowania interfejsu użytkownika.</p>
+<p>Używa wielowątkowości do pobrania danych stacji z API, aby nie blokować interfejsu użytkownika podczas pobierania. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01138">1138</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_ad91e2f75313bfbccd0c08c795b8bb0c3_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_ad91e2f75313bfbccd0c08c795b8bb0c3_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_ad91e2f75313bfbccd0c08c795b8bb0c3_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_ad91e2f75313bfbccd0c08c795b8bb0c3_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a79dbbb95a1e239da80aa4e3df1265236" name="a79dbbb95a1e239da80aa4e3df1265236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79dbbb95a1e239da80aa4e3df1265236">&#9670;&#160;</a></span>loadStationsFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QJsonArray AirQualityMonitor::loadStationsFromFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ładuje dane stacji z lokalnego pliku JSON. </p>
+<p>Ładuje dane stacji z pliku JSON.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>Tablica JSON z danymi stacji. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01273">1273</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a79dbbb95a1e239da80aa4e3df1265236_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a79dbbb95a1e239da80aa4e3df1265236_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a30b2d56cd068c8e1b97360e1a1c323eb" name="a30b2d56cd068c8e1b97360e1a1c323eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30b2d56cd068c8e1b97360e1a1c323eb">&#9670;&#160;</a></span>onMarkerClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::onMarkerClicked </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>stationName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje kliknięcie w marker na mapie. </p>
+<p>Obsługuje kliknięcie markera na mapie.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stationName</td><td>Nazwa stacji, która została kliknięta.</td></tr>
+    <tr><td class="paramname">stationName</td><td>Nazwa stacji, która została kliknięta.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Znajduje stację o podanej nazwie i wyświetla jej szczegóły. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00960">960</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a30b2d56cd068c8e1b97360e1a1c323eb_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a30b2d56cd068c8e1b97360e1a1c323eb_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a30b2d56cd068c8e1b97360e1a1c323eb_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a30b2d56cd068c8e1b97360e1a1c323eb_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a08a162d000d3ab9cf4840ab114a275c3" name="a08a162d000d3ab9cf4840ab114a275c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08a162d000d3ab9cf4840ab114a275c3">&#9670;&#160;</a></span>onMeasurementDataFinished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::onMeasurementDataFinished </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zakończenie pobierania danych pomiarowych. </p>
+<p>Obsługuje zakończenie pobierania danych pomiarowych dla sensora.</p>
+<p>Przetwarza dane pomiarowe po zakończeniu żądania sieciowego. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01374">1374</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a08a162d000d3ab9cf4840ab114a275c3_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a08a162d000d3ab9cf4840ab114a275c3_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a08a162d000d3ab9cf4840ab114a275c3_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a08a162d000d3ab9cf4840ab114a275c3_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ad8eb21eda0655b47e5062514017324fc" name="ad8eb21eda0655b47e5062514017324fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8eb21eda0655b47e5062514017324fc">&#9670;&#160;</a></span>onMeasurementsDownloaded</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::onMeasurementsDownloaded </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zakończenie pobierania danych pomiarowych. </p>
+<p>Przetwarza dane pomiarowe po zakończeniu żądania sieciowego i zapisuje je.</p>
+<p>Przetwarza odpowiedź z API i aktualizuje interfejs użytkownika oraz zapisuje dane lokalnie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00402">402</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_ad8eb21eda0655b47e5062514017324fc_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_ad8eb21eda0655b47e5062514017324fc_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_ad8eb21eda0655b47e5062514017324fc_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_ad8eb21eda0655b47e5062514017324fc_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a8ce222412580a45a82124e1a4ad821df" name="a8ce222412580a45a82124e1a4ad821df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ce222412580a45a82124e1a4ad821df">&#9670;&#160;</a></span>onMeasurementsLoadedFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::onMeasurementsLoadedFromFile </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sensorId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ładuje dane pomiarowe dla sensora z pliku lokalnego. </p>
+<p>Wczytuje dane pomiarowe dla sensora z pliku lokalnego.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sensorId</td><td>ID sensora, dla którego ładowane są dane.</td></tr>
+    <tr><td class="paramname">sensorId</td><td>ID sensora, dla którego ładowane są pomiary.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Jeśli dane nie są dostępne lokalnie i jest połączenie z internetem, próbuje pobrać dane z API. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00483">483</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a8ce222412580a45a82124e1a4ad821df_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a8ce222412580a45a82124e1a4ad821df_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a8ce222412580a45a82124e1a4ad821df_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a8ce222412580a45a82124e1a4ad821df_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a465fa386235bae18dff1fe71bd894c6c" name="a465fa386235bae18dff1fe71bd894c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a465fa386235bae18dff1fe71bd894c6c">&#9670;&#160;</a></span>onSearchNearbyClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::onSearchNearbyClicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje kliknięcie przycisku "Szukaj w pobliżu". </p>
+<p>Obsługuje kliknięcie przycisku wyszukiwania w pobliżu.</p>
+<p>Wyszukuje stacje w pobliżu określonego adresu w podanym promieniu.</p>
+<p>Pobiera adres i promień z pól tekstowych i inicjuje wyszukiwanie stacji w podanym promieniu od wskazanego adresu. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00977">977</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a465fa386235bae18dff1fe71bd894c6c_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a465fa386235bae18dff1fe71bd894c6c_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a465fa386235bae18dff1fe71bd894c6c_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a465fa386235bae18dff1fe71bd894c6c_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a0f41dd3a7a6fc7f550b9d277d5d1b319" name="a0f41dd3a7a6fc7f550b9d277d5d1b319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f41dd3a7a6fc7f550b9d277d5d1b319">&#9670;&#160;</a></span>onSensorsDownloaded</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::onSensorsDownloaded </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zakończenie pobierania danych sensorów. </p>
+<p>Obsługa zakończenia pobierania danych sensorów.</p>
+<p>Przetwarza dane sensorów po zakończeniu żądania sieciowego i zapisuje je. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00176">176</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a0f41dd3a7a6fc7f550b9d277d5d1b319_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a0f41dd3a7a6fc7f550b9d277d5d1b319_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a0f41dd3a7a6fc7f550b9d277d5d1b319_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a0f41dd3a7a6fc7f550b9d277d5d1b319_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aebcc5ba987dc511c966a5704694345c6" name="aebcc5ba987dc511c966a5704694345c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebcc5ba987dc511c966a5704694345c6">&#9670;&#160;</a></span>onSensorsFinished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::onSensorsFinished </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zakończenie pobierania danych sensorów. </p>
+<p>Obsługuje zakończenie pobierania danych sensorów dla stacji.</p>
+<p>Przetwarza dane sensorów po zakończeniu żądania sieciowego. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01399">1399</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_aebcc5ba987dc511c966a5704694345c6_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_aebcc5ba987dc511c966a5704694345c6_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_aebcc5ba987dc511c966a5704694345c6_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_aebcc5ba987dc511c966a5704694345c6_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a2021de10613f9147c9138d325eea0f31" name="a2021de10613f9147c9138d325eea0f31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2021de10613f9147c9138d325eea0f31">&#9670;&#160;</a></span>onSensorsLoadedFromFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::onSensorsLoadedFromFile </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>stationId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ładuje dane sensorów z pliku lokalnego dla stacji. </p>
+<p>Ładuje dane sensorów dla konkretnej stacji z pliku.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stationId</td><td>ID stacji, dla której ładowane są sensory.</td></tr>
+    <tr><td class="paramname">stationId</td><td>ID stacji do załadowania danych. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00276">276</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a2021de10613f9147c9138d325eea0f31_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a2021de10613f9147c9138d325eea0f31_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a2021de10613f9147c9138d325eea0f31_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a2021de10613f9147c9138d325eea0f31_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a850990845f595dd797522a17797f2663" name="a850990845f595dd797522a17797f2663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a850990845f595dd797522a17797f2663">&#9670;&#160;</a></span>onStationsFinished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::onStationsFinished </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zakończenie pobierania danych stacji. </p>
+<p>Obsługuje zakończenie pobierania danych stacji z API.</p>
+<p>Przetwarza dane stacji po zakończeniu żądania sieciowego.</p>
+<p>Przetwarza odpowiedź API, zapisuje dane do pliku lokalnego i aktualizuje interfejs użytkownika. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01156">1156</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a850990845f595dd797522a17797f2663_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a850990845f595dd797522a17797f2663_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a850990845f595dd797522a17797f2663_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a850990845f595dd797522a17797f2663_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a517f6382a65f84e45ecdede67d5c3cf1" name="a517f6382a65f84e45ecdede67d5c3cf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a517f6382a65f84e45ecdede67d5c3cf1">&#9670;&#160;</a></span>saveMeasurementsToFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::saveMeasurementsToFile </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonArray &amp;</td>          <td class="paramname"><span class="paramname"><em>allMeasurements</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zapisuje dane pomiarowe do lokalnego pliku JSON. </p>
+<p>Zapisuje dane pomiarowe do pliku JSON.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">allMeasurements</td><td>Tablica JSON ze wszystkimi danymi pomiarowymi.</td></tr>
+    <tr><td class="paramname">allMeasurements</td><td>Tablica JSON z danymi pomiarowymi. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01472">1472</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4482d6b0c3bd888ff64ca0b22f95f09f" name="a4482d6b0c3bd888ff64ca0b22f95f09f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4482d6b0c3bd888ff64ca0b22f95f09f">&#9670;&#160;</a></span>saveSensorsToFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::saveSensorsToFile </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonArray &amp;</td>          <td class="paramname"><span class="paramname"><em>sensors</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zapisuje dane sensorów do lokalnego pliku JSON. </p>
+<p>Zapisuje dane sensorów do pliku.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sensors</td><td>Tablica JSON z danymi sensorów do zapisania. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00256">256</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a4482d6b0c3bd888ff64ca0b22f95f09f_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a4482d6b0c3bd888ff64ca0b22f95f09f_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="af2171a17af73ab8e50efb374ff8ddf19" name="af2171a17af73ab8e50efb374ff8ddf19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2171a17af73ab8e50efb374ff8ddf19">&#9670;&#160;</a></span>saveStationsToFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::saveStationsToFile </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonArray &amp;</td>          <td class="paramname"><span class="paramname"><em>stations</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zapisuje dane stacji do lokalnego pliku JSON. </p>
+<p>Zapisuje dane stacji do pliku JSON.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stations</td><td>Tablica JSON z danymi stacji do zapisania.</td></tr>
+    <tr><td class="paramname">stations</td><td>Tablica JSON z danymi stacji. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01304">1304</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_af2171a17af73ab8e50efb374ff8ddf19_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_af2171a17af73ab8e50efb374ff8ddf19_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ab36994d80512a73bf84cd2bbafdc79bb" name="ab36994d80512a73bf84cd2bbafdc79bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab36994d80512a73bf84cd2bbafdc79bb">&#9670;&#160;</a></span>setupWebView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::setupWebView </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konfiguruje widok webowy dla mapy. </p>
+<p>Inicjalizuje komponent QWebEngineView i most komunikacyjny z JavaScript. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01320">1320</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_ab36994d80512a73bf84cd2bbafdc79bb_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_ab36994d80512a73bf84cd2bbafdc79bb_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a5ad33f1c9d9db274b3c73daa0761cc19" name="a5ad33f1c9d9db274b3c73daa0761cc19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ad33f1c9d9db274b3c73daa0761cc19">&#9670;&#160;</a></span>showAllStationsOnMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::showAllStationsOnMap </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pokazuje wszystkie stacje na mapie. </p>
+<p>Wyświetla wszystkie dostępne stacje pomiarowe jako markery na mapie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00935">935</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a5ad33f1c9d9db274b3c73daa0761cc19_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a5ad33f1c9d9db274b3c73daa0761cc19_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a767c8e00f14c1436435e9b47855acd49" name="a767c8e00f14c1436435e9b47855acd49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a767c8e00f14c1436435e9b47855acd49">&#9670;&#160;</a></span>showSensorDetails</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::showSensorDetails </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wyświetla szczegóły wybranego sensora. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>Wybrany element listy sensorów.</td></tr>
+    <tr><td class="paramname">item</td><td>Element listy reprezentujący wybrany sensor.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Przełącza widok na panel szczegółów sensora i ładuje dane pomiarowe dla wybranego sensora. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01247">1247</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a767c8e00f14c1436435e9b47855acd49_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_a767c8e00f14c1436435e9b47855acd49_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a767c8e00f14c1436435e9b47855acd49_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a767c8e00f14c1436435e9b47855acd49_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ac03a1d30c2b22972bb9f1333c659b75e" name="ac03a1d30c2b22972bb9f1333c659b75e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac03a1d30c2b22972bb9f1333c659b75e">&#9670;&#160;</a></span>showStationDetails</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::showStationDetails </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wyświetla szczegóły wybranej stacji. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>Wybrany element listy stacji.</td></tr>
+    <tr><td class="paramname">item</td><td>Element listy reprezentujący wybraną stację.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Przełącza widok na panel szczegółów stacji i ładuje dane o sensorach dla wybranej stacji. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01215">1215</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_ac03a1d30c2b22972bb9f1333c659b75e_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_ac03a1d30c2b22972bb9f1333c659b75e_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_ac03a1d30c2b22972bb9f1333c659b75e_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_ac03a1d30c2b22972bb9f1333c659b75e_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="afc1d4f0a0d6bff7fbd6d08724f7ac91c" name="afc1d4f0a0d6bff7fbd6d08724f7ac91c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc1d4f0a0d6bff7fbd6d08724f7ac91c">&#9670;&#160;</a></span>showStationListView</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::showStationListView </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pokazuje główny widok listy stacji. </p>
+<p>Wyświetla widok listy stacji.</p>
+<p>Przełącza interfejs użytkownika z powrotem do widoku listy stacji. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01203">1203</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_afc1d4f0a0d6bff7fbd6d08724f7ac91c_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_afc1d4f0a0d6bff7fbd6d08724f7ac91c_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a4b738a6079bab6f726ab3cf721b2f58d" name="a4b738a6079bab6f726ab3cf721b2f58d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b738a6079bab6f726ab3cf721b2f58d">&#9670;&#160;</a></span>updateMapWithStations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::updateMapWithStations </td>
+          <td>(</td>
+          <td class="paramtype">const QVector&lt; QJsonObject &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>stations</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje mapę znacznikami stacji. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stations</td><td>Wektor danych stacji do wyświetlenia.</td></tr>
+    <tr><td class="paramname">stations</td><td>Wektor obiektów JSON z danymi stacji.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Generuje kod JavaScript do aktualizacji mapy znacznikami dla podanych stacji. Każdy znacznik zawiera nazwę stacji. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l01098">1098</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a4b738a6079bab6f726ab3cf721b2f58d_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a4b738a6079bab6f726ab3cf721b2f58d_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="acd41767c5abd0e7f5ede406615b548e2" name="acd41767c5abd0e7f5ede406615b548e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd41767c5abd0e7f5ede406615b548e2">&#9670;&#160;</a></span>updateMeasurementDisplay</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::updateMeasurementDisplay </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje wyświetlanie wykresu i statystyk pomiarów. </p>
+<p>Aktualizuje wykres na podstawie wybranego zakresu dat.</p>
+<p>Odświeża wykres i statystyki na podstawie wybranego zakresu dat. Oblicza minimalną, maksymalną i średnią wartość oraz trend danych. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00732">732</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_acd41767c5abd0e7f5ede406615b548e2_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_acd41767c5abd0e7f5ede406615b548e2_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a9602565754f315cb0106ce9950c3552e" name="a9602565754f315cb0106ce9950c3552e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9602565754f315cb0106ce9950c3552e">&#9670;&#160;</a></span>updateMeasurementsFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::updateMeasurementsFile </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sensorId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QJsonArray &amp;</td>          <td class="paramname"><span class="paramname"><em>newValues</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje lokalny plik pomiarów nowymi danymi. </p>
+<p>Aktualizuje plik pomiarów nowymi danymi.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sensorId</td><td>ID sensora, który jest aktualizowany. </td></tr>
+    <tr><td class="paramname">newValues</td><td>Tablica JSON z nowymi wartościami pomiarów.</td></tr>
+    <tr><td class="paramname">sensorId</td><td>ID sensora, którego dane są aktualizowane. </td></tr>
+    <tr><td class="paramname">newValues</td><td>Tablica JSON z nowymi wartościami pomiarów.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Odczytuje istniejące dane, aktualizuje je nowymi wartościami dla danego sensora i zapisuje z powrotem do pliku. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00640">640</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_a9602565754f315cb0106ce9950c3552e_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_a9602565754f315cb0106ce9950c3552e_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aa1fd12adcf51568a3df5355f5e7faa33" name="aa1fd12adcf51568a3df5355f5e7faa33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1fd12adcf51568a3df5355f5e7faa33">&#9670;&#160;</a></span>updateMeasurementsList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::updateMeasurementsList </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonArray &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje interfejs użytkownika danymi pomiarowymi. </p>
+<p>Aktualizuje listę pomiarów w interfejsie użytkownika.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">measurementData</td><td>Tablica JSON z danymi pomiarowymi.</td></tr>
+    <tr><td class="paramname">values</td><td>Tablica JSON z wartościami pomiarów.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Wyświetla pomiary w liście z kolorowym formatowaniem zależnym od wartości. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00558">558</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_aa1fd12adcf51568a3df5355f5e7faa33_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_aa1fd12adcf51568a3df5355f5e7faa33_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ac9c590507f4638b56fccc4ac77069d3d" name="ac9c590507f4638b56fccc4ac77069d3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9c590507f4638b56fccc4ac77069d3d">&#9670;&#160;</a></span>updateSensorsFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::updateSensorsFile </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonArray &amp;</td>          <td class="paramname"><span class="paramname"><em>newSensors</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje lokalny plik sensorów nowymi danymi. </p>
+<p>Aktualizuje plik sensorów nowymi danymi.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newSensors</td><td>Tablica JSON z nowymi danymi sensorów. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00213">213</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_ac9c590507f4638b56fccc4ac77069d3d_cgraph.png" border="0" usemap="#aclass_air_quality_monitor_ac9c590507f4638b56fccc4ac77069d3d_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_ac9c590507f4638b56fccc4ac77069d3d_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_ac9c590507f4638b56fccc4ac77069d3d_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aa921cac9624064d22d7bad1b683f924d" name="aa921cac9624064d22d7bad1b683f924d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa921cac9624064d22d7bad1b683f924d">&#9670;&#160;</a></span>updateSensorsList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AirQualityMonitor::updateSensorsList </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonArray &amp;</td>          <td class="paramname"><span class="paramname"><em>sensorsData</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje interfejs użytkownika danymi sensorów dla stacji. </p>
+<p>Aktualizuje listę sensorów w interfejsie użytkownika.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sensorsData</td><td>Tablica JSON z danymi sensorów. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8cpp_source.html#l00318">318</a> pliku <a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_quality_monitor_aa921cac9624064d22d7bad1b683f924d_icgraph.png" border="0" usemap="#aclass_air_quality_monitor_aa921cac9624064d22d7bad1b683f924d_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="a127cf719f5ff1c505e214e0332bf3eb0" name="a127cf719f5ff1c505e214e0332bf3eb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a127cf719f5ff1c505e214e0332bf3eb0">&#9670;&#160;</a></span>addressSearchBox</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* AirQualityMonitor::addressSearchBox</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pole wprowadzania adresu do wyszukiwania. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00343">343</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="a9d27e88bb8bc5b27ae0e67111093ddc8" name="a9d27e88bb8bc5b27ae0e67111093ddc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d27e88bb8bc5b27ae0e67111093ddc8">&#9670;&#160;</a></span>bridge</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_bridge.html">Bridge</a>* AirQualityMonitor::bridge</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Most między JS a Qt. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00340">340</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="a90fc2cc9f1ef22388d90822c19e023ec" name="a90fc2cc9f1ef22388d90822c19e023ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90fc2cc9f1ef22388d90822c19e023ec">&#9670;&#160;</a></span>cachedStations</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QJsonArray AirQualityMonitor::cachedStations</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lokalnie buforowane dane stacji. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00333">333</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="ae4e0c5b441d11a04fe242b705be662d3" name="ae4e0c5b441d11a04fe242b705be662d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4e0c5b441d11a04fe242b705be662d3">&#9670;&#160;</a></span>channel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWebChannel* AirQualityMonitor::channel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Kanał webowy do komunikacji z mapą </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00338">338</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="a370c4faeb260fd0131d1fa21bffad6c5" name="a370c4faeb260fd0131d1fa21bffad6c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a370c4faeb260fd0131d1fa21bffad6c5">&#9670;&#160;</a></span>currentSensorId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AirQualityMonitor::currentSensorId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ID aktualnie wybranego sensora. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00335">335</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="a33440b75eb85aa4578aaa03b9dc2f41c" name="a33440b75eb85aa4578aaa03b9dc2f41c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33440b75eb85aa4578aaa03b9dc2f41c">&#9670;&#160;</a></span>currentStationId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AirQualityMonitor::currentStationId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ID aktualnie wybranej stacji. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00334">334</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="ab998074f4b97d575b05fce5c96853970" name="ab998074f4b97d575b05fce5c96853970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab998074f4b97d575b05fce5c96853970">&#9670;&#160;</a></span>downloadMeasurementButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* AirQualityMonitor::downloadMeasurementButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przycisk pobierania danych pomiarowych. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00348">348</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="a8b076ea0270d089f4155913a4a61d030" name="a8b076ea0270d089f4155913a4a61d030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b076ea0270d089f4155913a4a61d030">&#9670;&#160;</a></span>downloadStationDetail</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* AirQualityMonitor::downloadStationDetail</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przycisk pobierania danych sensorów. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00347">347</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="a2af88bfce2a839f8fbb29c88c89e64c2" name="a2af88bfce2a839f8fbb29c88c89e64c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af88bfce2a839f8fbb29c88c89e64c2">&#9670;&#160;</a></span>lastMeasurements</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QJsonArray AirQualityMonitor::lastMeasurements</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ostatnio pobrane pomiary. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00337">337</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="af430722ab0f7eb09f64f8a71a0b0ac8f" name="af430722ab0f7eb09f64f8a71a0b0ac8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af430722ab0f7eb09f64f8a71a0b0ac8f">&#9670;&#160;</a></span>networkManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkAccessManager* AirQualityMonitor::networkManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Manager żądań sieciowych. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00332">332</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="a53756bfddac2174739b197a6b1a4d51e" name="a53756bfddac2174739b197a6b1a4d51e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53756bfddac2174739b197a6b1a4d51e">&#9670;&#160;</a></span>radiusSearchBox</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* AirQualityMonitor::radiusSearchBox</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pole wprowadzania promienia wyszukiwania. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00344">344</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="ac482e6195f9d83d43d3d7e86949cc2b4" name="ac482e6195f9d83d43d3d7e86949cc2b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac482e6195f9d83d43d3d7e86949cc2b4">&#9670;&#160;</a></span>searchNearbyButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* AirQualityMonitor::searchNearbyButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przycisk wyszukiwania. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00345">345</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="acb4b26d06a8992435e76dc74ddf7ba8a" name="acb4b26d06a8992435e76dc74ddf7ba8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb4b26d06a8992435e76dc74ddf7ba8a">&#9670;&#160;</a></span>sensorMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;QString, int&gt; AirQualityMonitor::sensorMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mapuje nazwy wyświetlane sensorów na ID. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00336">336</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="ade78daed3c2037d81059d53bc7c29c66" name="ade78daed3c2037d81059d53bc7c29c66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade78daed3c2037d81059d53bc7c29c66">&#9670;&#160;</a></span>showAllStationsButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* AirQualityMonitor::showAllStationsButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przycisk pokazania wszystkich stacji. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00346">346</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="a07a89a474e2816b6a263b742fb4b248c" name="a07a89a474e2816b6a263b742fb4b248c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07a89a474e2816b6a263b742fb4b248c">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::AirQualityMonitorClass AirQualityMonitor::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Komponenty interfejsu użytkownika. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00331">331</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<a id="aa2a0fbc558e64fb5147beee7a2afb8a8" name="aa2a0fbc558e64fb5147beee7a2afb8a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2a0fbc558e64fb5147beee7a2afb8a8">&#9670;&#160;</a></span>webView</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWebEngineView* AirQualityMonitor::webView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Widok webowy do wyświetlania mapy. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_air_quality_monitor_8h_source.html#l00339">339</a> pliku <a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>C:/Users/frack/source/repos/AirQualityMonitor1/AirQualityMonitor/AirQualityMonitor/<a class="el" href="_air_quality_monitor_8h_source.html">AirQualityMonitor.h</a></li>
+<li>C:/Users/frack/source/repos/AirQualityMonitor1/AirQualityMonitor/AirQualityMonitor/<a class="el" href="_air_quality_monitor_8cpp_source.html">AirQualityMonitor.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_air_quality_monitor.html">AirQualityMonitor</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
