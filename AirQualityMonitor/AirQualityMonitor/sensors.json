@@ -38,5 +38,75 @@
             "paramName": "pył zawieszony PM10"
         },
         "stationId": 16
+    },
+    {
+        "id": 28767,
+        "param": {
+            "idParam": 5,
+            "paramCode": "O3",
+            "paramFormula": "O3",
+            "paramName": "ozon"
+        },
+        "stationId": 16493
+    },
+    {
+        "id": 26990,
+        "param": {
+            "idParam": 6,
+            "paramCode": "NO2",
+            "paramFormula": "NO2",
+            "paramName": "dwutlenek azotu"
+        },
+        "stationId": 16493
+    },
+    {
+        "id": 26995,
+        "param": {
+            "idParam": 8,
+            "paramCode": "CO",
+            "paramFormula": "CO",
+            "paramName": "tlenek węgla"
+        },
+        "stationId": 16493
+    },
+    {
+        "id": 26996,
+        "param": {
+            "idParam": 3,
+            "paramCode": "PM10",
+            "paramFormula": "PM10",
+            "paramName": "pył zawieszony PM10"
+        },
+        "stationId": 16493
+    },
+    {
+        "id": 26997,
+        "param": {
+            "idParam": 69,
+            "paramCode": "PM2.5",
+            "paramFormula": "PM2.5",
+            "paramName": "pył zawieszony PM2.5"
+        },
+        "stationId": 16493
+    },
+    {
+        "id": 31837,
+        "param": {
+            "idParam": 1,
+            "paramCode": "SO2",
+            "paramFormula": "SO2",
+            "paramName": "dwutlenek siarki"
+        },
+        "stationId": 16493
+    },
+    {
+        "id": 828,
+        "param": {
+            "idParam": 3,
+            "paramCode": "PM10",
+            "paramFormula": "PM10",
+            "paramName": "pył zawieszony PM10"
+        },
+        "stationId": 143
     }
 ]

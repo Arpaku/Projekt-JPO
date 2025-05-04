@@ -1129,6 +1129,8 @@ void AirQualityMonitor::loadStations()
     }
 }
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * @brief Pobiera dane stacji z API GIOŚ.
  *
@@ -1146,6 +1148,8 @@ void AirQualityMonitor::loadStationsFromApi()
         connect(reply, &QNetworkReply::finished, this, &AirQualityMonitor::onStationsFinished);
         });
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /**
  * @brief Obsługuje zakończenie pobierania danych stacji z API.
