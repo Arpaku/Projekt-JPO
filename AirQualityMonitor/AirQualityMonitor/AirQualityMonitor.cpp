@@ -27,6 +27,7 @@
 #include <QWebChannel>
 #include <QtConcurrent/QtConcurrentRun>
 #include <QMessageBox>
+#include <stdexcept>
 
  // Stałe globalne
 constexpr double kEarthRadiusKm = 6371.0;  ///< Promień Ziemi w kilometrach (do obliczeń metodą haversine)
@@ -214,39 +215,47 @@ void AirQualityMonitor::updateSensorsFile(const QJsonArray& newSensors)
 {
     QJsonArray allSensors;
 
-    // Wczytaj istniejące dane, jeśli plik istnieje
-    QFile readFile(QDir::currentPath() + "/sensors.json");
-    if (readFile.exists() && readFile.open(QIODevice::ReadOnly)) {
-        QByteArray data = readFile.readAll();
-        QJsonDocument doc = QJsonDocument::fromJson(data);
-        if (doc.isArray()) {
-            allSensors = doc.array();
+    try {
+        // Wczytaj istniejące dane, jeśli plik istnieje
+        QFile readFile(QDir::currentPath() + "/sensors.json");
+        if (readFile.exists() && readFile.open(QIODevice::ReadOnly)) {
+            QByteArray data = readFile.readAll();
+            QJsonDocument doc = QJsonDocument::fromJson(data);
+            if (doc.isArray()) {
+                allSensors = doc.array();
+            }
+            readFile.close();
         }
-        readFile.close();
-    }
 
-    // Usuń stare dane dla tej stacji, jeśli istnieją
-    int stationId = -1;
-    if (!newSensors.isEmpty()) {
-        stationId = newSensors.at(0).toObject().value("stationId").toInt();
-    }
+        // Usuń stare dane dla tej stacji, jeśli istnieją
+        int stationId = -1;
+        if (!newSensors.isEmpty()) {
+            stationId = newSensors.at(0).toObject().value("stationId").toInt();
+        }
 
-    if (stationId != -1) {
-        for (int i = allSensors.size() - 1; i >= 0; i--) {
-            QJsonObject obj = allSensors.at(i).toObject();
-            if (obj.value("stationId").toInt() == stationId) {
-                allSensors.removeAt(i);
+        if (stationId != -1) {
+            for (int i = allSensors.size() - 1; i >= 0; i--) {
+                QJsonObject obj = allSensors.at(i).toObject();
+                if (obj.value("stationId").toInt() == stationId) {
+                    allSensors.removeAt(i);
+                }
             }
         }
-    }
 
-    // Dodaj nowe dane
-    for (const QJsonValue& value : newSensors) {
-        allSensors.append(value);
-    }
+        // Dodaj nowe dane
+        for (const QJsonValue& value : newSensors) {
+            allSensors.append(value);
+        }
 
-    // Zapisz zaktualizowane dane do pliku
-    saveSensorsToFile(allSensors);
+        // Zapisz zaktualizowane dane do pliku
+        saveSensorsToFile(allSensors);
+    }
+    catch (const std::exception& e) {
+        qDebug() << "Błąd podczas aktualizacji pliku sensorów: " << e.what();
+        QMessageBox::warning(this, "Błąd",
+            QString("Nie udało się zaktualizować pliku sensorów: %1").arg(e.what()),
+            QMessageBox::Ok);
+    }
 }
 
 /**
@@ -406,71 +415,56 @@ void AirQualityMonitor::onMeasurementsDownloaded()
 
     int sensorId = reply->property("sensorId").toInt();
 
-    if (reply->error() != QNetworkReply::NoError) {
-        qDebug() << "Błąd sieci przy pobieraniu pomiarów:" << reply->errorString();
+    try {
+        if (reply->error() != QNetworkReply::NoError)
+            throw std::runtime_error(reply->errorString().toStdString());
+
+        QByteArray data = reply->readAll();
+        QJsonDocument doc = QJsonDocument::fromJson(data);
+
+        if (!doc.isObject())
+            throw std::runtime_error("Nieprawidłowy format danych z API");
+
+        QJsonObject root = doc.object();
+        QJsonArray values = root.value("values").toArray();
+
+        // Sprawdź czy otrzymaliśmy jakiekolwiek poprawne dane
+        bool hasValidData = false;
+        for (const QJsonValue& val : values) {
+            QJsonObject obj = val.toObject();
+            if (obj.contains("value") && !obj.value("value").isNull()) {
+                hasValidData = true;
+                break;
+            }
+        }
+
+        if (!hasValidData)
+            throw std::runtime_error("Serwer nie zwrócił żadnych ważnych danych pomiarowych");
+
+        // Otrzymano poprawne dane, zapisz je
+        updateMeasurementsFile(sensorId, values);
+
+        // Aktualizuj wyświetlanie
+        updateMeasurementsList(values);
+
+        // Zaktualizuj również wyświetlanie pomiarów za pomocą wykresu
+        displayMeasurementData(values);
+
+        QMessageBox::information(this, "Sukces",
+            "Pomyślnie pobrano najnowsze dane z serwera.", QMessageBox::Ok);
+    }
+    catch (const std::exception& e) {
+        qDebug() << "Błąd przy pobieraniu pomiarów:" << e.what();
         QMessageBox::warning(this, "Błąd pobierania",
             QString("Nie udało się pobrać danych z serwera: %1\n"
                 "Sprawdzam dane lokalne...")
-            .arg(reply->errorString()), QMessageBox::Ok);
+            .arg(e.what()), QMessageBox::Ok);
 
         // Próba załadowania danych offline
         onMeasurementsLoadedFromFile(sensorId);
-        reply->deleteLater();
-        return;
     }
-
-    QByteArray data = reply->readAll();
-    QJsonDocument doc = QJsonDocument::fromJson(data);
-
-    if (!doc.isObject()) {
-        qDebug() << "Nieprawidłowy format danych z API";
-        QMessageBox::warning(this, "Błąd formatu",
-            "Dane pobrane z serwera mają nieprawidłowy format.\n"
-            "Sprawdzam dane lokalne...", QMessageBox::Ok);
-
-        // Próba załadowania danych offline
-        onMeasurementsLoadedFromFile(sensorId);
-        reply->deleteLater();
-        return;
-    }
-
-    QJsonObject root = doc.object();
-    QJsonArray values = root.value("values").toArray();
-
-    // Sprawdź czy otrzymaliśmy jakiekolwiek poprawne dane
-    bool hasValidData = false;
-    for (const QJsonValue& val : values) {
-        QJsonObject obj = val.toObject();
-        if (obj.contains("value") && !obj.value("value").isNull()) {
-            hasValidData = true;
-            break;
-        }
-    }
-
-    if (!hasValidData) {
-        QMessageBox::warning(this, "Brak danych",
-            "Serwer nie zwrócił żadnych ważnych danych pomiarowych.\n"
-            "Sprawdzam dane lokalne...", QMessageBox::Ok);
-
-        // Próba załadowania danych offline
-        onMeasurementsLoadedFromFile(sensorId);
-        reply->deleteLater();
-        return;
-    }
-
-    // Otrzymano poprawne dane, zapisz je
-    updateMeasurementsFile(sensorId, values);
-
-    // Aktualizuj wyświetlanie
-    updateMeasurementsList(values);
-
-    // Zaktualizuj również wyświetlanie pomiarów za pomocą wykresu
-    displayMeasurementData(values);
 
     reply->deleteLater();
-
-    QMessageBox::information(this, "Sukces",
-        "Pomyślnie pobrano najnowsze dane z serwera.", QMessageBox::Ok);
 }
 
 /**
@@ -1475,14 +1469,20 @@ void AirQualityMonitor::loadSensorMeasurements(int sensorId)
  */
 void AirQualityMonitor::saveMeasurementsToFile(const QJsonArray& allMeasurements)
 {
-    QFile file(QDir::currentPath() + "/measurements.json");
-    if (file.open(QIODevice::WriteOnly)) {
+    try {
+        QFile file(QDir::currentPath() + "/measurements.json");
+        if (!file.open(QIODevice::WriteOnly))
+            throw std::runtime_error(file.errorString().toStdString());
+
         file.write(QJsonDocument(allMeasurements).toJson());
         file.close();
         qDebug() << "Dane zapisane do pliku measurements.json";
     }
-    else {
-        qDebug() << "Błąd zapisu do pliku measurements.json: " << file.errorString();
+    catch (const std::exception& e) {
+        qDebug() << "Błąd zapisu do pliku measurements.json: " << e.what();
+        QMessageBox::warning(this, "Błąd zapisu",
+            QString("Nie udało się zapisać danych: %1").arg(e.what()),
+            QMessageBox::Ok);
     }
 }
 
@@ -1492,34 +1492,33 @@ void AirQualityMonitor::saveMeasurementsToFile(const QJsonArray& allMeasurements
  */
 QJsonArray AirQualityMonitor::loadMeasurementsFromFile()
 {
-    QFile file(QDir::currentPath() + "/measurements.json");
-    if (!file.exists()) {
-        qDebug() << "Plik measurements.json nie istnieje.";
+    try {
+        QFile file(QDir::currentPath() + "/measurements.json");
+
+        if (!file.exists())
+            throw std::runtime_error("Plik measurements.json nie istnieje.");
+
+        if (!file.open(QIODevice::ReadOnly))
+            throw std::runtime_error(QString("Nie można otworzyć pliku measurements.json: %1").arg(file.errorString()).toStdString());
+
+        QByteArray data = file.readAll();
+        file.close();
+
+        QJsonParseError parseError;
+        QJsonDocument doc = QJsonDocument::fromJson(data, &parseError);
+
+        if (parseError.error != QJsonParseError::NoError)
+            throw std::runtime_error(QString("Błąd parsowania JSON: %1").arg(parseError.errorString()).toStdString());
+
+        if (!doc.isArray())
+            throw std::runtime_error("Plik JSON nie zawiera tablicy jako głównego elementu.");
+
+        return doc.array();
+    }
+    catch (const std::exception& e) {
+        qDebug() << e.what();
         return QJsonArray();
     }
-
-    if (!file.open(QIODevice::ReadOnly)) {
-        qDebug() << "Nie można otworzyć pliku measurements.json:" << file.errorString();
-        return QJsonArray();
-    }
-
-    QByteArray data = file.readAll();
-    file.close();
-
-    QJsonParseError parseError;
-    QJsonDocument doc = QJsonDocument::fromJson(data, &parseError);
-
-    if (parseError.error != QJsonParseError::NoError) {
-        qDebug() << "Błąd parsowania JSON:" << parseError.errorString();
-        return QJsonArray();
-    }
-
-    if (!doc.isArray()) {
-        qDebug() << "Plik JSON nie zawiera tablicy jako głównego elementu.";
-        return QJsonArray();
-    }
-
-    return doc.array();
 }
 
 /**
